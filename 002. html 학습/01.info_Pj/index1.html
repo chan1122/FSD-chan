@@ -71,6 +71,15 @@
         margin: 한개 두개 세개 (위 양쪽 아래)
         margin: 한개 두개 세개 네개 (4방향 모두 따로)
         ___________________________________________
+
+        [ 박스의 크기 설정시 패딩과 보더와의 관계 ]
+        1. 크기 설정없이 auto인 상태 : 패딩과 보더가 안쪽포함
+        2. width, height크기를 줄 경우 패딩과 보더는 바깥으로 나감!
+        (박스가 설정된 크기보다 커짐!!! -> 컨텐트박스 comtent-box)
+        3. 만약 width, height 크기를 유지하고 패딩과 보더를 안쪽으로 포함시키려면
+        아래의 속성으로 치환한다. 
+
+        ___________________________________________
         [ 글자 관련 속성 ]
         1. 글자크기 -> font-size
             값 -> 절대단위: px, pt (12pt==16px)
@@ -140,7 +149,18 @@
         예) red, green, blue, pink, navy, 등
         - 모든 색상은 w3schools.com의 색상참조로 가서확인!
         https://www.w3schools.com/cssref/css_colors.asp
-        ******************************************/
+        *****************************************
+
+        __________________________________________________
+        [ css 적용 우선순위 ]
+        inline > id > class > type
+        - 인라인이 가장 쎔!
+        - 약한 경우에 순위를 가장 높이는 방법! -> !important
+        -> 이 방법은 인라인보다도 쌔기 때문에 함부로 쓰면 안됨!
+
+
+        *****************************************************/
+
 
         /* 박스공통 */
         .part {
@@ -153,6 +173,8 @@
                 양쪽을 auto로 주면 블록박스가 중앙에옴!
                 margin: 0 auto 로 주는 경우가 많아서
                 마영오! 라고 불러줌! */
+            /* 박스 크기 유지설정 */
+            box-sizing: border-box;
         }
 
         /* 상단영역 */
@@ -160,6 +182,11 @@
             height: 150px;
             text-align: center;
             /* 글자중앙 */
+            /* 배경색 bgc */
+            background-color: #f0fff0;
+
+            /* 둥근모서리 brad */
+            border-radius: 110px;
         }
 
         /* 타이틀 */
@@ -176,7 +203,7 @@
             /* 글자자간 ls */
             letter-spacing: 2px;
             /* 글자줄간격 lh */
-            line-height: 110px;
+            line-height: 70px;
             /* 글자단어간격 ws */
             word-spacing: 10px;
 
@@ -220,6 +247,19 @@
             outline: 1px solid red;
         }
 
+        /* logo 링크 */
+        #gnb img {
+            width: 30px !important;
+            /* 인라인 보다 최우선인 !important를 사용
+            하지만 주의하여 사용해야함! JS 코드가 안먹히는 경우가 있음!*/
+
+            /* 이미지 옆 인라인요소 새로방향 위치정렬속성 va */
+            vertical-align: -9px;
+            /* 특정값 : top,bottom,baseline,middlem수치값 */
+            /* 오른쪽 마진 mr-9 */
+            margin-right: -9px
+        }
+
         /* ______________________________________________________________ */
         /* 메인영역 이미지 */
         main img {
@@ -229,6 +269,38 @@
         /* 하단영역 */
         footer.info {
             text-align: center;
+            /* 둥근모서리 brad */
+            border-radius: 110px;
+            /* 배경색 bgc */
+            background-color: #f0fff0;
+        }
+
+        /* 주소요소 */
+        .info address {
+            /* 글자스타일 fsn */
+            font-style: normal;
+            /* 글씨체 */
+            font-family: 'Nanum Gothic';
+            /* 글자크기 */
+            font-size: 14px;
+            /* 줄간격 */
+            line-height: 2;
+            /* 글자색 */
+            color: #000000;
+        }
+        /* 이름만 구분한 span 요소 */
+        .info address span{
+            /* 글자체 ff */
+            font-family: 'Black And White Picture', sans-serif;
+            /* 글자색 c */
+            color: #094d62;
+            /* 글자크기fsz */
+            font-size: 20px;
+            /* 글자데코 밑줄 tdu */
+            text-decoration:    underline;
+            /* 글자데코 스타일 tds */
+            text-decoration-style: double;
+
         }
     </style>
 </head>
@@ -262,9 +334,10 @@
     <footer class="part info">
         <!-- 회사주소 및 정보 -->
         <address>
-            서울시 강남구 역삼동 119 대호B 8F <br>
-            대표: Tom Brace Parker <br>
-            전화: 010-2222-3333
+            서울시 서울구 서울동 112 지구B 28F <br>
+            <!-- span -->
+            대표: <span>kim yee han</span> <br>
+            전화: 010-1234-5678.
         </address>
     </footer>
 
@@ -288,6 +361,11 @@
             (보통 article 이나 section은 
             w3c에서 heading 태그(h1~h6)를 내용에
             사용할 것을 권고함!-안써도 무관!)
+
+            [ span 요소 : (spam-범위)]
+            - 아무런 특징이 없는 인라인 요소
+            - 인라인 컨텐츠를 구분하여 구조화함
+
             [ img요소 : image ]
             - 이미지를 넣어주는 요소
             - 필수속성:
