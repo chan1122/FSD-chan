@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-/* Info PJ 메인 css - main.css */
+/* Info PJ 공통 css - common.css */
 
 /* 박스공통 */
 .part {
@@ -101,11 +101,6 @@ header h1 {
 }
 
 /* ______________________________________________________________ */
-/* 메인영역 이미지 */
-main img {
-    width: 100%;
-}
-
 /* 하단영역 */
 footer.info {
     text-align: center;
