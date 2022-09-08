@@ -159,4 +159,12 @@
 
 
 /* 공통타이틀 h3 */
-.h3
+.main h3{
+    font-family: 'Black And White Picture', sans-serif;
+    font-weight: normal;
+    font-size: 26px;
+    padding-left: 20px;
+    
+
+    
+}
