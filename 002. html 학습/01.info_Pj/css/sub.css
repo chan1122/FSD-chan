@@ -107,31 +107,34 @@
     /* 보더아래 */
     border-bottom: 2px solid #ccc;
 }
+
 /* i요소 변경 */
-.arti i{
+.arti i {
     /* 글자스타일 */
     font-style: normal;
     /* 글자 두껍게 */
     font-weight: bold;
 }
+
 /* Q요소 변경 */
-.arti q{
+.arti q {
     /* 글자색 c */
     color: darkred;
     /* 글자 두꼐 */
     font-weight: bold;
 }
+
 /* del 요소 변경 */
-.arti del{
+.arti del {
     /* 글자색 */
     color: rebeccapurple;
 }
 
 
-  
+
 
 /* 2-5. 기자정보 */
-.rinfo{
+.rinfo {
     padding: 10px;
     text-align: right;
     font-size: 14px;
@@ -140,7 +143,7 @@
 }
 
 /* 2-6. 기사원문 */
-.org a{
+.org a {
     padding: 10px;
     font-size: 20px;
     color: brown;
@@ -149,7 +152,7 @@
 }
 
 /* 공통박스 article */
-.main article{
+.main article {
     border-top: 9px double #000;
     margin-top: 40px;
     padding: 15px;
@@ -159,7 +162,7 @@
 
 
 /* 공통타이틀 h3 */
-.main h3{
+.main h3 {
     font-family: 'Black And White Picture', sans-serif;
     font-weight: normal;
     font-size: 26px;
@@ -168,13 +171,24 @@
 }
 
 /* 블록 인용구 박스 */
-.bquote blockquote{
+.bquote blockquote {
     margin: 0;
     padding: 5px;
+    overflow: hidden;
+    /* float  */
+    font: 17px/1.7 'Nanum Gothic';
+    text-align: justify;
+
+    /* 들여쓰기 ti */
+    text-indent: 20px;
+    /* 영문이 밑으로 내려가면서 글자들이 훨씬더 멀어지는 느낌을 받음 이것을 해결하기 위해
+    아래코드를 입력함 이러면 괞찮아짐 */
+    word-break: break-all;
+
 }
 
 /* 블록인용 박스내 이미지 */
-.bquote img{
+.bquote img {
     /* 이미지 옆에 왼쪽에 글자는 오른쪽에 흘러가게 설정 */
     float: left;
     /* 
@@ -193,6 +207,30 @@
         left - 나는 왼쪽 다른건 오른쪽흘러가게함
 
         right - 나는 오른쪽 다른건 왼쪽 흘러가게함
-        (인라인 요소를 오른쪽 끝으로 보낼떄도 사용함!)
+        (인라인 요소를 오른쪽 끝으로 보낼떄도 사용함!)  
     */
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+/* 주해박스 */
+/* .desc 앞에 .main부모를 쓴이유?
+기존세팅 .main article에서 설정한 값이 우선하기 때문에 이것보디 우선하도록 상위 붐부모를 씀! */
+.main .desc{
+    /* 보더 하단 bdb */
+    border-bottom: 5px double #1f0404;
+    /* 패딘하단 pb */
+    padding-bottom: 40px;
+    /* 마진하단 mb */
+    margin-bottom: 20px;
+}
+
+
+
+/* 주해박스 small 요소 */
+.desc small{
+    /* 전체 패딘적용으해 블록박스로 변경 */
+    display: block;
+    /* 패딩 p - 위아래 양쪽 */
+    padding: 0 20px;
 }
