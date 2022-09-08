@@ -16,22 +16,23 @@
 @import url(common.css);
 
 /* 메인영역 박스 */
-.main{
+.main {
     /* 패딩 p 15 */
     padding: 15px;
 }
 
 /* 2-1. 언론사로고 */
-.prlogo img{
+.prlogo img {
     height: 32px;
 }
+
 /* 2-2. 기사제목 */
-.atit{
+.atit {
     font-size: 30px;
     /* 글자두께 보통 fwn */
     font-weight: normal;
     /* 글자체 */
-    font-family: "굴림","궁서",sans-serif;
+    font-family: "굴림", "궁서", sans-serif;
     /* 자간 ls */
     letter-spacing: -2px;
     /* 단어사이 간격 ws */
@@ -40,21 +41,22 @@
     /* white-space: nowrap; */
     /* 언제 쓰나> 조금차이로 줄바꿈 되는 경우 안되게 할떄 사용함
     기본 박스는 모두 wrap박스이다.*/
-    
+
 
 }
 
 /* 2-3. 기사사진(+사진설명) */
-.afig{
+.afig {
     /* 마진 0 */
     margin: 15px 0;
     /* 마진 위아래 양쪽 */
     /* 컨텐츠 중앙정렬 tac */
     text-align: center;
-    
-} 
+
+}
+
 /* 기사 이미지 */
-.afig img{
+.afig img {
     /* 최대 가로크기 maw100p */
     max-width: 100%;
     /* 이미지에 이설정을 하면 
@@ -62,7 +64,27 @@
     이미지가 박스크기 맞게 작아짐 */
 
 }
+
+/* 기사 이미지 설명글 small */
+.afig small {
+    /* 글자체는 ff */
+    font-family: gulim;
+    /* 글자색 c */
+    color: rgb(68, 48, 134);
+}
+
 /* 2-4. 기사내용 */
+.arti p {
+    /* 글자체 ff */
+    font-family: "Nabum Gothic", "굴림";
+    /* 글자크기 fz */
+    font-size: 18px;
+    /* 글자크기 lh */
+    line-height: 1.6;
+    /* 양쪽 패딩 pd */
+    padding: 0 10px;
+
+}
 
 /* 2-5. 기자정보 */
 /* 2-6. 기사원문 */
