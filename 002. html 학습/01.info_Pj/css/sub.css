@@ -15,6 +15,8 @@
 /* @import url(파일주소); */
 @import url(common.css);
 
+
+
 /* 메인영역 박스 */
 .main {
     /* 패딩 p 15 */
@@ -209,14 +211,14 @@
         right - 나는 오른쪽 다른건 왼쪽 흘러가게함
         (인라인 요소를 오른쪽 끝으로 보낼떄도 사용함!)  
     */
-    border-radius: 5px;
-    margin-right: 15px;
+    border-radius: 105px;
+    margin-right: 23px;
 }
 
 /* 주해박스 */
 /* .desc 앞에 .main부모를 쓴이유?
 기존세팅 .main article에서 설정한 값이 우선하기 때문에 이것보디 우선하도록 상위 붐부모를 씀! */
-.main .desc{
+.main .desc {
     /* 보더 하단 bdb */
     border-bottom: 5px double #1f0404;
     /* 패딘하단 pb */
@@ -228,9 +230,169 @@
 
 
 /* 주해박스 small 요소 */
-.desc small{
+.desc small {
     /* 전체 패딘적용으해 블록박스로 변경 */
     display: block;
     /* 패딩 p - 위아래 양쪽 */
     padding: 0 20px;
+}
+
+/* 오늘의 작품 & 느낌 */
+.work {
+    /* 글자중앙정렬 */
+    text-align: center;
+    /* 배경색 bgc */
+    background-color: lightblue;
+}
+
+/* 어늘의 작품 cite 요소 */
+.work cite {
+    font-style: normal;
+    font-weight: bold;
+    font-family: 'Black And White Picture', sans-serif;
+    font-size: 20px;
+    color: darkblue;
+}
+
+/* 메인컨텐츠 아래 a요소
+주의사할 - 글자색, 밑줄은 반드시 a요소에서 처리할것! */
+
+.main a {
+    /* 글자색 c */
+    color: #222;
+    /* 글자데코 tdn 밑줄없앰 */
+    text-decoration: none;
+    /* 글자크기 fz  */
+    font-size: 17px;
+    /* 글자체 ff*/
+    font-family: "Nanum Gothic";
+    /* 줄간격 lh */
+    line-height: 2.5;
+    /* 자간 ls */
+    letter-spacing: -1px;
+    font-weight: normal;
+
+
+}
+
+/* a요소 마우스 오버시 */
+/* 가상클래스 :hover */
+.main a:hover {
+    /* 글자색 */
+    color: skyblue;
+    /* 텍스트 그림자 ts */
+    text-shadow: 2px 2px 2px yellowgreen;
+    /* text-shadow: x축 y축 경계흐림 색#000; */
+}
+
+/* ul,ol 블릿,숫자 타입변경 */
+.main ul {
+    /* 리스트 타입 lst */
+    list-style-type: square;
+    /* square 사각형, disc 원형, circle 속이 비어있는 원 */
+
+}
+
+.main ol {
+    list-style-type: upper-roman;
+    /* upper-roman 로마자 대문자 */
+    /* 순서를 표시하는 종류가 많다 */
+    font-weight: bold;
+}
+
+/* /* li 순서별글자색 변경하기 */
+.main ul li:first-child a {
+    color: blue;
+}
+
+.main ul li:nth-child(2) a {
+    color: red;
+}
+.main ul li:nth-child(3) a {
+    color: rgb(95, 143, 17);
+}
+
+.main ul li:last-child a {
+    color: yellow;
+}
+
+/* 분야별 뉴스 dt */
+.secnews dt {
+    font-family: 'Black And White Picture', sans-serif;
+    margin-top: 30px;
+    padding: 5px;
+    font-size: 22px;
+    text-shadow: 2px 2px 2px #222;
+
+    /* 한줄에 오고 딪인은 block처럼 적용 */
+    display: inline-block;
+
+    border: 3px double rgb(20, 80, 133);
+    /* 둥근 모서리 - 50% 설정시 원 */
+    border-radius:  50%;
+    
+}
+/* dt순서별 글자색 변경 */
+.secnews dt:first-of-type{
+    color: orange;
+}
+.secnews dt:nth-of-type{
+    color: rgb(15, 36, 87);
+}
+.secnews dt:last-of-type{
+    color: rgb(97, 14, 43);
+}
+
+/* 
+    [   자식요소 순번 선택하기  ]
+    
+    ->태그가 한종류일떄
+    :first-child 첫번째 자식요소
+    :nth-child(n) n번째 자식요소 (n은 1부터)
+    :last-child 마지막 자식요소
+
+
+    ->태그가 여러종류일떄
+    :first-of-type 첫번째 자식요소
+    :nth-of-type (n) n번째 자식요소 (n은 1부터)
+    :last-of-type 마지막 자식요소
+
+
+*/
+
+/* 사진뉴스 박스 */
+.pnews0 table{
+    /* 마영오 - 블록요소 테이블 중앙 정렬 */
+    margin: 0 auto;
+}
+
+/* 첫번째 td - 숫자부분 */
+.pnews0 td:first-child{
+    width: 40px;
+    height: 80px;
+    background-color: rgb(0, 217, 255);
+    text-align: center;
+
+}
+
+/* 두번쨰 td - 뉴스제목링크 */
+.pnews0 td:nth-child(2){
+    background: rgb(227, 211, 233);
+    padding-right: 135px;
+    padding-left: 51px;
+}
+
+/* 사진뉴스 이미지 */
+.pnews0 img{
+    /* 가로크기 w */
+    /* 이미지 및 박스 크기를 w h */
+    width: 151px;
+    height: 103px;
+    vertical-align: middle;
+}
+.pnews0 table{
+    /* 떨어져있는 칸사이를 붙여준다 */
+    border-collapse: collapse;
+
+    border-spacing: 7px;
 }

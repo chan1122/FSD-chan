@@ -9,6 +9,11 @@
         rel="stylesheet">
     <!-- 스타일시트 익스터널방식 -->
     <link rel="stylesheet" href="css/sub.css">
+    <style>
+        body {
+            background-image: url("data:image/jpeg;base64,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");
+        }
+    </style>
 </head>
 
 <body>
@@ -98,7 +103,7 @@
         <article class="bquote">
             <h3>달 탐사</h3>
             <blockquote cite="https://ko.wikipedia.org/wiki/%EB%8B%AC_%ED%83%90%EC%82%AC">
-            <img src="./img logo/dal.jpg" alt="달탐사 모습">
+                <img src="./img logo/dal.jpg" alt="달탐사 모습">
 
                 달 탐사(영어: exploration of the Moon)는 달에 대한 호기심은 인간이 밤하늘을 올려다보던 과거부터 시작되었지만, 물리적인 탐사는 1959년 소련의 루나 2호로
                 시작하였다. 1969년에는 미국의 아폴로 11호가 최초로 유인 달 착륙에 성공하였다. 지금도 탐사선을 통한 달 탐사는 활발히 진행되고 있으며, 일본, 중국, 인도와 같은 신흥 우주개발국의
@@ -256,54 +261,56 @@
             <table>
                 <tr>
                     <td> 1</td>
-                    <td> 
-                        <a href="https://n.news.naver.com/mnews/article/293/0000040589" target="_blank"> 
+                    <td>
+                        <a href="https://n.news.naver.com/mnews/article/293/0000040589" target="_blank">
                             'M자' 벗고 위성통신 탑재,<br>
-                             新 프로까지 확 달라진 아이폰14
+                            新 프로까지 확 달라진 아이폰14
                         </a>
                     </td>
-                    <td>  
-                        <a href="https://n.news.naver.com/mnews/article/293/0000040589" target="_blank"> 
+                    <td>
+                        <a href="https://n.news.naver.com/mnews/article/293/0000040589" target="_blank">
                             <img src="./img logo/pm1.jpg" alt="사진 이미지">
-                            
+
                         </a>
                     </td>
                 </tr>
 
                 <tr>
                     <td> 2</td>
-                    <td> 
-                        <a href="https://n.news.naver.com/mnews/article/293/0000040593" target="_blank"> 
+                    <td>
+                        <a href="https://n.news.naver.com/mnews/article/293/0000040593" target="_blank">
                             그날의 여성, 익스트림 스포츠 겨냥한
                             <br> '애플워치8·울트라' 공개
 
                         </a>
                     </td>
-                    <td>  
-                        <a href="https://n.news.naver.com/mnews/article/293/0000040593" target="_blank"> 
+                    <td>
+                        <a href="https://n.news.naver.com/mnews/article/293/0000040593" target="_blank">
                             <img src="./img logo/pm2.png" alt="기사사진 2">
-                            
+
                         </a>
                     </td>
                 </tr>
 
                 <tr>
                     <td> 3</td>
-                    <td> 
-                        <a href="https://n.news.naver.com/mnews/ranking/article/293/0000040580?ntype=RANKING" target="_blank"> 
+                    <td>
+                        <a href="https://n.news.naver.com/mnews/ranking/article/293/0000040580?ntype=RANKING"
+                            target="_blank">
                             TSMC, 2나노 개발에 49조 투입... <br>
                             삼성전자와 개발 경쟁 '선전포고'
-                            
+
                         </a>
                     </td>
-                    <td>  
-                        <a href="https://n.news.naver.com/mnews/ranking/article/293/0000040580?ntype=RANKING" target="_blank"> 
+                    <td>
+                        <a href="https://n.news.naver.com/mnews/ranking/article/293/0000040580?ntype=RANKING"
+                            target="_blank">
                             <img src="img logo/pmc3.jpg" alt="기사사진 3">
-                            
+
                         </a>
                     </td>
                 </tr>
-               
+
             </table>
 
 
