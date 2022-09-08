@@ -86,5 +86,29 @@
 
 }
 
+/* 중간 궤적수정이동 왜하나 글자표시 박스 변경 */
+.arti mark {
+    /* 인라인을 블록으로 전환! */
+    display: block;
+    /* 배경색 */
+    background-color: rgb(48 114 134);
+    /* 글자중앙 정렬 */
+    text-align: center;
+    /* 줄간격 */
+    line-height: 4;
+    /* 글자체 */
+    font-family: 'Nanum Gothic';
+    /* 글자크기 */
+    font-size: 20px;
+    /* 글자두꼐 */
+    font-weight: bold;
+    /* 보더위*/
+    border-top: 2px solid #808080;
+    /* 보더아래 */
+    border-bottom: 2px solid #ccc;
+}
+  
+
 /* 2-5. 기자정보 */
+
 /* 2-6. 기사원문 */
