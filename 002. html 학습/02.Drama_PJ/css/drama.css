@@ -77,9 +77,81 @@ html,body{
 /* nth-child(순번) -> odd(홀수), even(짝수) */
 #drama tbody tr:nth-child(even) td{
     /* 배경색 */
-    background-color: #90ee90;
+    background-color: #83bac9;
 }
 #drama tbody tr:nth-child(odd) td{
     /* 배경색 */
-    background-color: lightgray;
+    background-color: #d3d3d3;
 }
+
+/* 본문의(tbody)의 첫번째 td (번호항목) 중앙정렬 */
+#drama tbody td:first-child{
+    /* 글자중앙정렬 */
+    text-align: center;
+    font-size: 24px;
+}
+/* 하단부분 */
+#drama tfoot td{
+    /* 중앙정렬 */
+     text-align: center;
+     padding: 45px 0;
+}
+/* 드라마명 링크처리 */
+#drama tbody a {
+    /* 글자색 c */
+    color: #222;
+    /* 밑줄없앰 */
+    text-decoration: none;
+}
+/* 마우스 오버시 */
+#drama tbody a:hover {
+    color: red;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+}
+/* 하단페이지 링크처리 */
+#drama tfoot a {
+    /* 글자색 c */
+    color: #222;
+    /* 밑줄없앰 */
+    text-decoration: none;
+}
+/* 하단페이징 오버시 */
+#drama tfoot a:hover {
+    color: blue;
+}   
+div.gubun{
+    width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    letter-spacing: 2px;
+    overflow: hidden;
+
+}
+table#gubun{
+    font-size: 20px;
+    border: 1px solid #000;
+    float: right;
+    
+}
+#gubun td{
+    /* 패딩 p */
+    padding: 10px;
+
+}
+/* 구분테이블 첫번째 tr의 첫번째 td의
+오른쪽 점선넣기 */
+#gubun tr:first-child td:first-child{
+    border-right: 2px dotted #999;
+}
+/* 구분테이블 두번째 tr부터 마지막 tr까지 즉, 앞에 tr이 있는tr 형제요소만 선택하여 보더 상단넣기 
+잎에 tr이 있는 tr -> tr+tr */
+
+#gubun  tr+tr td{
+    border-top: 1px dotted #000;
+}
+
+/* #gubun tr:nth-child(1)~tr{
+    border-top: 1px solid #000;
+} */
+
