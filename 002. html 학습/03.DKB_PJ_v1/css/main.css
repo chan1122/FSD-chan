@@ -27,3 +27,54 @@ body{
     */
     
 }
+
+/* 메인영역 */
+.cont{
+    /* 높이값 */
+    height: 969px;
+    /* 넘치는 자식요소숨기기 */
+    overflow: hidden;
+    
+    
+
+}
+
+/* 전체 캐릭터 박스 */
+.cbx{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 250px;
+    margin-top: 500px;
+}
+
+/* 자식요소의 float해제 설정 가상요소 after*/
+.cbx::after{
+    content: '';
+    display: block;
+    clear: both;
+
+}
+
+
+
+
+/* 캐릭터 박스 */
+.caricter { 
+    /* 가로크기 4등분 - 25% */
+    width: 24%;
+    /* 양쪽마진 주기 */
+    margin: 0 .5%;
+    /* 블록바긋 옆을 흐르게 */
+    float: left;
+    /* left 값은  "나는 왼쪽에 너는 오른쪽에 흘러가라 라는뜻" */
+}
+
+/* 캐릭터박스 캐릭터 이미지 */
+.caricter img{
+    width: 200px;
+}
+
+/* 캐릭터 이미지 */
+.caricter img{
+    width: 100%;
+}
