@@ -63,7 +63,7 @@
             2) 앱솔루트 가로, 세로 크기를 주지 않은 경우
                 일반적으로  block요소이므로 width: auto 로써 부모끝까지 차지하지만 앱솔루트는 내용만큼 그 크기가 자동으로 설정됨
                 [-> 앱솔루트 판타롱스타킹]
-                
+
                 
             3) 
 
@@ -115,7 +115,10 @@
         }
 
         /* 부모를 찾는 앱솔루트 */
+
+        
         .bx2{
+
             border: 2px dotted orange;
             padding: 50px;
             font-size: 24px;
@@ -123,24 +126,51 @@
         }
         /* 각 부모박스 */
         .s5{
+            position: relative;
             background-color: lightblue;
         }
         .s6{
+            position: relative;
             background-color: lightcoral;
         }
         .s7{
+            position: relative;
             background-color: lightgreen;
         }
         .s8{
+            position: relative;
             background-color: lightsalmon;
         }
         /* 부모찾는 앱솔루트 박스 */
         .abs{
+            position: absolute;
+            width: 50px;
+            height: 50px;
             color: #fff;
             background: url(./ab_img/ab1.jpg) no-repeat center/cover;
         }
-        
 
+        /* a3는 앱솔루트이면서 위치값이 없으므로 젠틀하다!!! - 싸고있는 박스안에 그대로 있음! */
+        /* 부모박스를 찾는 a4 */
+        .a4{
+            top: 0;
+            left: 0;
+            /* 나의 부모는 누구인가 */
+            width: 20%;
+            height: 40%;
+        }
+
+        /* 앱솔루트 : 판타롱스타킹 */
+        .a5{
+            position: absolute;
+            top: 20%;
+            right: 10%;
+        }
+        .a5 img{
+            vertical-align: top;
+            /* 이미지 하단간극 없애주는 명령어
+            top , middle , bottom 모두 가능하다 */
+        }
         
     </style>
 </head>
