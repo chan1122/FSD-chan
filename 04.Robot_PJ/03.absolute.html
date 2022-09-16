@@ -65,9 +65,10 @@
                 [-> 앱솔루트 판타롱스타킹]
 
                 
-            3) 
+            3) 블록이 아닌 요소에 앱솔루트를 준경우 자동으로  dispaly:block 로 설정됨!! 이유 : 자동크기를 설정할경ㅇ 블록이아니면 크기설정이 안디므로 자동전환된다!
+            - > 일반적으로 모든 앱솔루트는 block이다!
 
-            4) 
+            4)
 
                
 
@@ -171,7 +172,43 @@
             /* 이미지 하단간극 없애주는 명령어
             top , middle , bottom 모두 가능하다 */
         }
+
+        /* spam을 앱솔루트로! */
+        .spabs{
+            position: absolute;
+            /* 부모는 s8이다 */
+            bottom: 0;right: 0;border: 4px dotted blue;
+        }
         
+
+        /* 앱솔루트 끼르는 서로 겹친다  */
+        .absimg{
+            width: 92px;
+            height: 115px;
+            border: 4px ridge rebeccapurple;
+
+        }
+        .absimg img{
+            position: absolute;
+            /* 젠틀앱솔루트여서 
+            부모자격잉벗는 일반 static 요소여도 그자리에 가만히 있음! - > 앨솔루트이미지 끼리는 서로 겹쳐짐 (위아래는 z-insex를 사용해서 변경가능 ) */
+        }
+        /* 두번째 닷스이미지 투명하게 변경 */
+        .abs img:last-child{
+            opacity: 0;
+            /* 
+                opacity속성
+                -투명도 소성
+                -0 완전 투명
+                -1불투명
+                -0.~ 소수점값 반투명
+            */
+            transition: 1;
+        }
+        /* 오버시 닥스이미지 나타내기 */
+        .absimg:hover img:last-child{
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
