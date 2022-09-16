@@ -3,14 +3,18 @@
 
 /* 공사중표시 */
 body *{
-    outline: 2px dashed lime;
+    outline: 2px dashed skyblue;
 }
+
+
 
 /* 초기화 */
 html,body,h1,h2,h3,ul,ol{
     margin: 0;
     padding: 0;
 }
+
+
 
 /* 전체배경 */
 body{
@@ -21,21 +25,29 @@ body{
     background: url(../images/bgspace.jpg) no-repeat fixed top/cover;
 }
 
+
+
 /* 공통class */
 /* 메탈소재1 배경 */
 .mt1{
     background: url(../images/metal01.jpg) no-repeat center/cover;
 }
+
+
 /* 메탈소재2 배경 */
 .mt2{
     background: url(../images/metal02.jpg) no-repeat center/cover;
 }
+
+
 
 /* 2-1. 로봇박스 */
 .robx{
     /* 패딩 위,아래 */
     padding: 200px 0 400px;
 }
+
+
 
 /* 2-1-1.로봇머리 */
 .head{
@@ -46,6 +58,8 @@ body{
     /* 마영오 */
     margin: 0 auto;
 }
+
+
 /* 눈공통 */
 .eye{
     /* 포지션 : 앱솔루트 */
@@ -62,6 +76,8 @@ body{
     background-size: 100% 100%;
 }
 /* 왼눈 */
+
+
 .e1{
     top: 50px;
     left: 50px;
@@ -73,21 +89,27 @@ body{
     right: 50px;
     background-image: url(../images/e2.jpg);
 }
+
+
 /* 코 */
 .nose{
     position: absolute;
     top: 107px;
-    left: 99px;
+    left: 100px;
     width: 50px;
     height: 70px;
     background: url(../images/nose.jpg) no-repeat 0/100% 100%;
 }
+
+
 /* 입 */
 .mouth{
     position: absolute;
     bottom: 17px;
-    left: 74px;
+    left: 75px;
     width: 96px;
     height: 41px;
     background: url(../images/mouth.png) no-repeat 0/100% 100%;
 }
+
+
