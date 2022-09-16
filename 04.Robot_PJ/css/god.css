@@ -18,17 +18,17 @@ body{
     /* height: 3000px; */
 
     /* 배경: 색이반고윙/크 */
-    background: url(../images/bgspace.jpg) no-repeat fixed top/cover;
+    background: url(../images/bg.jpg) no-repeat fixed top/cover;
 }
 
 /* 공통class */
 /* 메탈소재1 배경 */
 .mt1{
-    background: url(../images/metal01.jpg) no-repeat center/cover;
+    background: url(../images/sun.png) no-repeat center/cover;
 }
 /* 메탈소재2 배경 */
 .mt2{
-    background: url(../images/metal02.jpg) no-repeat center/cover;
+    background: url(../images/) no-repeat center/cover;
 }
 
 /* 2-1. 로봇박스 */
@@ -63,31 +63,40 @@ body{
 }
 /* 왼눈 */
 .e1{
-    top: 50px;
-    left: 50px;
-    background-image: url(../images/e1.jpg);
+    top: 15px;
+    left: 300px;
+    background-image: url(../images/jigu.png);
 }
 /* 오른눈 */
 .e2{
-    top: 50px;
-    right: 50px;
-    background-image: url(../images/e2.jpg);
+    top: -50px;
+    right: -200px;
+    background-image: url(../images/moon.png);
 }
 /* 코 */
 .nose{
     position: absolute;
-    top: 107px;
-    left: 99px;
-    width: 50px;
-    height: 70px;
-    background: url(../images/nose.jpg) no-repeat 0/100% 100%;
+    bottom: 6%;
+    left: -30%;
+    width: 700px;
+    height: 837px;
+    background: url(../images/lefth.png) no-repeat 0/100% 100%;
 }
 /* 입 */
 .mouth{
     position: absolute;
-    bottom: 17px;
-    left: 74px;
-    width: 96px;
-    height: 41px;
-    background: url(../images/mouth.png) no-repeat 0/100% 100%;
+    top: 0%; 
+    right: -30%;
+    width: 654px;
+    height: 723px;
+    background: url(../images/righth.png) no-repeat 0/100% 100%;
+}
+
+.nose:hover{
+    left:0
+    
+}
+.mouth:hover{
+    right:0
+    
 }
