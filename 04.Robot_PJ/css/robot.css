@@ -30,13 +30,13 @@ body{
 /* 공통class */
 /* 메탈소재1 배경 */
 .mt1{
-    background: url(../images/metal01.jpg) no-repeat center/cover;
+    background: url(../images/3dwhite.jpg) no-repeat center/cover;
 }
 
 
 /* 메탈소재2 배경 */
 .mt2{
-    background: url(../images/metal02.jpg) no-repeat center/cover;
+    background: url(../images/ear.jpg) no-repeat center/cover;
 }
 
 
@@ -57,6 +57,10 @@ body{
     height: 250px;
     /* 마영오 */
     margin: 0 auto;
+    /* 원형만들기 */
+   
+    /* 둥근 모서리 : 왼위 오른위 오른아래 왼아래(시계방향) */
+     border-radius:50px 50px  120px 120px ;
 }
 
 
@@ -69,11 +73,16 @@ body{
 
     /* 배경공통 */
     /* 배경반복 : 반복안함 */
+    background-color: #ffffff;
     background-repeat: no-repeat;
     /* 배경위치 : 중앙 */
     background-position: center;
     /* 배경크기 : 채움 */
     background-size: 100% 100%;
+    /* 둥근 모서리만들기 */
+    border-radius: 50%;
+    /* qhejdlwndtjs  */
+    border: 4px solid #000;
 }
 /* 왼눈 */
 
@@ -81,13 +90,13 @@ body{
 .e1{
     top: 50px;
     left: 50px;
-    background-image: url(../images/e1.jpg);
+    background-image: url(../images/eye2.jpg);
 }
 /* 오른눈 */
 .e2{
     top: 50px;
     right: 50px;
-    background-image: url(../images/e2.jpg);
+    background-image: url(../images/eye1.jpg);
 }
 
 
@@ -98,7 +107,9 @@ body{
     left: 100px;
     width: 50px;
     height: 70px;
-    background: url(../images/nose.jpg) no-repeat 0/100% 100%;
+    background: url(../images/nose1.jpg) no-repeat 0/110% 100%;
+    border-radius: 30px;
+
 }
 
 
@@ -109,7 +120,91 @@ body{
     left: 75px;
     width: 96px;
     height: 41px;
-    background: url(../images/mouth.png) no-repeat 0/100% 100%;
+    background: url(../images/black.jpg) no-repeat 0/100% 100%;
+    border-radius: 50px 50px 180px 180px;
+
 }
 
+/* 귀공통 */
+.ear{
+    position: absolute;
+    top: 80px;
+    width: 60px;
+    height: 90px;
+}
+/* 왼귀 */
+.er1{
+    left: -30px;
+    z-index: -1;
+    border-radius: 50px 0 0 50px;
+    
+}
+.er2{
+    right: -30px;
+    z-index: -1;
+    border-radius: 0 50px 50px 0;
+}
 
+/* 2-1-2 로봇 몸통 */
+
+.body1{
+    position: relative;
+    /* 부모자격 자식요소 앱솔루트 */
+    width: 250px;
+    height: 310px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+/* 목 */
+.neck{
+    position: absolute;
+    top: -50px;
+    width: 60px;
+    height: 50px;   
+}
+/* 팔공통 */
+.arm{
+    position: absolute;
+    width: 50px;
+    height: 250px;
+    background-size: 100%;
+    background-repeat: repeat-y;
+}
+/* 왼팔 */
+.a1{
+    left: -50px;
+}
+.a2{
+    right: -50px;
+}
+/* 다리공통 */
+.leg{
+    position: absolute;
+    width: 70px;
+    height: 300px;
+    background-size: 100%;
+    background-repeat: repeat-y;
+}
+/* 왼다리 */
+.l1{
+    left: 0;
+}
+/* 오른다리 */
+.l2{
+    right: 0;
+}
+/* 어꺠공통 */
+.shd{
+    position: absolute;
+    top: -20px;
+    width: 90px;
+    height: 80px;
+}
+.s1{
+    left: -80px;
+    border-radius: 50% 0 0 50%;
+}
+.s2{
+    right: -80px;
+    border-radius: 0 50% 50% 0;
+}
