@@ -75,28 +75,29 @@ body{
 }
 /* 코 */
 .nose{
-    position: absolute;
+    position: fixed;
     bottom: 6%;
-    left: -30%;
+    left: -700px;
     width: 700px;
     height: 837px;
+    transition:3s;
     background: url(../images/lefth.png) no-repeat 0/100% 100%;
 }
 /* 입 */
 .mouth{
-    position: absolute;
+    position: fixed;
     top: 0%; 
-    right: -30%;
+    right: -654px;
     width: 654px;
     height: 723px;
+    transition:2s;
     background: url(../images/righth.png) no-repeat 0/100% 100%;
 }
 
-.nose:hover{
-    left:0
-    
+.head:hover .nose{
+    left: 0;
 }
-.mouth:hover{
-    right:0
-    
+.head:hover .mouth{
+    right: 0;
 }
+
