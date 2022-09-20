@@ -1,7 +1,15 @@
 @charset "utf-8";
 /* 로봇 PJ CSS - robot.css */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik+Moonrocks&family=Teko:wght@300&family=Ultra&display=swap');
 
-.body::after{
+/* 
+font-family: 'Bebas Neue', cursive;( 하단용 )
+font-family: 'Rubik Moonrocks', cursive; (h2용)
+font-family: 'Teko', sans-serif; (본문용)
+font-family: 'Ultra', serif (small태그영);
+*/
+
+.body::after {
     top: 70%;
     content: '';
     display: block;
@@ -11,24 +19,37 @@
     width: 100%;
     border-radius: 10% 10% 50% 50%;
     height: 200px;
-    background-image: linear-gradient(#cdbebe,#433ea2);
-}
-/* 공사중표시 */
-body *{
-    outline: 2px dashed lime;
+    background-image: linear-gradient(#cdbebe, #433ea2);
 }
 
+/* 공사중표시 */
+/* body * {
+    outline: 2px dashed lime;
+} */
+
 /* 초기화 */
-html,body,h1,h2,h3,ul,ol{
+html,
+body,
+h1,
+h2,
+h3,
+ul,
+ol {
     margin: 0;
     padding: 0;
 }
-.leg::after{
+/* 내부아이디 요소로 스크롤 위치 변경시 스무스하세 넘어가게 하는 방법 
+(내부요소 버튼 링크 등등 페이지 내에서 위아래 로 이동할때 + !!!!! js없다는 가정하에 쓰는 방법) */
+html{
+    scroll-behavior: smooth;
+}
+
+.leg::after {
     content: '';
     display: block;
     position: absolute;
     bottom: -30px;
-    left: -18px;
+    left: -7px;
     width: 80px;
     height: 40px;
     /* 둥근모서리 */
@@ -36,13 +57,14 @@ html,body,h1,h2,h3,ul,ol{
     border-radius: 30px 30px 0 0;
     border: 1px solid #000;
     border-bottom: 1px solid #000;
-    background-image:radial-gradient(closest-side at 20px 20px, #fff, #333);
+    background-image: radial-gradient(closest-side at 20px 20px, #fff, #333);
     background-color: #fff;
 
 
 }
+
 /* 전체배경 */
-body{
+body {
     /* 스크롤확인용 */
     /* height: 3000px; */
 
@@ -52,22 +74,130 @@ body{
 
 /* 공통class */
 /* 메탈소재1 배경 */
-.mt1{
+.mt1 {
     background: url(../images/metal01.jpg) no-repeat center/cover;
 }
+
 /* 메탈소재2 배경 */
-.mt2{
+.mt2 {
     background: url(../images/metal02.jpg) no-repeat center/cover;
 }
+/* 로봇 주변에 빛이 나게하는거 */
+.brRo, .brRo::after, .brRo::before{
+    /* 박스그림자 : x y blur spread 색 */
+    box-shadow: 0 0 10px 5px cyan;  
+    /* 박스 그림자를 밝은색으로주면 빛나는 효과를 줄 수 있음 */
+}
+/*  상단영역 */ 
+/* 로고 */
+.logo{
+    /* 구역 잡기 */
+    position: fixed;
+    top: 50px;
+    left: 20px;
+
+    width: 200px;
+    height: 200px;
+    /* 글자색 */
+    color: darkgreen;
+    /* 스두크 줄체 */
+    font: 45px/200px 'Rubik Moonrocks' ;
+    /* 테두리 */
+    border: 2px solid #fff;
+    /* 테두리 둘글게 */
+    border-radius: 50%;
+    /* 텍스트 중앙정렬 */
+    text-align: center;
+    /* 배경 이미지  */
+    background: url(../images/sun.png) no-repeat center/cover;
+    /* 택스트 그림자 */
+    text-shadow: 2px 2px 2px #000;
+    /* 박스 그림자 + 내부(inset) 외부(글로우 효과까지) */
+    
+    box-shadow: inset 0 0 20px 5px gold,
+    0 0 20px 5px goldenrod;
+    
+}
+
+.but .tp{
+    text-decoration: none;
+    font-size: 30px;
+    font-family: 'Teko', sans-serif;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+}
+.but .tp:hover{
+    text-decoration: none;
+    color: red; 
+  
+
+}
+
+.link{
+    position: absolute;
+    top: 100px;
+    right: 10px;
+    font-size: 30px;
+}
+.link a{
+    /* 글자색 밑줄 */
+    color: lightcoral;
+    /* 글자 밑줄 밑 데코 없앰 */
+    text-decoration: none;
+    font: 35px 'Ultra';
+    text-shadow: 2px  2px 2px #000;
+}
+.link a:hover{
+    color: lightblue;   
+    /* 글자 데코 윗줄 */
+    text-decoration: overline;
+    
+}
+/* 버튼 박스 공통 */
+.but{
+    /* 포지션 */
+    position: fixed;
+    /* 배경색 */
+    background-color: #ccc;
+    /* 테두리 */
+    border: 7px outset lightblue;
+    height: 60px;
+    width: 60px;
+}
+.top .but:hover{
+   
+    background-color: yellow; 
+
+}
+.btntop{
+    /* 퍼지션 주고위치 조정 */
+    bottom: 90px;
+    right: 50px;    
+    /* 영역 잡기 */
+   
+    border-radius: 100% 100% 0 0;
+}
+.btnbottom{
+    /* 퍼지션 주고위치 조정 */
+    bottom: 30px;
+    right: 50px;    
+    /* 영역 잡기 */
+   
+    border-radius: 0 0 100% 100% ;
+}
+
 
 /* 2-1. 로봇박스 */
-.robx{
+.robx {
     /* 패딩 위,아래 */
     padding: 200px 0 400px;
 }
 
 /* 2-1-1.로봇머리 */
-.head{
+.head {
     position: relative;
     /* 부모자격!!! */
     width: 250px;
@@ -78,8 +208,9 @@ body{
     /* 둥근모서리 : 왼위 오른위 오른아래 왼아래(시계방향) */
     border-radius: 50px 50px 0 0;
 }
+
 /* 눈공통 */
-.eye{
+.eye {
     /* 포지션 : 앱솔루트 */
     position: absolute;
     width: 50px;
@@ -100,20 +231,23 @@ body{
     /* 보더 이중선 */
     border: 4px double #000;
 }
+
 /* 왼눈 */
-.e1{
+.e1 {
     top: 50px;
     left: 50px;
     background-image: url(../images/e1.jpg);
 }
+
 /* 오른눈 */
-.e2{
+.e2 {
     top: 50px;
     right: 50px;
     background-image: url(../images/e2.jpg);
 }
+
 /* 코 */
-.nose{
+.nose {
     position: absolute;
     top: 107px;
     left: 99px;
@@ -123,8 +257,9 @@ body{
     /* 둥근모서리 */
     border-radius: 30px;
 }
+
 /* 입 */
-.mouth{
+.mouth {
     position: absolute;
     bottom: 17px;
     left: 74px;
@@ -134,27 +269,29 @@ body{
 }
 
 /* 귀공통 */
-.ear{
+.ear {
     position: absolute;
     top: 80px;
     width: 60px;
     height: 90px;
 }
+
 /* 왼귀 */
-.er1{
+.er1 {
     left: -60px;
     /* 둥근모서리: 왼위,왼아래만 30px */
     border-radius: 30px 0 0 30px;
 }
+
 /* 오른귀 */
-.er2{
+.er2 {
     right: -60px;
     /* 둥근모서리: 오른위,오른아래만 30px */
     border-radius: 0 30px 30px 0;
 }
 
 /******* 2-1-2.로봇몸통 *******/
-.body{
+.body {
     position: relative;
     /* 부모자격 - 자식요소 앱솔루트 */
     width: 250px;
@@ -165,16 +302,18 @@ body{
     /* 마진상단 */
     margin-top: 50px;
 }
+
 /* 목 */
-.neck{
+.neck {
     position: absolute;
     top: -50px;
     left: 95px;
     width: 60px;
     height: 50px;
 }
+
 /* 팔공통 */
-.arm{
+.arm {
     position: absolute;
     width: 50px;
     height: 250px;
@@ -182,6 +321,7 @@ body{
     background-size: 100%;
     background-repeat: repeat-y;
 }
+
 /* 가상요소로 손만들기 */
 .arm::before{
     content: '';
@@ -191,30 +331,31 @@ body{
     position: absolute;
     bottom: -25px;
 
-    width: 70px;
+    width: 74px;
     height: 70px;
     /* 둥근모서리: 원 */
     border-radius: 50%;
     /* background-color: yellow; */
 
     /* 선형 그라데이션 */
-    background-image: 
-    /* linear-gradient(red,blue); */
-    /* linear-gradient(to right,red,blue); */
-    /* linear-gradient(to left,red 5%,blue 20%,blue 80%,yellow); */
-    /* linear-gradient(45deg,red,blue,yellow); */
-    /* 원형 그라데이션 */
-    /* radial-gradient(red,blue,yellow); */
-    /* radial-gradient(circle,red,blue,yellow); */
-    radial-gradient(farthest-side at 40% 40%,white,#333);
+    background-image:
+        /* linear-gradient(red,blue); */
+        /* linear-gradient(to right,red,blue); */
+        /* linear-gradient(to left,red 5%,blue 20%,blue 80%,yellow); */
+        /* linear-gradient(45deg,red,blue,yellow); */
+        /* 원형 그라데이션 */
+        /* radial-gradient(red,blue,yellow); */
+        /* radial-gradient(circle,red,blue,yellow); */
+        radial-gradient(farthest-side at 40% 40%, white, #333);
 }
 
 /* 왼쪽가상요소 위치 */
-.arm.a1::before{
+.arm.a1::before {
     left: -15px;
 }
+
 /* 오른쪽가상요소 위치 */
-.arm.a2::before{
+.arm.a2::before {
     right: -15px;
 }
 
@@ -258,26 +399,29 @@ body{
     background-color: #000;
     border-radius: 5px;
 }
+
 /* 왼손그림자 위치 */
-.arm.a1::after{
+.arm.a1::after {
     left: 12px;
 }
+
 /* 오른손그림자 위치 */
 .arm.a2::after{
     right: 12px;
 }
 
 /* 왼팔 */
-.a1{
+.a1 {
     left: -60px;
 }
+
 /* 오른팔 */
-.a2{
+.a2 {
     right: -60px;
 }
 
 /* 다리공통 */
-.leg{
+.leg {
     position: absolute;
     top: 100%;
     /* 부모높이값 만큼 100% 밀기 */
@@ -287,35 +431,41 @@ body{
     background-size: 100%;
     background-repeat: repeat-y;
 }
+
 /* 왼다리 */
-.l1{
+.l1 {
     left: 0;
     /* 안써도 기본방향이 left임! */
 }
+
 /* 오른다리 */
-.l2{
+.l2 {
     right: 0;
 }
+
 /* 어깨공통 */
-.shd{
+.shd {
     position: absolute;
     top: -20px;
     width: 90px;
     height: 80px;
 }
+
 /* 왼어깨 */
-.s1{
+.s1 {
     left: -80px;
     /* 둥근모서리: 왼위,왼아래 둥글게 */
     border-radius: 50% 0 0 50%;
 }
+
 /* 오른어깨 */
-.s2{
+.s2 {
     right: -80px;
     /* 둥근모서리: 오른위,오른아래 둥글게 */
     border-radius: 0 50% 50% 0;
 }
-.tv{
+
+.tv {
     position: absolute;
     top: 30px;
     left: 20px;
@@ -325,17 +475,19 @@ body{
     border: 5px ridge #000;
     border-radius: 10%;
 }
-.screen{
+
+.screen {
     position: relative;
     top: 5px;
     left: 11px;
-    width: 139px;
-    height: 108px;
+    width: 71%;
+    height: 85%;
     background-color: #fff;
     border-radius: 10px;
     overflow: hidden;
 }
-.screen iframe{
+
+.screen iframe {
     position: absolute;
     top: 0px;
     height: 10px;
@@ -344,4 +496,168 @@ body{
     border: none;
     opacity: 0.7;
     border-radius: 10% 10% 10% 10%;
+}
+
+/* *************** 로봇 설명 박스**************** */
+.dcbx{
+    /* 최대가로크기 */
+    max-width: 800px;
+    /* 마영오 */
+    margin: 0 auto;
+    /* 하단여백  */
+    margin-bottom: 200px;
+    /* 배경색 */
+    background-color: rgba(0, 0, 0, 0.514);
+    /* 글자색 */
+    color: #fff;
+    /* 텍스트 그림자 */
+    text-shadow: 1px 1px 1px #000;
+    /* 패딩 위아래 양쪽 */
+    padding: 15px 30px;
+    /* 경계선 : 두정색 */
+    border: 3px solid #fff;
+    /* 둥근 모서리  */
+    border-radius: 10%;
+    /* 박스 그림자 - 콤마로 연결하면 다중셋팅 가능 -inset 은 내부 그림자 설정 하는겅미 */
+    box-shadow: inset 0 0 20px gold,
+    inset 0 0 50px 10px red;
+
+
+}
+/*  로봇 설명 제목 */
+.dcbx h2{
+    /* 스티키포지션(스크롤시딱 달라붙는 포지션) 평상시에는 relative과 비슷함 스크롤 시에만 사용하는 포지션 */
+
+    position: sticky;
+    top: 10%;
+
+    font-family: 'Rubik Moonrocks', cursive;
+    /* 글자중앙 */
+    text-align: center;
+    /* 글자색 */
+    color: lightblue;
+    /* 글자 크기  */
+    font-size: 30px;
+    /* 글자 그림자 */
+    text-shadow: 1px 1px 1px #000;
+    /* 배경색 흰새 반투명 */
+    background-color: rgba(
+        255, 255, 255, 0.5110);
+    /* 둥근 모서리 */
+    border-radius: 20px;
+}
+/* 로봇 정보 출처 */
+.dcbx small{
+    /* 블록으로 변경 (텍스트 중앙 정렬적용을 위해 */
+    display: block;
+    /* 텍스트중앙 */
+    text-align: center;
+    /* 글자색 */
+    color: #ff0;
+    /* 글자크기 */
+    font-size: 16px;
+    /* 패딩 */
+    padding: 10px;
+    font-family: 'Ultra', serif;
+    
+}
+.dcbx p{
+    font-family: 'Teko', sans-serif;
+    /* 글자크기 */
+    font-size: 20px;
+    /* 줄간격 */
+    line-height: 1.8;
+    /* 자간 */
+    letter-spacing: 1px;
+    /* 단어간격 */
+    word-spacing: 2px;
+    /*  가독성을 위한 다단설정 */
+    /* 다단표시(다중열속성) */
+    color: #fff;
+
+    /* 다중열 개수 */
+    column-count: 3;
+    /* 다중열 구분선 */
+    column-rule: 5px dotted lightblue;
+    /* 보더 색상과 유사함 두꼐 종류 색상(두종색) */
+
+    /* 다중열 사이 간격  */
+    column-gap: 55px;
+    /* 양쪽 정렬 taj */
+    text-align: justify;
+    /* 단어 꺠기 */
+    word-break: break-all;
+    /* 단어를 꺠는 이유는 단어단위로 줄바꿈이 되는 1byte문자인 여엉인 경우 단어단위로 모두 꺠줘야 양쪽 정렬시 중간 공백이 생기지 않는다(한글과 같은 2byte 문자일 경우 단어 꺠기를 안해도 모두 떨어진다) */
+
+    /* 첫글자 들여쓰기 */
+    text-indent: 20px;
+}
+.dcbx p::first-letter{
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(0, 64, 255);
+}
+/* 이고 왜 안먹음 */
+.dcbx .AROBOT::first-letter{
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+    color: orange;
+}
+
+/* 하단영역 */
+.info{
+    /* 패딩영역 */
+    padding: 50px;
+    text-align: center;
+    /* 글자색 */
+    color: #fff;
+    /* 글자 : 스두크/줄체 */
+    font: 50px 'Bebas Neue';
+    /* 글자 그림자 */
+    text-shadow: 2px 2px  2px #000;
+    /* 배경색 검정 반투명  */
+    background-color: #ffffff70;
+
+}
+/* 가상요소 아이콘 넣기 */
+.info::before{
+    content: ' ';
+    /* 박스내에 인라인 요소이면서 박스 형태를 가진 박스 */
+    display: inline-block;
+    width: 30px;
+    height: 70px;
+    background: url(../images/robot_03.png) no-repeat;
+
+    /* 크기 조정 */
+    background-position: 0 0;   
+    background-size: 60px;
+
+    border-radius: 50%;
+    border: 1px solid red;
+    background-color: pink;
+    vertical-align: middle;
+    margin: 7px;
+}
+.info::after{
+    content: ' ';
+    display: inline-block;
+    width: 30px;
+    height: 70px;
+    background: url(../images/robot_03.png) no-repeat;
+    background-position: -25px 0;
+    background-size: 62px;
+    border-radius: 50%;
+    border: 1px solid blue;
+    background-color: lightblue;
+    vertical-align: middle;
+    margin: 7px;
+}
+.tv{
+
+    transition: all 2s;
+}
+.tv:hover{
+    width: 350px;
+    height: 170px;
 }
