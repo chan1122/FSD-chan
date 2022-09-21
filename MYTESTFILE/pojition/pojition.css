@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+/* 아웃라인 잡아주기 */
+body * {
+    outline: 2px dashed red;
+    color: rgb(28, 0, 154);
+
+}
+
+/* 내부아이디 요소로 스크롤 위치 변경시 스무스하세 넘어가게 하는 방법 
+(내부요소 버튼 링크 등등 페이지 내에서 위아래 로 이동할때 + !!!!! js없다는 가정하에 쓰는 방법) */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 전체 초기화 */
+html,
+body,
+h1,
+h2,
+h3,
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+}
+/* 배경 이미지 넣기 */
+body {
+    background: url(../images/sunweatherbg.jpg) no-repeat fixed top/cover;
+    margin: 0 auto;
+}
+/* 상단영역 뿌옇게 만들기 */
+.tit {
+    position: relative;
+    /* 패딩영역 */
+    padding: 30px;
+    text-align: center;
+    /* 글자색 */
+    color: #fff;
+    /* 글자 : 스두크/줄체 */
+    font: 30px;
+    /* 글자 그림자 */
+    text-shadow: 2px 2px 2px #000;
+    /* 배경색 검정 반투명  */
+    background-color: #ffffff70;
+}
+main{
+    position: relative;
+    max-height: 30px;
+    min-height: 25px;
+}
+
+/* 메뉴 버튼간 간격 */
+.menu{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    width: 100%;     
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.425);
+    overflow: hidden;
+}
+.menu li{
+    
+    margin: 0 auto;
+    float: left;
+    padding: 15px 20px;
+}
+.menu ul {
+    width: 500px;
+    margin: 0 auto;
+    
+}
