@@ -120,17 +120,21 @@
         /* #tr4에 트랜지션 설정 */
 
         #tr4 span{
-            transition: left 5s ease-in-out,
-            background-color 2s ease-out 4s,
-            border-radius 3s linear 5s,
-            top 8s ease-in-out 8s
-            ; 
+            top: 0;
+            left: 0;    
+            transition: left 2s ease-in-out 3s,
+            ;
+            transition: top 4s ease-in-out 2s;
+      
         }
         #tr4:hover span{
             left: 70%;
-            background-color: darkorchid;
             border-radius: 0;
+            
             top: -100px;
+            background-color: red;
+           
+            
         }
         /* 
             여러가지 속성을 별도로 트랜지션 주고자 할 경우
