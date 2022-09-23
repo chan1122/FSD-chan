@@ -53,10 +53,20 @@ body{
     /* 마영오! */
     margin: 0 auto;
     /* 마진탑 mt */
-    margin-top: 200px;
+    margin-top: -100%;
     /* 마진아래 mb */
     margin-bottom: 100px;
+
+    transition: all 1s;
+    animation:headani 2.5s ease-out .1s forwards;
 }
+@keyframes headani {
+    to{
+        /* 원레위치로 */
+        margin-top: 250px;
+    }
+}
+
 
 /* 자식요소의 float해제 설정 가상요소 after로! */
 .cbx::after{
@@ -212,3 +222,4 @@ body{
     /* 양쪽정렬 justify */
     text-align: justify;
 }
+

@@ -2,14 +2,173 @@
 /* 도깨비 PJ 공통모듈 CSS - common.css */
 /* 상단영역, 하단영역 반복디자인 */
 
-
-/* 1. 상단영역 */
-.top{
+/****************** 1. 상단영역 ******************/
+/* 겉박스 */
+#top{
+    /* 배경색 */
+    background-color: rgba(255, 255, 255, 0.416);
+}
+.top {
     height: 128px;
+}
+/* 1-1 로고 */
+.logo{
+    width: 100px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+/* 1-1 로고이미지 */
+.logo img{
+    width: 100px;
+}
+
+/* 1-2 GNB 메뉴 */
+.gnb{
+    /* 가로 크기 지정 후 마.영.오! */
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+/* gnb 상위 li*/
+.gnb>ul>li{
+    padding: 0 15px;
+}
+/* gnb상위메뉴  a */
+.gnb>ul>li>a{
+    /* 레러티브 포지션으로 a::after 포지션 의 부모자격 ! */
+    position: relative;
+    /* 블록화 */
+    display: block;
+    /* 글자셋팅 */
+    font-size: 17px;
+    line-height: 2.5;
+    transition: all 0.3s ease-out;
 
 }
-/* 3. 하단영역 */
-.info{
-    height: 241px;
+.gnb>ul>li>a::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 0%;
+    height: 3px;
+    background-color: darkred;
+    transition: width 2s;
+}
+.gnb>ul>li>a:hover::after{
+    width: 100%;
+}
+.gnb>ul>li:hover a{
+    transform: scale(1.2);   
+    color: darkgrey; 
     
 }
+/* sns메뉴 */
+.tmenu{
+    position: absolute;
+    top: 20px;
+    right: 0;
+}
+.tmenu>ul>li{
+    padding: 0 5px;
+}
+.tmenu>ul>li>a{
+    font-size: 15px;
+}
+.sns li{
+    width: 30px;
+    height: 30px;
+
+}
+/****************** 3. 하단영역 ******************/
+/* 속박스 */
+.info {
+    height: 241px;
+    position: relative;
+}
+
+
+/* 겉박스 */
+#info {
+    background-color: rgba(255, 255, 255, 0.605);
+}
+
+/* 하단링크 */
+.blink {
+    padding-top: 0;
+}
+
+/* 하단링크 리스트 */
+.blink ul {
+    
+    /* 마영오 */
+    margin: 0 auto;
+    /* 가로크기를 주여야지만 마영오가 적용 확인이 가능하다! */
+    width: 878px;
+    
+}
+
+/* 가상요소로 float 지우기 */
+
+
+.blink li {
+    float: left;
+    padding: 0 15px;
+}
+
+.blink a{
+    display: block;
+    font-size: 14px;
+    color: black;
+    font-weight: bold;
+    line-height: 2.8;
+    
+}
+
+.blink li:hover a{
+    transform: scale(1.2);
+    color: red;
+    text-decoration: none;
+    transition: all .7s;
+}
+
+/* 3-2 회사 정보 */
+.addr{
+    padding: 10px;
+}
+.addr address{
+    /* 글자셋팅 - address요소 기본 이탤릭체 해제 */
+    font-size: 14px;
+    font-style: normal;
+    text-align: center;
+    line-height: 2;
+
+    /* 박스셋팅 */
+    width: 804px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 4px double lightblue;
+
+}
+
+/* 하단로고 */
+.blogo{
+    /* 글자중앙 */
+    text-align: center;
+}
+
+/* 3-4 바로가기 */
+.brand {
+    /* 포지션 앱솔루트 */
+    position: absolute;
+    top: 10px;
+    right: 0;
+    /* 부모는? .info */
+}
+#sel {
+    color: #222;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
