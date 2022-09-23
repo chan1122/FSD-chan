@@ -55,3 +55,11 @@ body{
     display: block;
     clear: both;
 }
+/* 배경이미지 설명 클래스 images replacement */
+/* IR클래스 */
+.ir{
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
