@@ -4,48 +4,54 @@
 
 /****************** 1. 상단영역 ******************/
 /* 겉박스 */
-#top{
+#top {
     /* 배경색 */
     background-color: rgba(255, 255, 255, 0.416);
 }
+
 .top {
     height: 128px;
 }
+
 /* 1-1 로고 */
-.logo{
+.logo {
     width: 100px;
     margin: 0 auto;
     padding-top: 20px;
 }
+
 /* 1-1 로고이미지 */
-.logo img{
+.logo img {
     width: 100px;
 }
 
 /* 1-2 GNB 메뉴 */
-.gnb{
+.gnb {
     /* 가로 크기 지정 후 마.영.오! */
     width: 600px;
     margin: 0 auto;
     margin-top: 25px;
 }
+
 /* gnb 상위 li*/
-.gnb>ul>li{
+.gnb>ul>li {
     padding: 0 15px;
 }
+
 /* gnb상위메뉴  a */
-.gnb>ul>li>a{
+.gnb>ul>li>a {
     /* 레러티브 포지션으로 a::after 포지션 의 부모자격 ! */
     position: relative;
     /* 블록화 */
     display: block;
     /* 글자셋팅 */
-    font-size: 17px;
+    font-size: 1.7rem;
     line-height: 2.5;
     transition: all 0.3s ease-out;
 
 }
-.gnb>ul>li>a::after{
+
+.gnb>ul>li>a::after {
     content: '';
     display: block;
     position: absolute;
@@ -55,66 +61,81 @@
     background-color: darkred;
     transition: width 2s;
 }
-.gnb>ul>li>a:hover::after{
+
+.gnb>ul>li>a:hover::after {
     width: 100%;
 }
-.gnb>ul>li:hover a{
-    transform: scale(1.2);   
-    color: darkgrey; 
-    
+
+.gnb>ul>li:hover a {
+    transform: scale(1.2);
+    color: darkgrey;
+
 }
+
 /* sns메뉴 */
-.tmenu{
+.tmenu {
     position: absolute;
     top: 20px;
     right: 0;
 }
-.tmenu>ul>li{
+
+.tmenu>ul>li {
     padding: 0 5px;
 }
-.tmenu>ul>li>a{
-    font-size: 15px;
+
+.tmenu>ul>li>a {
+    font-size: 1.5rem;
 }
+
 .sns {
     margin-top: -5px;
 }
-.sns li{
+
+.sns li {
     width: 30px;
     height: 30px;
     /* 배경이미지로 sns 아이콘 넣기(스프라이츠) */
     background: url(../images/icons.png) no-repeat;
 }
+
 /* 트위터 */
-.sns li:nth-child(1){
+.sns li:nth-child(1) {
     background-position: 0 0;
 }
+
 /* 트위터 오버시 */
-.sns li:nth-child(1):hover{
+.sns li:nth-child(1):hover {
     background-position: 0 -30px;
 }
+
 /* 페이스북 */
-.sns li:nth-child(2){
+.sns li:nth-child(2) {
     background-position: -60px 0;
 }
+
 /* 페이스북 오버시*/
-.sns li:nth-child(2):hover{
+.sns li:nth-child(2):hover {
     background-position: -60px -30px;
 }
+
 /* 인스타 */
-.sns li:nth-child(3){
+.sns li:nth-child(3) {
     background-position: -30px 0;
 }
+
 /* 인스타 오버시 */
-.sns li:nth-child(3):hover{
+.sns li:nth-child(3):hover {
     background-position: -30px -30px;
 }
+
 /* sns a요소 확장 */
-.sns a{
+.sns a {
     display: block;
     width: 100%;
     height: 100%;
 
 }
+
 /****************** 3. 하단영역 ******************/
 /* 속박스 */
 .info {
@@ -135,12 +156,12 @@
 
 /* 하단링크 리스트 */
 .blink ul {
-    
+
     /* 마영오 */
     margin: 0 auto;
     /* 가로크기를 주여야지만 마영오가 적용 확인이 가능하다! */
     width: 878px;
-    
+
 }
 
 /* 가상요소로 float 지우기 */
@@ -151,16 +172,16 @@
     padding: 0 15px;
 }
 
-.blink a{
+.blink a {
     display: block;
-    font-size: 14px;
+    font-size: 1.4rem;
     color: black;
     font-weight: bold;
     line-height: 2.8;
-    
+
 }
 
-.blink li:hover a{
+.blink li:hover a {
     transform: scale(1.2);
     color: red;
     text-decoration: none;
@@ -168,12 +189,13 @@
 }
 
 /* 3-2 회사 정보 */
-.addr{
-    padding: 10px;
+.addr {
+    padding: 1.0rem;
 }
-.addr address{
+
+.addr address {
     /* 글자셋팅 - address요소 기본 이탤릭체 해제 */
-    font-size: 14px;
+    font-size: 1.4rem;
     font-style: normal;
     text-align: center;
     line-height: 2;
@@ -187,7 +209,7 @@
 }
 
 /* 하단로고 */
-.blogo{
+.blogo {
     /* 글자중앙 */
     text-align: center;
 }
@@ -200,10 +222,9 @@
     right: 0;
     /* 부모는? .info */
 }
+
 #sel {
     color: #222;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 1.4rem;
 }
-
-

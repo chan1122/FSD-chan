@@ -13,14 +13,19 @@
     4. 전체 공통체(메뉴 등)
     font-family: 'Nanum Gothic', sans-serif;
 */
+/* 전체 글자크기 Root 설정  */
+html{
+    font-size: 10px;
+    /* 글자 rem담위 계산 편의떄문~! */
+}
 
 /* 전체 웹폰트 일반적용! */
-body{
+body {
     font-family: 'Nanum Gothic', sans-serif;
 }
 
 /* 속박스 class */
-.ibx{
+.ibx {
     max-width: 1200px;
     /* 최대가로크기 1200px이면
     싸고 있는 박스가 이것보다 작아질 경우
@@ -31,33 +36,38 @@ body{
 /* 스크롤바 디자인 클래스 */
 /* -webkit- 밴더사명(크롬,사파리) 접두어 
 ( 참고: -ms-(ie), -o-(오페라), -moz-(파이어폭스) */
-.scbar::-webkit-scrollbar{
+.scbar::-webkit-scrollbar {
     /* 전체 스크롤바 크기변경 */
     width: 7px;
 }
-.scbar::-webkit-scrollbar-thumb{
+
+.scbar::-webkit-scrollbar-thumb {
     /* 스크롤바 */
     background-color: #555;
     border-radius: 5px;
 }
-.scbar::-webkit-scrollbar-track{
+
+.scbar::-webkit-scrollbar-track {
     /* 스크롤바 트랙 */
     background-color: #ddd;
     border-radius: 5px;
 }
+
 /* float셋팅 클래스 */
-.clb > li{
+.clb>li {
     float: left;
 }
+
 /* float설정 지우기 클래스 */
-.clb::after{
+.clb::after {
     content: '';
     display: block;
     clear: both;
 }
+
 /* 배경이미지 설명 클래스 images replacement */
 /* IR클래스 */
-.ir{
+.ir {
     display: block;
     width: 0;
     height: 0;
