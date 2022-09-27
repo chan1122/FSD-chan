@@ -1,102 +1,104 @@
 @charset "utf-8";
-/* 도꺠비 Pj 미디어쿼리 css - media.css */
+/* 도깨비 PJ 미디어쿼리 CSS - media.css */
 
-/* 1200 이하 */
+/**************** 1200이하 ****************/
 @media screen and (max-width:1200px) {
-
-    /* 탑메뉴 가로크기 화면 맞춤 */
-    .tmenu {
+    /* 탑메뉴 가로크기 화면맞춤 */
+    .tmenu{
         width: 100%;
     }
+} /**************** 1200px이하 ****************/
 
-}
-
-/*1200px 이하*/
-
-/* 990 이하 */
-@media screen and (max-width:990px) {
-
-    /* 상대단위 rem글자 크기변경을 위해 html변경  */
-    html {
-        font-size: 9px;
+/**************** 1070이하 ****************/
+@media screen and (max-width:1070px) {
+    /* 상대단위 rem글자 크기변경 위해 html변경 */
+    html{
+        font-size: 8px;
     }
-
+    /* GNB메뉴 조정 */
     .gnb {
-        width: 549px;
-        margin: 0 auto;
-        margin-top: 25px;
+        width: 495px;
+        margin-top: 34px;
     }
-
+    /* 하단링크 조정 */
     .blink ul {
         max-width: 680px;
     }
-
-    /* 브랜드 바로가기 바  */
-    .brand {
+    /* 브랜드박스 */
+    .brand{
         display: none;
     }
 
-    .caricter {
-        width: 50%;
+    /* 캐릭터 박스 한줄에 2개씩 */
+    .caricter{
+        width: 49%;
     }
-
-    /* 캐릭터 부모박스 cbx */
-    .cbx {
-        margin-top: 50px;
+    /* 캐릭터 부모박스 */
+    .cbx{
+        margin-top: 100px;
     }
-
-    /* 캐릭터 오버시 이미지 박스 */
+    /* 캐릭터 오버시 이미지박스 */
     .caricter:hover .ci {
         margin-top: 0;
     }
-
-    .caricter:hover {
+    /* 캐릭터 오버시 z-index */
+    .caricter:hover{
         z-index: 1;
     }
-}
+    /* 설명박스 타이틀 */
+    .cd h3{
+        font-size: 3vw;
+    }
+    /* 설명박스 p요소 */
+    .cd p{
+        font-size: 2vw;
+    }
 
-/* 990 이하 */
-/* 870 이하 */
+
+} /**************** 1070px이하 ****************/
+
+/**************** 870이하 ****************/
 @media screen and (max-width:870px) {
 
-    /* 없어질 요소들 - 상단메유, GNB , 하단 링크*/
-    .tmenu,
-    .gnb,
-    .blink {
+    /* 없어질 요소들 : 상단메뉴, GNB, 하단링크 */
+    .tmenu, .gnb, .blink{
         display: none;
     }
 
-    .top {
+    /* 상단영역 높이값 */
+    .top{
         height: 80px;
     }
 
-    /* 캐릭터 부모박스  */
+    /* 캐릭터부모박스 */
     .cbx {
         margin-top: 20px;
     }
 
-    .caricter {
-        width: 100%;
+    /* 캐릭터박스 한줄에 하나씩 */
+    .caricter{
+        width: 99%;
     }
-
-    .cd {
+    /* 설명박스 자리자치하는 포지션으로! */
+    .cd{
         position: static;
     }
-
     /* 설명박스 타이틀 */
-    .cd h3 {
-        font-size: 4vw
+    .cd h3{
+        font-size: 4vw;
     }
-
-    .cd p {
+    /* 설명박스 p요소 */
+    .cd p{
         font-size: 3vw;
     }
 
-    /* 설명박스 p요소 */
-    /* 하단ㅇ여영 */
+    /* 하단영역 */
     .info {
         height: auto;
         padding-bottom: 20px;
     }
+    .ham{
+        display: block;
+    }
 
-}
+} /**************** 870px이하 ****************/
