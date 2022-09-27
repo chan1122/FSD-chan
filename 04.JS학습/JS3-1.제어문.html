@@ -11,7 +11,58 @@
                 함수명: jumsu
                 기능: 점수에 따른 평가출력하기
         *********************************************/
-        
+        function jumsu() {
+
+            // 1.함수호출 확인해보기
+            // console.log("점수!");
+            // 2. 대상선정
+            // 2-1. 점수입력요소 : input#jumsu                      
+            var jumsu = document.getElementById("jumsu");
+
+            //2-2 출력요소 : #jexp
+
+            var jexp = document.querySelector("#jexp")
+
+            //2-3 칭찬스티커 : #jshow
+            var jshow = document.querySelector("#jshow")
+            // 3. 입력값 읽어오기
+            var score = jumsu.value;
+            // value속성 - 입력된 값을 읽기/쓰기
+
+            // console.log("입력된값:",score);
+
+
+            // 변수 셋팅
+            var msg;
+
+            // 4. 점수환산하기
+            if (score >= 90) {
+                msg = "매우잘함";
+            } else if (score >= 80 && score < 90) {
+                msg = "잘함";
+            } else if (score >= 70) {
+                msg = "적당함";
+            } else if (score >= 60) {
+                msg = "턱걸이?";
+            } else if (score >= 50) {
+                msg = "반타작?";
+            } else if (score >= 40) {
+                msg = "?";
+            } else if (score >= 30) {
+                msg = "????";
+            } else if (score >= 20) {
+                msg = "?ㅋ?ㅋ?ㅋ?ㅋ";
+            } else if (score >= 10) {
+                msg = "이런 SSi^^";
+            } else if (score >= 0) {
+                msg = "ㅋㅋ 알고보니 천제?";
+            }
+            console.log(msg)
+
+            // 5. 화면출력 : #jexp-> jexp변수
+            jexp.innerText = "평가결과는" + msg;
+        } /////////////jumsu함수///////////////
+
 
         /********************************************** 
             [ if문 ]
@@ -65,7 +116,7 @@
             함수명: local
             기능: 지역명을 입력하면 지역국번을 안내한다!
           *************************************************/
-        
+
 
         /************************************************ 
            [ switch case 문 ]
@@ -108,7 +159,7 @@
                       변경될때 발생하는 이벤트
                       -> onchange 이벤트속성을 사용함!
           *************************************************/
-        
+
         /*************************************************** 
                [ for문 ]
 
@@ -145,7 +196,7 @@
                       변경될때 발생하는 이벤트
                       -> onchange 이벤트속성을 사용함!
           *************************************************/
-        
+
 
         /**************************************************** 
               [ while문 ]
@@ -226,7 +277,7 @@
     <h3 id="jexp">평가출력</h3>
     <label for="jumsu">점수입력:</label>
     <input type="text" id="jumsu" placeholder="점수를 입력하세요!" maxlength="3" />
-    <button class="sbtn">평가하기</button>
+    <button class="sbtn" onclick="jumsu()">평가하기</button>
     <!-- 
         onkeypress 이벤트 속성 
         -> 키보드를 치면 발생하는 이벤트연결 속성
@@ -264,8 +315,7 @@
     <h2>switch case문 연습</h2>
     <h3 id="info">국번안내</h3>
     <label for="local">지역명 입력:</label>
-    <input type="text" id="local" placeholder="지역명을 '도'를 빼고 쓰세요!" maxlength="10"
-      />
+    <input type="text" id="local" placeholder="지역명을 '도'를 빼고 쓰세요!" maxlength="10" />
     <button class="sbtn">국번문의</button>
 
     <br /><br />
