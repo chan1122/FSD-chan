@@ -10,6 +10,9 @@
         /********************************************* 
                 함수명: jumsu
                 기능: 점수에 따른 평가출력하기
+                    1. 점수에따른 메시지 출력
+                    2.점수에따른 메시지 글자색 변경
+                    3. 점수에따른 칭찬스티커 보이기
         *********************************************/
         function jumsu() {
 
@@ -21,8 +24,7 @@
 
             //2-2 출력요소 : #jexp
 
-            var jexp
-             = document.querySelector("#jexp")
+            var jexp = document.querySelector("#jexp")
 
             //2-3 칭찬스티커 : #jshow
             var jshow = document.querySelector("#jshow")
@@ -30,38 +32,89 @@
             var score = jumsu.value;
             // value속성 - 입력된 값을 읽기/쓰기
 
+
+            //데이터 초기화 함수 : 숫자가 아니거나 범위 밖 숫자일떄 셋팅될만한 요소를 초기화 해줌
+            //변수에 익명하무 function(){} 를 할당함!
+            //변수에 할당한 함수일 경우 바로 호출하려면 
+            //할당된 함수가 호출코드보다 위에 이썽야함
+            var initFn = function(){
+                jexp.style.color = "#000";
+                jshow.style.backgroundPosition = "322px 0";
+                jumsu.value = "0";
+                
+            }; //////////// initFn 함수 /////////
             // console.log("입력된값:",score);
 
 
             // 변수 셋팅
             var msg;
-
+            // 평과 결과 메시지 글자색 변수
+            var jc;
+            // 평가결과 칭찬 스티커 위치변수
+            var bgp;
             // 4. 점수환산하기
             if (score >= 90) {
                 msg = "매우잘함";
+                jc = "red";
+                bgp = "0 0";
             } else if (score >= 80 && score < 90) {
                 msg = "잘함";
+                jc = "orange";
+                bgp = "0 0";
+
             } else if (score >= 70) {
                 msg = "적당함";
+                jc = "yellow";
+                bgp = "0 0";
+
             } else if (score >= 60) {
                 msg = "턱걸이?";
+                jc = "green";
+                bgp = "-322px 0";
             } else if (score >= 50) {
                 msg = "반타작?";
+                jc = "skyblue";
+                bgp = "-322px -322px";
             } else if (score >= 40) {
                 msg = "?";
+                jc = "blue";
+                bgp = "-644px 0";
             } else if (score >= 30) {
                 msg = "????";
+                jc = "purple";
+                bgp = "-644px -644px";
             } else if (score >= 20) {
                 msg = "?ㅋ?ㅋ?ㅋ?ㅋ";
+                jc = "brown";
+                bgp = "-644px -644px";
             } else if (score >= 10) {
                 msg = "이런 SSi^^";
+                jc = "pink";
+                bgp = "-644px -644px";
             } else if (score >= 0) {
                 msg = "ㅋㅋ 알고보니 천제?";
+                jc = "black";
+                bgp = "-644px -644px";
             }
+            else if(score < 0 || score > 100){
+                jexp.innerHTML = "0이상 100이하의 숫자만 입력해주세요";
+            }
+
+            initFn();
+
+            
             console.log(msg)
+
+            
 
             // 5. 화면출력 : #jexp-> jexp변수
             jexp.innerText = "평가결과는" + msg;
+            // 6. 글자색 변경
+            jexp.style.color = jc;
+            // style.속성명 = 값
+
+            //7. 칭찬스티커 배경위치 변경
+            jshow.style.backgroundPosition = bgp;
         } /////////////jumsu함수///////////////
 
 
@@ -277,7 +330,7 @@
     <h2>if문 연습</h2>
     <h3 id="jexp">평가출력</h3>
     <label for="jumsu">점수입력:</label>
-    <input type="text" id="jumsu" placeholder="점수를 입력하세요!" maxlength="3" />
+    <input type="text" id="jumsu" placeholder="점수를 입력하세요!" maxlength="3" onkeypress="if(event.keyCode===13)jumsu()" />
     <button class="sbtn" onclick="jumsu()">평가하기</button>
     <!-- 
         onkeypress 이벤트 속성 
