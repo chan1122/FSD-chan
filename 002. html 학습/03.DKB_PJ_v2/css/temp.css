@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* 도깨비 PJ 서브 페이지 CSS - temp.css */
+/* 메인 페이지에만 적용되는 CSS */
+
+/* 외부 CSS합치기 */
+@import url(reset.css);
+@import url(core.css);
+@import url(commom.css);
+
+/* 공사중 표시 */
+body * {
+    outline: 2px dashed gray;
+}
+
+.cont{
+    /* 최소 높이설정 : 내용이 넟칠경우 자동 auto */
+    min-height: 600px;
+}
