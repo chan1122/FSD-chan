@@ -366,12 +366,12 @@
 
             // 앞의 데이터를 살리기위해 +=(대입연산자)사용!
             // for(시;한;증){실행코드}
-            for (var i = 0; i <= 9; i++) {
+            for(var i = 1; i <= 9; i++) {
                 code += `${optval} × ${i} ＝ ${optval*1} <br>`
             }
 
-            code += `${optval} × 2 ＝ ${optval*2} <br>`
-            code += `${optval} × 3 ＝ ${optval*3} <br>`
+            // code += `${optval} × 2 ＝ ${optval*2} <br>`
+            // code += `${optval} × 3 ＝ ${optval*3} <br>`
 
             // 4. 화면출력 : html코드를 innerHTML로 출력!
             // 주의: innerTEXT로 출략하면 태그가 그대로 보임
@@ -653,7 +653,7 @@
         <option value="100">100단</option>
     </select>
     <!-- 구구단 출력박스 -->
-    <div class="gugu g1" onclick="gugu()"></div>
+    <div class="gugu g1" onclick="gugu(this)"></div>
     <!-- 
             [this 키워드] -> 주의: 따옴표로 싸지 말것!
             -> 이벤트가 발생하는 요소자신을 말함!
