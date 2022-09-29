@@ -26,6 +26,7 @@
 
 /* 1. 타이틀 */
 .stit {
+    user-select: none;
     font-size: 5rem;
     text-align: center;
     padding: 40px 0 20px;
@@ -51,6 +52,7 @@
 /* 입력창 공통 라벨 */
 .minput label {
     /* 크기디자인 적용위해 */
+    user-select: none;
     display: inline-block;
     width: 150px;
     font-size: 2rem;
@@ -111,11 +113,27 @@ input:focus {
     margin-top: 50px;
     text-align: center;
     font-size: 1.6rem;
+    user-select: none;
 }
 
 /* 체크박스 라벨과 세로정렬 */
 .addbx input {
+    width: 0;
+}
+
+/* 체크박스 아이콘을 라벨에 넣기! */
+.addbx input+label {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
     vertical-align: -3px;
+    font-size: 20px;
+    color: #000;
+    margin-right: 7px;
+}
+/* 체크박스 체크시 아이콘 변경 */
+.addbx input:checked+label{
+    font-weight: bold;
 }
 
 /* 기타링크 구분선 */
