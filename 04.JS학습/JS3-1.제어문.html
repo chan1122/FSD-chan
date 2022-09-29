@@ -297,9 +297,9 @@
 
             // 4.메시지 만들기
             // msg변수에 최종 출력내용을 다시 담아서 변경함!
-            if(msg === 
-            
-            "esc") msg = "등록되지 않은 지역입니다!";
+            if (msg ===
+
+                "esc") msg = "등록되지 않은 지역입니다!";
             else msg = `${txt}의 지역번호는 ${msg}입니다!`;
             //if 문의 실행문이 1개이면 중괄호 생략가능!
             //5. 화ㅣㅁ녀 출력
@@ -351,7 +351,33 @@
                       변경될때 발생하는 이벤트
                       -> onchange 이벤트속성을 사용함!
           *************************************************/
+        function gugu(U) { // U 전달변수(함수로출시 보내는 값을 받는 함수내에서만 사용되는 지역변수)
+            // 0. 전달값의 선택 option 값 읽기
+            var optval = U.value;
 
+            // 1. 호출 확인하기
+            console.log("구구단을 외워봅시당!", optval);
+
+            // 2. 대상선정 : 출력대상 -> .g1
+            var tg = document.querySelector(".g1");
+
+            // 3. 구구단 만들기 : code변수에 모두 넣기
+            var code = `<h2>${optval}단</h2>`;
+
+            // 앞의 데이터를 살리기위해 +=(대입연산자)사용!
+            // for(시;한;증){실행코드}
+            for (var i = 0; i <= 9; i++) {
+                code += `${optval} × ${i} ＝ ${optval*1} <br>`
+            }
+
+            code += `${optval} × 2 ＝ ${optval*2} <br>`
+            code += `${optval} × 3 ＝ ${optval*3} <br>`
+
+            // 4. 화면출력 : html코드를 innerHTML로 출력!
+            // 주의: innerTEXT로 출략하면 태그가 그대로 보임
+            tg.innerHTML = code;
+        } ////////////////gugu함수///////////////////////
+        ///////////////////////////////////////////////
         /*************************************************** 
                [ for문 ]
 
@@ -517,8 +543,15 @@
     <h2>for문 연습</h2>
     <h3>구구단 출력하기</h3>
     <select name="sel" id="sel">
-        <!-- option[value=$]{$단}*20 -->
-        <option value="1">구구단을 선택하세요!</option>
+        <!-- 
+            option[value=$]{$단}*100
+            [젠코딩(에밋코딩)]
+            요소명[속성명=값]{데이터값}
+            $ 기호는 다중생성시 연속번호자리
+            *숫자 -> 생성갯수
+            구구단을 외우장!~! (선택보세용~!)
+        -->
+        <option value="1">구구단을 외우장!~! (선택보세용~!)</option>
         <option value="2">2단</option>
         <option value="3">3단</option>
         <option value="4">4단</option>
@@ -538,10 +571,96 @@
         <option value="18">18단</option>
         <option value="19">19단</option>
         <option value="20">20단</option>
+        <option value="21">21단</option>
+        <option value="22">22단</option>
+        <option value="23">23단</option>
+        <option value="24">24단</option>
+        <option value="25">25단</option>
+        <option value="26">26단</option>
+        <option value="27">27단</option>
+        <option value="28">28단</option>
+        <option value="29">29단</option>
+        <option value="30">30단</option>
+        <option value="31">31단</option>
+        <option value="32">32단</option>
+        <option value="33">33단</option>
+        <option value="34">34단</option>
+        <option value="35">35단</option>
+        <option value="36">36단</option>
+        <option value="37">37단</option>
+        <option value="38">38단</option>
+        <option value="39">39단</option>
+        <option value="40">40단</option>
+        <option value="41">41단</option>
+        <option value="42">42단</option>
+        <option value="43">43단</option>
+        <option value="44">44단</option>
+        <option value="45">45단</option>
+        <option value="46">46단</option>
+        <option value="47">47단</option>
+        <option value="48">48단</option>
+        <option value="49">49단</option>
+        <option value="50">50단</option>
+        <option value="51">51단</option>
+        <option value="52">52단</option>
+        <option value="53">53단</option>
+        <option value="54">54단</option>
+        <option value="55">55단</option>
+        <option value="56">56단</option>
+        <option value="57">57단</option>
+        <option value="58">58단</option>
+        <option value="59">59단</option>
+        <option value="60">60단</option>
+        <option value="61">61단</option>
+        <option value="62">62단</option>
+        <option value="63">63단</option>
+        <option value="64">64단</option>
+        <option value="65">65단</option>
+        <option value="66">66단</option>
+        <option value="67">67단</option>
+        <option value="68">68단</option>
+        <option value="69">69단</option>
+        <option value="70">70단</option>
+        <option value="71">71단</option>
+        <option value="72">72단</option>
+        <option value="73">73단</option>
+        <option value="74">74단</option>
+        <option value="75">75단</option>
+        <option value="76">76단</option>
+        <option value="77">77단</option>
+        <option value="78">78단</option>
+        <option value="79">79단</option>
+        <option value="80">80단</option>
+        <option value="81">81단</option>
+        <option value="82">82단</option>
+        <option value="83">83단</option>
+        <option value="84">84단</option>
+        <option value="85">85단</option>
+        <option value="86">86단</option>
+        <option value="87">87단</option>
+        <option value="88">88단</option>
+        <option value="89">89단</option>
+        <option value="90">90단</option>
+        <option value="91">91단</option>
+        <option value="92">92단</option>
+        <option value="93">93단</option>
+        <option value="94">94단</option>
+        <option value="95">95단</option>
+        <option value="96">96단</option>
+        <option value="97">97단</option>
+        <option value="98">98단</option>
+        <option value="99">99단</option>
+        <option value="100">100단</option>
     </select>
     <!-- 구구단 출력박스 -->
-    <div class="gugu g1"></div>
+    <div class="gugu g1" onclick="gugu()"></div>
+    <!-- 
+            [this 키워드] -> 주의: 따옴표로 싸지 말것!
+            -> 이벤트가 발생하는 요소자신을 말함!
+            -> 받는곳에서 요소 내부의 송성에 접근가능함!
+            ____________________________________________
 
+         -->
     <br /><br />
     <hr />
     <!-- while문 연습 -->
