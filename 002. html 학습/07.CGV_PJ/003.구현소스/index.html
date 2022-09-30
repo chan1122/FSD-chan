@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <!-- 뷰포트 필수 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>영화 보는곳</title>
     <link rel="stylesheet" href="./css/main.css">
+    <!-- 메인 CGV 메인페이지 JS -->
+    <script src="./js/main.js" defer></script>
+    <!-- 스크립트 연결시 defer 속성을 사용하면 html요소가 모두 로딩된 후 실행함 이방법을 않쓸떄는 소스코드에서 로딩후 실행설저을 하면되!-->
 </head>
+
 <body>
 
 
@@ -16,7 +21,7 @@
     <div id="top">
         <div class="top ibx">
             <!-- 1-1 . 로고 -->
-            <h1 class="tit">CGV  에고편 상영관</h1>
+            <h1 class="tit">CGV 에고편 상영관</h1>
             <!-- 1-2 . GNB 메뉴 -->
             <nav class="gnb"></nav>
 
@@ -32,7 +37,10 @@
             <!-- 2-1 . 스크린 박스 -->
             <div id="screen">
                 <!-- 유튜브 아이프레임 넣기 -->
-                <iframe width="900" height="506" src="https://www.youtube.com/embed/s6aKZgriWeM?autoplay=1&mute=1&loop=1&playlist=s6aKZgriWeM&controls=0"  allow=autoplay></iframe>
+                <iframe width="900" height="506"
+                    src="https://www.youtube.com/embed/s6aKZgriWeM?autoplay=1&mute=1&loop=1&playlist=s6aKZgriWeM&controls=0"
+                    allow=autoplay></iframe>
+                    <!-- allow="autopaly"는 유튜브 동영상 요청시 자동재생의 필수다! -->
                 <!-- iframe 요소 : inline frame - 다른 페이지를 삽입하는 요소
                 - src 속성 : 필수속성으로 경로를 지정
                 - 프에임보더가 있음(boder:none으로 없앰) 
@@ -55,8 +63,87 @@
                 4. 반복재생 리스트 : playlist=동영상ID
                 ->  반복설정시 반복재생리스트도 같이씀!
              -->
-            
+
             </div>
+            <!-- 2-2. 예고편 선택 메뉴 -->
+            <nav class="mlist">
+                <ul>
+                    <li>
+                        <!-- data-내가만든속성
+                        데이터를 저장하기 위한 속성은 data-속성으로 시작하면 된다 -->
+                        <a href="#" data-mv="mI9oyFMUlfg">
+                            <img src="./images/m1.jpg" alt="닥스2">
+
+                            <!-- 영화정보 -->
+                            <ol class="mvtxt">
+                                <li>닥터스트레인지2</li>
+                                <li>베네딕트 컴버배치</li>
+                                <li>액션, 판타지, 모험</li>
+                            </ol>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-mv="DSEfRVqjbFA">
+                            <img src="./images/m2.jpg" alt="공룡!">
+
+                            <!-- 영화정보 -->
+                            <ol class="mvtxt">
+                                <li>쥬라기월드:도미니언</li>
+                                <li>크리스 프랫</li>
+                                <li>액션, 모험</li>
+                            </ol>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-mv="DpVAb7Bi5UQ">
+                            <img src="./images/m3.jpg" alt="브로컬리">
+
+                            <!-- 영화정보 -->
+                            <ol class="mvtxt">
+                                <li>브로커</li>
+                                <li>송강호, 강동원</li>
+                                <li>드라마</li>
+                            </ol>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-mv="aw9j_23nORs">
+                            <img src="./images/m4.jpg" alt="범죄씨리2">
+
+                            <!-- 영화정보 -->
+                            <ol class="mvtxt">
+                                <li>범죄도시2</li>
+                                <li>마동석, 손석구</li>
+                                <li>범죄, 액션</li>
+                            </ol>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-mv="wXWiVmTEzkA">
+                            <img src="./images/m5.jpg" alt="이상한가수">
+                        
+                        <!-- 영화정보 -->
+                        <ol class="mvtxt">
+                            <li>몬스터싱어</li>
+                            <li>바네사 파라디</li>
+                            <li>애니메이션</li>
+                        </ol>
+                    </a>
+                    </li>
+                    <li>
+                        <a href="#" data-mv="W7edvITC9g4">
+                            <img src="./images/m6.jpg" alt="거미남자:집없대..">
+
+                            <!-- 영화정보 -->
+                            <ol class="mvtxt">
+                                <li>스파이더맨:노웨이홈</li>
+                                <li>톰 홀랜드</li>
+                                <li>액션,모험</li>
+                            </ol>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </main>
     </div>
 
@@ -72,4 +159,5 @@
 
 
 </body>
+
 </html>

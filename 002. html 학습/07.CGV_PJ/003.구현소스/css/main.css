@@ -70,7 +70,71 @@ body {
     /* 기본 보더 프래임 제거 */
 
 }
+/* 2-2 . 예고편 선택메뉴 */
+.mlist{
+    position: absolute;
+    width: 100%;
+    bottom: 60px;
+    /* 앱솔루트 판다롱스타킹 이므로 가로크기를 부모박스에 맞춘다! 이유는?
+    flex 정렬을 맞추기 위해서 */
+}
+/* 선택메뉴 ul */
+.mlist ul{
+    display: flex;
+    justify-content: center;
+}
+/* 상위 li */
+.mlist ul>li{
+    /* 렐러티브 포지션 - 부모자격(.mvtxt) */
+    position: relative;
+    /* 부모자격이 이쓴ㄴ 요소가 앱솔루트를 숨길수 있다 */
+    overflow: hidden;
+}
+/* 포스터 이미지  */
+.mlist img{
+    width: 99px;
+    height: 140px;
+}
+/* 상위 li 중 2번쨰 부터 끝까지 적용 */
+.mlist>ul>li+li{
+    margin-left: 10px;
+}
+/* 영화 정보 박스 */
+.mvtxt{
+    /* 플레스 박스 */
+    display: flex;
+    /* 플렉스 수직방향진행 */
+    flex-direction: column;
+    /* 진행방의 수평 중앙정렬 */
+    justify-content: center;
+    /* 높이값만큼 내려강있음 */
+    top: 100%;
+    /* 보모는 상위 li */
+    width: 100%;
+    height: 100%;
+    /* 빈투명 배경 */
+    background-color: rgba(2, 2, 2, 0.459);
+    position: absolute;
+    font-family: 'Cute Font', cursive;
+    color: #fff;
+    font-size: 1.4rem;
+    text-align: center;
+    line-height: 2;
+    /* 트랜지션 : 속시이지 */
+    transition: top .3s ease-out;
+}
+/* 상위 li에 마우스 오버시 영화정보 불러오기 */
+.mlist>ul>li:hover .mvtxt{
+    top: 0;
+}
+/* 영화 제목만 변경하기 */
+.mvtxt li:first-child{
 
+    color: rosybrown;
+    font-size: 1.7rem;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
 /**-******-****-****-**** 3. 하단영역 *-******-****-****-*****/
 .info {
     height: 100px;
