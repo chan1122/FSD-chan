@@ -7,7 +7,7 @@
 
 /* 공사중 표시 */
 body * {
-    outline: 1px dotted red;
+    /* outline: 1px dotted red; */
     
 }
 
@@ -52,14 +52,11 @@ body {
     bottom: 20px;
     right: 20px;
     /* 부모는 .top이 부모 */
-    width: 100px;
-    height: 100px;
 }
 /* 네비 ul */
 .gnb ul{
     /* 플렉스 박스 - 직계 li만 옆으로! */
     display: flex;
-
 }
 .gnb ul li{
     font-family: 'Jua', sans-serif;
