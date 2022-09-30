@@ -6,6 +6,8 @@
     <!-- 뷰포트 필수 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>영화 보는곳</title>
+    <!-- 링크아이콘 폰트어썸 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="./css/main.css">
     <!-- 메인 CGV 메인페이지 JS -->
     <script src="./js/main.js" defer></script>
@@ -24,7 +26,20 @@
             <h1 class="tit">CGV 에고편 상영관</h1>
             <!-- 1-2 . GNB 메뉴 -->
             <nav class="gnb"></nav>
-
+                <ul>
+                    <li>
+                        <a href="#">영화</a>
+                    </li>
+                    <li>
+                        <a href="#">예매</a>
+                    </li>
+                    <li>
+                        <a href="#">극장</a>
+                    </li>
+                    <li>
+                        <a href="#">이벤트&컬쳐</a>
+                    </li>
+                </ul>
         </div>
     </div>
 
@@ -40,7 +55,7 @@
                 <iframe width="900" height="506"
                     src="https://www.youtube.com/embed/s6aKZgriWeM?autoplay=1&mute=1&loop=1&playlist=s6aKZgriWeM&controls=0"
                     allow=autoplay></iframe>
-                    <!-- allow="autopaly"는 유튜브 동영상 요청시 자동재생의 필수다! -->
+                <!-- allow="autopaly"는 유튜브 동영상 요청시 자동재생의 필수다! -->
                 <!-- iframe 요소 : inline frame - 다른 페이지를 삽입하는 요소
                 - src 속성 : 필수속성으로 경로를 지정
                 - 프에임보더가 있음(boder:none으로 없앰) 
@@ -121,14 +136,14 @@
                     <li>
                         <a href="#" data-mv="wXWiVmTEzkA">
                             <img src="./images/m5.jpg" alt="이상한가수">
-                        
-                        <!-- 영화정보 -->
-                        <ol class="mvtxt">
-                            <li>몬스터싱어</li>
-                            <li>바네사 파라디</li>
-                            <li>애니메이션</li>
-                        </ol>
-                    </a>
+
+                            <!-- 영화정보 -->
+                            <ol class="mvtxt">
+                                <li>몬스터싱어</li>
+                                <li>바네사 파라디</li>
+                                <li>애니메이션</li>
+                            </ol>
+                        </a>
                     </li>
                     <li>
                         <a href="#" data-mv="W7edvITC9g4">
@@ -153,7 +168,44 @@
     <!-- -------------------------------------------------------- -->
     <div id="info">
         <footer class="info ibx">
-
+            <!-- 3-1. 하단로고 -->
+            <div class="lowimg">
+                <img src="./images/blogo.png" alt="하단로고">
+            </div>
+            <!-- 3-2 회사주소 -->
+            <div>
+                <address>
+                    (04377)서울특별시 용산구 한강대로 23길 55, 아이파크몰 6층(한강로동)<br>
+                    대표이사 : 최병환사업자등록번호 : 104-81-45690통신판매업신고번호 : 2017-서울용산-0662<br>
+                    개인정보보호 책임자 : 정종민대표이메일 : cjcgvmaster@cj.netCGV고객센터 : 1544-1122
+                </address>
+            </div>
+            <!-- 3-3 sns박스 -->
+            <div class="lastbox">
+                <ol class="sns">
+                    <li>
+                        <a href="#" class="fa-brands fa-facebook">
+                            <span class="ir">
+                                페이스북 바로가기
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="fa-brands fa-twitter">
+                            <span class="ir">
+                                트위터 바로가기
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="fa-brands fa-instagram">
+                            <span class="ir">
+                                인스타그램 바로가기
+                            </span>
+                        </a>
+                    </li>
+                </ol>
+            </div>
         </footer>
     </div>
 

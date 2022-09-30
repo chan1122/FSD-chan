@@ -24,7 +24,7 @@ for (var i = 0; i < len; i++) {
 
     // 순서대로 a요소에 click 이벤트 설정하기!
     // 대상은: mvlink변수
-    mvlink.item(i).onclick = function(){chgMV()};
+    mvlink.item(i).onclick = function(){chgMV(this)};
     // 온클릭은 a요소의 이벤트속성임
     // 이퀄 오른쪽애 할당되는데 
     // 이떄 chgMV() 함수르 직접쓰면 함수가 바로 싷핼됨
@@ -71,8 +71,11 @@ function chgMV(ele){ //ele 전달되는 a요소
 // 1. 변수에 할당하는방법 -> 변수명이 함수명이 됨!
 // 2. 이벤트와 연결하는방법  -> 이벤트가 발생시 함수실행
 
-// console.log("난 길조야!");
+console.log("난 바깥이야!");
 
-// function (){
-//     console.log("난 길길조야!!");
-// }
+var myFn = function(){
+    console.log("난 안이야!");
+}
+
+// 익명함수 호출!
+myFn();
