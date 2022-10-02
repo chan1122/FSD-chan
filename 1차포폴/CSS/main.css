@@ -1,0 +1,69 @@
+@charset "utf-8";
+/* 1차포폴 메인페이지 CSS - main.css */
+
+/* 외부 CSS 합치기 */
+@import url(reset.css);
+@import url(core.css);
+
+/* 공사중 표시 */
+body * {
+    outline: 3px dotted red;
+    color: #fff;
+}
+/* 배경색 */
+body{
+    background-color: aquamarine;
+}
+/* 상당 박효신 문구 */
+.tit {
+    text-align: center;
+    font-size: 1.4rem;
+    color: #fff;
+    background-color: rgba(0, 0, 139, 0.774);
+    height: 65px;
+}
+/* 음소거버튼 */
+.nosound{
+    position: absolute;
+    padding: 10px;
+    margin: 10px;
+    right: 0;
+    background-color: none;
+    border: none;
+    display: block;
+}
+/* GNB메뉴 */
+.gnb {
+    display: flex;
+    padding: 10px;
+    justify-content: space-evenly;
+    background-color: rgba(0, 0, 139, 0.774);
+    height: 20px;
+    top: 5px
+}
+/* GNB안박스 */
+.ganb {
+    float: left;
+   width: 1000px; 
+   height: 30px;
+}
+.ganb li{
+    
+}
+/* GNB 요소들 모음 */
+.ganb a {
+    display: block;
+    padding: 10px;
+    font-size: 1.2rem;
+    width: 100%;
+    height: 100%;
+}
+/* 좌측 문구 디자인 */
+.cont{
+    position: absolute;
+    width: 100px;
+    height: 1000px;
+    overflow: hidden;
+    font-size: 3rem;
+    background-color: lightgreen;
+}
