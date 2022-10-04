@@ -54,11 +54,11 @@ body{
     background: url(../images/JUSAWI.png) no-repeat 0/1000px;
 }
 .cb1{
-    left: 750px;
+    left: 60%;
 }
 .cb2{
     top: 220px;
-    left: 200px;
+    left: 23%;
 }
 /* 1. 앞면 */
 .cube span:nth-child(1){
