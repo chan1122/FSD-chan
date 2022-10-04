@@ -11,7 +11,7 @@ function(){
     const btns = document.querySelector(".btns button");
 
     // 변경대상: .cube
-    const cube = document.querySelector(".cube");
+    const cube = document.querySelectorAll(".cube");
 
     // 클릭시 기능구현함수
     const aniFn = function(){
@@ -22,11 +22,14 @@ function(){
         // 2. 대상선정: .cube -> cube변수
 
         // 3. 변경내용: 변경대상요소에 클래스 넣기/빼기
-        cube.classList.toggle("on");
+        for(let i=0; i<2; i++){
+
+            cube[i].classList.toggle("on");
+        }
 
         // 4. 큐브 클래스 on여부에 따라 버튼 글자 변경하기
         // 비?집:놀이동산 -> 삼항연산자
-        cube.classList.contains("on") ? 
+        cube[0].classList.contains("on") ? 
         btns.innerText="멈춰!" : btns.innerText="돌아!";
         // console.log(cube.classList.contains("on"));
 
