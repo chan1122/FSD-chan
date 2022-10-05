@@ -13,6 +13,14 @@
         .forCls img {
             height: 100px;
         }
+        .rbtn{
+            display: block;
+            position: sticky;
+            top: 10px;
+            width: 5%;
+            height: 3%;
+            left: 90%;
+        }
     </style>
     <script>
         ////// 로드구역 ////////////////////////
@@ -33,6 +41,7 @@
                 console.log(tg);
 
 
+                
 
 
                 // 버튼개수
@@ -41,6 +50,17 @@
                 for (let i = 0; i < cnt; i++) {
                     btns[i].onclick = addNum;
                 } ////////// for //////////////
+
+                
+                let rtn = document.querySelector(".rbtn");
+                rtn.onclick = ()=>
+                {
+                    for (let i = 0; i < cnt; i++) {
+                     tg[i].innerHTML = "";
+                    } ////////// for //////////////
+
+                };
+               
 
 
                 /*///////////////////////////////////////
@@ -65,7 +85,6 @@
                     else if (btxt === "for문옵션2") num = 2; 
 
                     tg[num].innerHTML = "";
-
 
 
 
@@ -104,6 +123,9 @@
 
 <body>
 
+    <!-- 리셋버튼 -->
+    <button class="rbtn">리셋</button>
+
     <h1>for문 옵션</h1>
 
     <hr>
@@ -123,6 +145,16 @@
 
     <h2>5번까지만 돌리기</h2>
     <button>for문옵션2</button>
+    <br><br>
+    <div class="forCls"></div>
+
+    <h2>1번 3번 뺴고 7번까지만 돌리기</h2>
+    <button>for문옵션3</button>
+    <br><br>
+    <div class="forCls"></div>
+
+    <h2> 홀수번만 돌리기 </h2>
+    <button>for문옵션4</button>
     <br><br>
     <div class="forCls"></div>
 

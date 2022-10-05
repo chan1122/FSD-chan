@@ -35,7 +35,7 @@
 
             // 2. 출력대상 : .cont
             const tg = document.querySelectorAll(".cont")
-            console.log(tg)
+            // console.log(tg)
 
             // 3. 내용출력하기 : 배열과 객체를 활용!
 
@@ -232,11 +232,11 @@
                 ,"팬레터":function(){
                     //1. 메시지 띄우기 
                     alert("음....");
-                    tg[3].style.background = "url(https://file.mk.co.kr/meet/neds/2022/05/image_readtop_2022_456627_16533579475052374.jpeg) no-repeat-x top/auto 100%";
+                    tg[3].style.background = "url(https://file.mk.co.kr/meet/neds/2022/05/image_readtop_2022_456627_16533579475052374.jpeg) repeat-x top/auto 100%";
                     tg[3].style.color = "#fff"
-                    tg[3].style.textshadow = "0 0 5px #000";
+                    tg[3].style.textShadow = "0 0 5px #000";
                     tg[3].innerText = "손석구 라고 합니당!";
-                    tg[3].style.lineHeight = "84xp";
+                    tg[3].style.lineHeight = "84px";
                     tg[3].style.transform = "scale(1.3)";
                     tg[3].style.transition = "1s ease-out 1s";
                 }
@@ -258,15 +258,15 @@
             // 객체에 셋팅된 함수를 보통 "메서드"라고 부른다!
             // 이 메서드를 호출해 보자!
             tg[3].onclick = SSG["팬레터"];
-            tg[3].title = `여기를 클릭하여 ${SSG["너의이름은?"]}의 팬레터를 확인해보세여ㅕ를 확인해보세요!`;
-            tg[3].style.cursor = "pointer"
             
-
-
+            
+            
             // title 속성 넣기
-
-
+            tg[3].title = `여기를 클릭하여 ${SSG["너의이름은?"]}의 팬레터를 확인해보세여ㅕ를 확인해보세요!`;
+            
+            
             // 손가락 표시
+            tg[3].style.cursor = "pointer";
 
 
             /*************************************** 
