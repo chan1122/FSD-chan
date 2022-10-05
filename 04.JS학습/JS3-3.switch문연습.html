@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>if문 연습</title>
+    <title>switch문 연습</title>
     <!-- 웹폰트 CDN -->
     <link href="https://fonts.googleapis.com/css?family=Audiowide&amp;display=swap" rel="stylesheet">
     <style>
@@ -106,7 +106,7 @@
                 //개별 버튼들 접근하여 셋팅!
 
                 //방법2: 이벤트 등록 내장함수 사용방식
-                btns[i].addEventListener("click",function(){
+                btns[i].addEventListener("click", function () {
                     chgImg(this);
                 })
                 // 방법1 : onclick 속성에 익명함수 할당방식
@@ -148,38 +148,52 @@
 
             //이미지 경로변수(이것이 버튼별 바뀜!)
             let isrc;
-            isrc = "./images/ala1.jpg";
-
-            // 2. 버튼별 데이터 분기하기(if문사용!)
-            if (btxt === "포스터") {
-                isrc = "./images/ala1.jpg";
-            } 
+            isrc = "./images/4cutmanhwa-1.jpg";
 
 
-            else if (btxt === "장면1") {
-                isrc = "./images/ala2.jpg";
-            } //else if////
+            // 2. 버튼별 데이터 분기하기(switch문사용!)
+            switch (btxt) {
+                case "장면1":
+                    isrc = "./images/4cutmanhwa-1.jpg";
+                    break
+
+                case "장면2":
+                    isrc = "./images/4cutmanhwa-2.jpg";
+                    break
+
+                case "장면3":
+                    isrc = "./images/4cutmanhwa-3.jpg";
+                    break
+
+                case "장면4":
+                    isrc = "./images/4cutmanhwa-4.jpg";
+                    break
 
 
-            else if (btxt === "장면2") {
-                isrc = "./images/ala3.jpg";
-            } //else if////
-
-
-            else if (btxt === "장면3") {
-                isrc = "./images/ala4.jpg";
-            } //else if////
+            } ////switch////
+            // if 문
+            // if (btxt === "포스터") {
+            //     isrc = "./images/ala1.jpg";
+            // } else if (btxt === "장면1") {
+            //     isrc = "./images/ala2.jpg";
+            // } //else if////
+            // else if (btxt === "장면2") {
+            //     isrc = "./images/ala3.jpg";
+            // } //else if////
+            // else if (btxt === "장면3") {
+            //     isrc = "./images/ala4.jpg";
+            // } //else if////
 
             // 이미지 경로 확인!
-            console.log("이미지경로:",isrc);
+            console.log("이미지경로:", isrc);
 
             // 3 . 대상 이미지에 src값 변경하기 
             // 대상 이미지 : #scene
             // 속성변경하기 JS내장함수 : setAttribute(속성값,값)
             document.querySelector("#scene")
-            .setAttribute("src",isrc);
+                .setAttribute("src", isrc);
             /* 아래와 같은 걸로 바꿍 볼수 있다 */
-                // .src = isrc;
+            // .src = isrc;
 
 
         } // chgimg 함수 /////     
@@ -188,19 +202,19 @@
 
 <body>
     <!-- 전체 타이틀 -->
-    <h1 class="tit">All New Aladin</h1>
+    <h1 class="tit">NO~~~....</h1>
 
     <!-- 스틸컷장면박스 -->
     <div class="photo">
-        <img id="scene" src="./images/ala1.jpg" alt="알라딘스틸컷">
+        <img id="scene" src="./images/4cutmanhwa.jpg" alt="알라딘스틸컷">
     </div>
 
     <!-- 선택버튼박스 -->
     <div class="btnbx">
-        <button class="btns">포스터</button>
         <button class="btns">장면1</button>
         <button class="btns">장면2</button>
         <button class="btns">장면3</button>
+        <button class="btns">장면4</button>
     </div>
     <!-- 
         함수호출시 this란?
