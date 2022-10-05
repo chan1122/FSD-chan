@@ -5,65 +5,79 @@
     <meta charset="UTF-8">
     <title>For문 옵션</title>
     <style>
-        .forCls{
+        .forCls {
             height: 100px;
             border: 4px dotted lightseagreen;
         }
+
         .forCls img {
             height: 100px;
         }
     </style>
     <script>
-        ////로드 구역
-        window.addEventListener("DOMContentLoaded",function(){
+        ////// 로드구역 ////////////////////////
+        window.addEventListener("DOMContentLoaded",
+            function () {
 
-            // 호출 확인!@~
-            console.log("로딩완료")
+                // 호출확인
+                console.log("로딩완료!");
 
-            // 이벤트 설정하기
-            // 클릭 이벤트 대상 :button
-            let btns = document.querySelectorAll("button");
-            // console.log(btns)
+                // 이벤트 설정하기 ///////////
 
-            // 변경대상 
-            let tg = document.querySelectorAll("forCls");
-            console.log(tg);
-            
-            let cnt = btns.length;
+                // 클릭이벤트 대상: button
+                let btns = document.querySelectorAll("button");
+                // console.log(btns);
 
-            for(let i = 0;i<cnt;i++){
-                btns[i].onclick = addNum;
-            }
+                // 변경대상 : .forCls
+                let tg = document.querySelectorAll(".forCls");
+                console.log(tg);
 
 
-        /*///////////////////////////////////////
-            함수명: addNum
-            기능: for문으로 숫자이미지를 추가한다
-        */ ///////////////////////////////////////
-        function addNum(){
 
-            //호출한 버튼 요소 자식의 글자의 버튼 텍스트
-            let btxt = this.innerText;
-            // this는 항상 이벤트 설정된 요소 자신인 
-            // 버튼별로 호출하는 요소가 들어옴
 
-            console,log("helloworld!",this.btxt)
+                // 버튼개수
+                let cnt = btns.length;
 
-            // 2. 버튼에 따른 분기하기
-            if(btxt === "기본호출"){
-                for(let i=0;i<10;i++){
-                    btxt
-                }
-            }
-        }
-         ///////////// addNum 함수 /////////////////
-        /////////////////////////////////////////////
-    });
-        
+                for (let i = 0; i < cnt; i++) {
+                    btns[i].onclick = addNum;
+                } ////////// for //////////////
+
+
+                /*///////////////////////////////////////
+                    함수명: addNum
+                    기능: for문으로 숫자이미지를 추가한다
+                */ ///////////////////////////////////////
+                function addNum() {
+
+                    // 0. 호출한 버튼요소 자식의 버튼텍스트
+                    let btxt = this.innerText;
+                    // this는 항상 이벤트설정된 요소자신임!
+                    // 버튼별로 호출하는 요소가 들어옴!
+
+                    // 1. 함수호출확인
+                    console.log("나야나!", btxt);
+
+                    // 2. 버튼에 따른 분기하기
+                    if (btxt === "기본호출") {
+
+                        for (let i = 0; i < 10; i++) {
+                            tg[0].innerHTML +=
+                            `<img src="./images/num/num_01.png" alt="숫자이미지">`;
+                        } //////// for ////////////
+
+                    } /////// if /////////
+
+                } ///////////// addNum 함수 /////////////////
+                /////////////////////////////////////////////
+
+
+
+            }); ////////////로드구역 /////////////////
     </script>
 </head>
 
 <body>
+    
     <h1>for문 옵션</h1>
 
     <hr>
