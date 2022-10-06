@@ -303,30 +303,65 @@
             ***************************************/
 
             // 객체 생성하기
-            const GU ={
-                name : "공유",
-                tall:"184cm",
-                weight:"74kg",
-                com:"매니지먼트숲",
-                work:"도꺠비,부산행",
-                tmi:"그리고 저는 잘생겻어요^^",
-                msg: (txt)=>{
+            const GU = {
+                name: "공유",
+                tall: "184cm",
+                weight: "74kg",
+                com: "매니지먼트숲",
+                work: "도꺠비,부산행",
+                tmi: "그리고 저는 잘생겻어요^^",
+                msg: (txt) => {
                     // 1. 메시지 띄우기
-                    alert("팬레터:"+txt)
+                    alert("팬레터:" + txt)
+
+                    tg[4].style.background =
+                        "url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Gong_Yoo_%28Sep_2016%29.png/250px-Gong_Yoo_%28Sep_2016%29.png) repeat-x top/auto 100%"
+                    // 글자색
+                    tg[4].style.color = "#fff";
+                    // 텍스트 그림자
+                    tg[4].style.textShadow = "0 0 5px #000";
+                    // 위아래 글자 넓이 
+                    tg[4].style.lineHeight = "30px";
+                    // 박스높이
+                    tg[4].style.height = "100px";
+                    // 패딩 상당 100px주기
+                    tg[4].style.paddingTop = "100px";
+                    // 트랜지션(재생속도 주기)
+                    tg[4].style.transition = "2s ease-in-out .5s";
                 }
 
-            };////GU객체////
+            }; ////GU객체////
 
             // GU객체 출력하기 ////////
             // 출력대상: tg[4]
-            console.log(GU);
+            console.log("원본GU", GU);
+
+            //GU객체 속성중 work 값 업데이트!
+            GU.work = "도꺠비,부산행,오징어게임";
+
+            // 객체속성추가하기
+            // 추가방법 object객체의 속성정의 메서드 사용함
+            // --> object.defineProperty(객체명,속성명,{value:속성값})
+            Object.defineProperty(GU, "foot", {
+                value: "280cm"
+            });
+            // GU객체의 발자이즈인 foot속성과 값을 추가함!
+
+            // 객체속성 지우기 /////
+            // delete 객체명.속성명 -> 선택속성제거!
+            // 추가한속성말고 이미 처음에 있는 속성을 제거해보자!
+
+            // delete GU.work;
+
+            // GU객체 찍어보기
+            // console.log("work값 변경 GU:",GU)
             // 줄간격 조정
             tg[4].style.lineHeight = "24px";
             tg[4].style.letterSpacing = "4px";
 
             // 내용출력
-            tg[4].innerHTML =`
-                저는${GU.name} 데이터 입니다
+            tg[4].innerHTML = `
+                저는${GU.name} 데이터 입니다.
                 키는${GU.tall} 몸무게는${GU.weight}이고요<br>
                 소속으로는${GU.com}에있으며<br>
                 대표작으로는 ${GU.work} 이 있습니다<br>
@@ -335,18 +370,126 @@
 
             // 툴팁 띄우기
             // setAttribute(속성명,값)
-
+            tg[4].setAttribute("title", GU.name + "의 팬레터를 확인? // 바로클릭!@!@");
 
             // 손가락모양
+            tg[4].style.cursor = "pointer";
 
 
             // 공유박스 클릭시 GU객체 메서드 호출하기
-
+            // tg[4].onclick = GU.msg("ㅎㅎ");
+            tg[4].onclick = () => {
+                GU.msg("\n공유, 왜 잘생겻나요...\n나도 공유 닮았더라면.....\n");
+                // \는 alert창에서 줄바꿈을 해준다!!!
+            }; /////////click//////
 
             // 미션: tg[5]에 자신이 만든 객체의 정보를 출력하시오
+            const T5 = {
+                A: "토이스토리",
+                B: "등장인물",
+                C: "우디",
+                D: "버즈라이트이어",
+                E: "엔디",
+                F: "1995년",
+                G: "어린이/코미디",
+                msg: (txtt) => {
+                    alert("재미있게본!" + txtt);
+                    tg[5].style.background =
+                        "url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0gN9kvCaImVX99AvAoVbHunXWTkluUEexGA&usqp=CAU)repeat-x top/auto 100%";
+                    tg[5].style.lineHeight = "30px";
+                    tg[5].style.fontSize = "20px";
+                    tg[5].style.color = "#fff";
+                    tg[5].style.paddingTop = "20px";
+                    tg[5].style.transition = "2s ease-out .3s";
+
+
+
+                },
+
+
+                예고편: () => {
+                    const mybx = document.querySelector("#mvbx");
+
+                    mvbx.innerHTML = `        <div id="mv">
+            <iframe width="100%" height="100%" 
+            src="https://www.youtube.com/embed/pHTORP2CUXY?autoplay=1&mute=1&loop=1"
+            allow=autoplay>
+            </iframe>
+            <!-- 닫기버튼 -->
+                <button class="cbtn">❌</button>
+        
+            </div>`;
+                    const mv = document.querySelector("#mv");
+                    let mst = mv.style;
+
+                    mst.position = "fixed";
+                    mst.top = "50%";
+                    mst.left = "50%";
+                    mst.transform = "translate(-50%,-50%)";
+                    mst.width = "700px";
+                    mst.height = "450px";
+                    mst.backgroundColor = "#000";
+
+                    // 닫기버튼 셋팅
+                    const cbtn = document.querySelector(".cbtn");
+                    let cst = cbtn.style;
+
+                    cst.position = "absolute";
+                    cst.top = "0";
+                    cst.right = "-70px";
+                    cst.width = "50px";
+                    cst.height = "50px";
+                    cst.backgroundColor = "blue";
+                    cst.border = "none";
+                    cst.color = "#fff";
+                    cst.fontSize = "40px";
+                    cst.fontWeight = "bold";
+                    cst.borderRadius = "50%";
+                    cst.cursor = "pointer";
+
+                    cbtn.onclick = () => mv.remove();
+
+                }
+
+            }
             // 주제는 영화정보
+            console.log(T5);
             // 변수명도 자신이 지어본다!
+            tg[5].style.fontSize = "16px"
+            tg[5].style.color = "#000"
+            tg[5].style.lineHeight = "30px"
+            tg[5].style.paddingTop = "10px"
             // 객체의 속성명도 변수형으로 자신이 지어본다!
+            tg[5].innerHTML = `
+                제목은 ${T5.A} 입니다 ${T5.B} 들은 ${T5.C}, ${T5.D}, ${T5.E}가 있습니다<br>
+                ${T5.F} 에 제작되었으며 장르는 ${T5.G}이므로 전체연령가입니다
+            `;
+            // 마우스 오버시 정보 창
+            tg[5].title =
+                `클릭하시면 ${T5.제목} 예고편을 보실 수 있습니다!`;
+
+            // 손가락 모양
+            tg[5].style.cursor = "pointer";
+
+            // 예고편  메서드 호출
+            tg[5].onclick = () => {
+                T5.예고편();
+                T5.msg('333');
+            }
+
+
+            //T5.msg("재미있는 영화!!!");
+
+
+            //기타 디자인 잡기
+
+
+
+
+            // 스타일 잡기
+
+
+
 
 
 
@@ -400,7 +543,11 @@
     <div class="cont"></div>
 
     <!-- 예고편 동영상용 박스 -->
-    <aside id="mvbx"></aside>
+    <aside id="mvbx">
+        <!-- 유튭아이프레임 -->
+        <div id="MV">
+        </div>
+    </aside>
 
 </body>
 
