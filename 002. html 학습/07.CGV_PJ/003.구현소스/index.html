@@ -3,269 +3,32 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- 뷰포트 필수 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>영화 보는곳</title>
-    <!-- 링크아이콘 폰트어썸 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <link rel="stylesheet" href="./css/main.css">
-    <!-- 메인 CGV 메인페이지 JS -->
-    <script src="./js/main.js" defer></script>
-    <!-- 스크립트 연결시 defer 속성을 사용하면 html요소가 모두 로딩된 후 실행함 이방법을 않쓸떄는 소스코드에서 로딩후 실행설저을 하면되!-->
+    <title>CGV Intro Page</title>
+    <!-- 인트로 cSS 파일 스타일 익스 터넣 방식 -->
+    <link rel="stylesheet" href="./css/intro.css">
+    <!-- 인트로 js -->
+    <script src="./js/intro.js"></script>
 </head>
 
 <body>
 
+    <!-- 동영상 자동재생 + 무음 + 루프돌게하기 -->
+    <video id="myvid" src="./images/cgv.mp4" autoplay muted playsinline></video>
 
-    <!-- -------------------------------------------------------- -->
-    <!-- 1. 상단영역 **********************************************-->
-    <!-- -------------------------------------------------------- -->
-    <div id="top">
-        <div class="top ibx">
-            <!-- 1-1 . 로고 -->
-            <h1 class="tit">CGV 에고편 상영관</h1>
-            <!-- 1-2 . GNB 메뉴 -->
-            <nav class="gnb">
-                <ul>
-                    <li>
-                        <a href="#">영화</a>
-                        <!-- 서브메뉴 -->
-                        <div class="smenu">
-                            <ol>
-                                <li>
-                                    <a href="#">무비차트</a>
-                                </li>
-                                <li>
-                                    <a href="#">HD트레일러</a>
-                                </li>
-                                <li>
-                                    <a href="#">무비파인더</a>
-                                </li>
+    <!--  2. 들어가기 버튼 -->
+    <h2 id="enter">
+        <a href="#">
+            <img src="./images/logo_cgv.png" alt="cgv로고">
+            <span>HerE</span>
+        </a>
+    </h2>
 
+    <!-- 오브젝트 핏 옵션 적용이 이미지도 동일한지 테스트 -->
+    <!-- <img src="./images/poster.png" alt="포스터" id="myvid"> -->
 
-                                <li class="bdt">
-                                    <a href="#">CGV아트하우스</a>
-                                </li>
-                            </ol>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#">예매</a>
-                        <div class="smenu">
-                            <ol>
-                                <li>
-                                    <a href="#">빠른예매</a>
-                                </li>
-                                <li class="bdt">
-                                    <a href="#">상영시간표</a>
-                                </li>
-                            </ol>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#">극장</a>
-                        <div class="smenu">
-                            <ol>
-                                <li>
-                                    <a href="#">CGV 극장</a>
-                                </li>
-                                <li>
-                                    <a href="#">특별관</a>
-                                </li>
-                                <li class="bdt">
-                                    <a href="#">CLUB 서비스</a>
-                                </li>
-                            </ol>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#">이벤트&컬쳐</a>
-                        <div class="smenu">
-                            <ol>
-                                <li>
-                                    <a href="#">이벤트</a>
-                                </li>
-                                <li>
-                                    <a href="#">기프트샵</a>
-                                </li>
-                                <li class="bdt">
-                                    <a href="#">매거진</a>
-                                </li>
-                            </ol>
-                        </div>
-                        
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-
-    <!-- -------------------------------------------------------- -->
-    <!-- 2. 메인영역 **********************************************-->
-    <!-- -------------------------------------------------------- -->
-
-    <div id="cont">
-        <main class="cont ibx">
-            <!-- 2-1 . 스크린 박스 -->
-            <div id="screen">
-                <!-- 유튜브 아이프레임 넣기 -->
-                <iframe width="900" height="506"
-                    src="https://www.youtube.com/embed/s6aKZgriWeM?autoplay=1&mute=1&loop=1&playlist=s6aKZgriWeM&controls=0"
-                    allow=autoplay></iframe>
-                <!-- allow="autopaly"는 유튜브 동영상 요청시 자동재생의 필수다! -->
-                <!-- iframe 요소 : inline frame - 다른 페이지를 삽입하는 요소
-                - src 속성 : 필수속성으로 경로를 지정
-                - 프에임보더가 있음(boder:none으로 없앰) 
-                - 디자인은 css에서 컨트롤 권고
-
-                [ 유튜브 동영상 호출시 파라미터사용 ]
-                동영상옵션을 GET방식으로 키=값 넘기기
-
-                -> 유튜브 본사에서 지정함!
-                형식: 유튜브url?키=값&키=값&...
-                -> GET 방식 데이터 전송품
-
-                중요옵션
-                1. 자동재생 : autoplay = 1 
-                2. 소리 없음 : mute=1
-                    -> 자동재생시 소리없음을 체크해야지만 자동재생옵션이 먹힘
-                    (이유: 소리있고 자동재생햇던 시절 심장마비로 죽는 사고가 많이 발생!
-                    그래서 법적으로 자동재생은 소리가 없어야 허용 -> video태그도 동일!)
-                3. 반복설정 : loop=1
-                4. 반복재생 리스트 : playlist=동영상ID
-                ->  반복설정시 반복재생리스트도 같이씀!
-             -->
-
-            </div>
-            <!-- 2-2. 예고편 선택 메뉴 -->
-            <nav class="mlist">
-                <ul>
-                    <li>
-                        <!-- data-내가만든속성
-                        데이터를 저장하기 위한 속성은 data-속성으로 시작하면 된다 -->
-                        <a href="#" data-mv="mI9oyFMUlfg">
-                            <img src="./images/m1.jpg" alt="닥스2">
-
-                            <!-- 영화정보 -->
-                            <ol class="mvtxt">
-                                <li>닥터스트레인지2</li>
-                                <li>베네딕트 컴버배치</li>
-                                <li>액션, 판타지, 모험</li>
-                            </ol>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" data-mv="DSEfRVqjbFA">
-                            <img src="./images/m2.jpg" alt="공룡!">
-
-                            <!-- 영화정보 -->
-                            <ol class="mvtxt">
-                                <li>쥬라기월드:도미니언</li>
-                                <li>크리스 프랫</li>
-                                <li>액션, 모험</li>
-                            </ol>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" data-mv="DpVAb7Bi5UQ">
-                            <img src="./images/m3.jpg" alt="브로컬리">
-
-                            <!-- 영화정보 -->
-                            <ol class="mvtxt">
-                                <li>브로커</li>
-                                <li>송강호, 강동원</li>
-                                <li>드라마</li>
-                            </ol>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" data-mv="aw9j_23nORs">
-                            <img src="./images/m4.jpg" alt="범죄씨리2">
-
-                            <!-- 영화정보 -->
-                            <ol class="mvtxt">
-                                <li>범죄도시2</li>
-                                <li>마동석, 손석구</li>
-                                <li>범죄, 액션</li>
-                            </ol>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" data-mv="wXWiVmTEzkA">
-                            <img src="./images/m5.jpg" alt="이상한가수">
-
-                            <!-- 영화정보 -->
-                            <ol class="mvtxt">
-                                <li>몬스터싱어</li>
-                                <li>바네사 파라디</li>
-                                <li>애니메이션</li>
-                            </ol>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" data-mv="W7edvITC9g4">
-                            <img src="./images/m6.jpg" alt="거미남자:집없대..">
-
-                            <!-- 영화정보 -->
-                            <ol class="mvtxt">
-                                <li>스파이더맨:노웨이홈</li>
-                                <li>톰 홀랜드</li>
-                                <li>액션,모험</li>
-                            </ol>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </main>
-    </div>
-
-
-    <!-- -------------------------------------------------------- -->
-    <!-- 3. 하단영역 **********************************************-->
-    <!-- -------------------------------------------------------- -->
-    <div id="info">
-        <footer class="info ibx">
-            <!-- 3-1. 하단로고 -->
-            <div class="lowimg">
-                <img src="./images/blogo.png" alt="하단로고">
-            </div>
-            <!-- 3-2 회사주소 -->
-            <div>
-                <address>
-                    (04377)서울특별시 용산구 한강대로 23길 55, 아이파크몰 6층(한강로동)<br>
-                    대표이사 : 최병환사업자등록번호 : 104-81-45690통신판매업신고번호 : 2017-서울용산-0662<br>
-                    개인정보보호 책임자 : 정종민대표이메일 : cjcgvmaster@cj.netCGV고객센터 : 1544-1122
-                </address>
-            </div>
-            <!-- 3-3 sns박스 -->
-            <div class="lastbox">
-                <ol class="sns">
-                    <li>
-                        <a href="#" class="fa-brands fa-facebook">
-                            <span class="ir">
-                                페이스북 바로가기
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="fa-brands fa-twitter">
-                            <span class="ir">
-                                트위터 바로가기
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="fa-brands fa-instagram">
-                            <span class="ir">
-                                인스타그램 바로가기
-                            </span>
-                        </a>
-                    </li>
-                </ol>
-            </div>
-        </footer>
-    </div>
-
+    <!-- 동영상 포스터 걸어주기 옵션 -->
+    <!-- <video src="./images/cgv.mp4"  playsinline></video> -->
 
 </body>
 
