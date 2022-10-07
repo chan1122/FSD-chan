@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* CGV PJ 인트로페이지 CSS - intro.css */
+
+/* 외부 CSS 합치기 */
+@import url(reset.css);
+@import url(core.css);
+
+/* 전체페이지 보이는 화면기준 */
+
+html,body{
+    width: 100vW;
+    height: 100vh;
+}

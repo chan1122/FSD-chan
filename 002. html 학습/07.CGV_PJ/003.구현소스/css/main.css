@@ -135,8 +135,22 @@ body {
 }
 
 /* 서브메뉴 오버시 이모지(이모티콘) 넣기 */
-.smenu a:hover::after {
+/* 이모지는 window키 + 세미콜론(;) 단축키 */
+/* 영화 하위메뉴 이모지 */
+.gnb ul>li:nth-child(1) .smenu a:hover::after {
     content: '💕';
+    float: right;
+}
+.gnb ul>li:nth-child(2) .smenu a:hover::after {
+    content: '👍';
+    float: right;
+}
+.gnb ul>li:nth-child(3) .smenu a:hover::after {
+    content: '😍';
+    float: right;
+}
+.gnb ul>li:nth-child(4) .smenu a:hover::after {
+    content: '🎉';
     float: right;
 }
 
@@ -182,12 +196,14 @@ body {
     bottom: 60px;
     /* 앱솔루트 판다롱스타킹 이므로 가로크기를 부모박스에 맞춘다! 이유는?
     flex 정렬을 맞추기 위해서 */
+
 }
 
 /* 선택메뉴 ul */
 .mlist ul {
     display: flex;
     justify-content: center;
+    perspective: 480px;
 }
 
 /* 상위 li */
@@ -196,6 +212,43 @@ body {
     position: relative;
     /* 부모자격이 이쓴ㄴ 요소가 앱솔루트를 숨길수 있다 */
     overflow: hidden;
+    transform-origin: bottom;
+    transform: rotateX(75deg);
+    /* 트랜지션주기 */
+    transition: all .4s ease-out;
+}
+/* 상위 li에 마우스 오버시 일어나 */
+/* + 클래스 on 적용시 같은 변경적용 */
+.mlist ul>li:hover,
+.mlist ul>li.on{
+    transform: rotateX(0deg);
+    outline: 1px solid coral;
+    transform: scale(1.2);
+    z-index: 1;
+}
+/* 닥스 */
+.mlist ul>li:nth-child(1):hover{
+    box-shadow: 0 1px 10px 10px darkred;
+}
+/* 쥬라기 월드 */
+.mlist ul>li:nth-child(2):hover{
+    box-shadow: 0 1px 10px 10px gold;
+}
+/* 브로커 */
+.mlist ul>li:nth-child(3):hover{
+    box-shadow: 0 1px 10px 10px skyblue;
+}
+/* 범시2 */
+.mlist ul>li:nth-child(4):hover{
+    box-shadow: 0 1px 10px 10px wheat;
+}
+/* 몬싱 */
+.mlist ul>li:nth-child(5):hover{
+    box-shadow: 0 1px 10px 10px blue;
+}
+/* 거미맨 */
+.mlist ul>li:nth-child(6):hover{
+    box-shadow: 0 1px 10px 10px darkmagenta;
 }
 
 /* 포스터 이미지  */
