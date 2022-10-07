@@ -50,7 +50,7 @@ body {
 .gnb {
     
     position: absolute;
-    bottom: 20px;
+    bottom: 10px;
     right: 20px;
     /* 부모는 .top이 부모 */
 }
@@ -67,6 +67,8 @@ body {
     position: relative;
     font-size: 2rem;
     padding: 0 10px;
+    padding-bottom: 5px;
+    /* 하단패딩  -> 서브멤뉴와 붙어 있게 하기 위햐서 */
 }
 
 /*  s메뉴  */
