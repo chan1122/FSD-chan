@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded", () => {
         // paused 속성 : 비디오 멈춤 상태면 true /(아니면) false
         console.log(myvid.paused);
         if(myvid.paused)
-            location.href = "index.html";
+            location.href = "main.html";
 
     };  // 타임업데이트 //
 
