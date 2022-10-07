@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* 1차포폴 메인페이지 CSS - main.css */
+/* 음원사이트 메인페이지 CSS - main.css */
 
 /* 외부 CSS 합치기 */
 @import url(reset.css);
@@ -12,8 +12,22 @@ body * {
 }
 
 /* 배경색 */
+html,
 body {
-    background-color: aquamarine;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.122);
+}
+
+#myvid {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    z-index: -10;
+    object-fit: cover;
+    filter: brightness(50%);
 }
 
 /* 상당 박효신 문구 */
@@ -21,7 +35,7 @@ body {
     text-align: center;
     font-size: 1.4rem;
     color: #fff;
-    background-color: rgba(0, 0, 139, 0.774);
+    /* background-color: rgba(0, 0, 0, 0.774); */
     height: 65px;
 }
 
@@ -39,16 +53,14 @@ body {
 /* GNB메뉴 */
 .gnb {
     display: flex;
-    padding: 10px;
     justify-content: space-evenly;
-    background-color: rgba(0, 0, 139, 0.774);
-    height: 20px;
-    top: 5px
+    /* background-color: rgba(0, 0, 0, 0.774); */
 }
+
 /* 직계 gnb 메뉴들 크기및 위치 조정 값 */
-.ganb li{
+.ganb li {
     margin: 0 20px;
-    width: 150px;  
+    width: 150px;
     text-align: center;
     font-weight: bold;
     font-size: 1.6rem;
@@ -57,18 +69,18 @@ body {
 
 /* GNB안박스 */
 .ganb {
+    border-radius: 50px 0 0 50px;
+    background-color: #ddd;
+    position: absolute;
     display: flex;
-    float: left;
-    width: 1000px;
-    height: 30px;
-    margin: 0 5px;
-    justify-content: center;
-
+    right: 0;
 }
+
 
 
 /* GNB 요소들 모음 */
 .ganb a {
+    color: darkblue;
     display: block;
     width: 100%;
     height: 100%;
