@@ -4,6 +4,7 @@
 /* 외부 CSS 합치기 */
 @import url(reset.css);
 @import url(core.css);
+@import url(ani.css);
 
 /* 공사중 표시 */
 body * {
@@ -48,7 +49,7 @@ body {
 
 /* 1-2 . GNB */
 .gnb {
-    
+
     position: absolute;
     bottom: 10px;
     right: 20px;
@@ -77,7 +78,7 @@ body {
     left: 50%;
     /* 부모는? 싸고 있는 li */
     /* 트랜스폼으로 x축으로 중앙이동 */
-    transform: translate(-50%,5px);
+    transform: translate(-50%, 5px);
     z-index: 1;
     width: 140px;
     padding: 3px;
@@ -88,8 +89,9 @@ body {
     display: none;
 
 }
+
 /* 상위메뉴에 마우스 오버시 메뉴보이게 하기 */
-.gnb>ul>li:hover .smenu{
+.gnb>ul>li:hover .smenu {
     display: block;
 }
 
@@ -141,14 +143,17 @@ body {
     content: '💕';
     float: right;
 }
+
 .gnb ul>li:nth-child(2) .smenu a:hover::after {
     content: '👍';
     float: right;
 }
+
 .gnb ul>li:nth-child(3) .smenu a:hover::after {
     content: '😍';
     float: right;
 }
+
 .gnb ul>li:nth-child(4) .smenu a:hover::after {
     content: '🎉';
     float: right;
@@ -196,8 +201,8 @@ body {
     bottom: 60px;
     /* 앱솔루트 판다롱스타킹 이므로 가로크기를 부모박스에 맞춘다! 이유는?
     flex 정렬을 맞추기 위해서 */
-
 }
+
 
 /* 선택메뉴 ul */
 .mlist ul {
@@ -214,40 +219,96 @@ body {
     overflow: hidden;
     transform-origin: bottom;
     transform: rotateX(75deg);
+
     /* 트랜지션주기 */
     transition: all .4s ease-out;
 }
+
+.mlist .letsg li {
+    animation: mvani 3s ease-in-out 1s forwards;
+    left: -100%;
+}
+
 /* 상위 li에 마우스 오버시 일어나 */
 /* + 클래스 on 적용시 같은 변경적용 */
 .mlist ul>li:hover,
-.mlist ul>li.on{
-    transform: rotateX(0deg);
+.mlist ul>li.on {
     outline: 1px solid coral;
     transform: scale(1.2);
     z-index: 1;
 }
+
+@keyframes mvani {
+    10% {
+        left: 80%;
+        transform: rotate(0deg)
+    }
+
+    20% {
+        transform: rotate(0deg)
+    }
+
+    30% {
+        transform: rotate(0deg)
+    }
+
+    40% {
+        transform: rotate(0deg)
+    }
+
+    50% {
+        transform: rotate(0deg)
+    }
+
+    60% {
+        transform: rotate(0deg)
+    }
+
+    70% {
+        transform: rotate(0deg)
+    }
+
+    80% {
+        transform: rotate(0) skew(-30deg, -50deg)
+    }
+
+    90% {
+        transform: rotate(0) skew(-30deg, -50deg)
+    }
+
+    100% {
+        left: 0;
+    }
+
+}
+
 /* 닥스 */
-.mlist ul>li:nth-child(1):hover{
+.mlist ul>li:nth-child(1):hover {
     box-shadow: 0 1px 10px 10px darkred;
 }
+
 /* 쥬라기 월드 */
-.mlist ul>li:nth-child(2):hover{
+.mlist ul>li:nth-child(2):hover {
     box-shadow: 0 1px 10px 10px gold;
 }
+
 /* 브로커 */
-.mlist ul>li:nth-child(3):hover{
+.mlist ul>li:nth-child(3):hover {
     box-shadow: 0 1px 10px 10px skyblue;
 }
+
 /* 범시2 */
-.mlist ul>li:nth-child(4):hover{
+.mlist ul>li:nth-child(4):hover {
     box-shadow: 0 1px 10px 10px wheat;
 }
+
 /* 몬싱 */
-.mlist ul>li:nth-child(5):hover{
+.mlist ul>li:nth-child(5):hover {
     box-shadow: 0 1px 10px 10px blue;
 }
+
 /* 거미맨 */
-.mlist ul>li:nth-child(6):hover{
+.mlist ul>li:nth-child(6):hover {
     box-shadow: 0 1px 10px 10px darkmagenta;
 }
 

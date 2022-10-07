@@ -6,6 +6,11 @@ window.addEventListener("DOMContentLoaded", () => {
     // 호출확인
     console.log("로딩완료");
 
+    
+    setTimeout(()=>{
+        document.querySelector(".letsg")
+        .classList.remove("letsg");
+    },4000);
 
     // 예고편 선택메뉴 a 요소 
     const mvlink = document.querySelectorAll(".mlist a");
