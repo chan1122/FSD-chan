@@ -7,7 +7,7 @@
 
 /* 공사중 표시 */
 body * {
-    outline: 3px dotted red;
+    /* outline: 3px dotted red; */
     color: #fff;
 }
 
@@ -37,6 +37,7 @@ body {
     color: #fff;
     /* background-color: rgba(0, 0, 0, 0.774); */
     height: 65px;
+    display: block;
 }
 
 /* 음소거버튼 */
@@ -74,17 +75,18 @@ body {
     position: absolute;
     display: flex;
     right: 0;
-    outline: 3px solid black;
     width: 85vw;
     justify-content: flex-end;
     margin: 0 auto;
+    height: 50px;
+
 
 }
 
 /* 메인 부분 */
 .main {
     position: absolute;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.889);
     width: 85vw;
     height: 90vh;
     top: 130px;
@@ -93,10 +95,14 @@ body {
     outline: 2px solid black;
     border-radius: 5px 0 0 0;
     margin: 0 auto;
+    color: black;
+    text-align: center;
+    font-size: 5rem;
 }
 
 /* GNB 요소들 모음 */
 .ganb a {
+    padding: 5px;
     color: #fff;
     display: block;
     width: 100%;
@@ -109,8 +115,10 @@ body {
     width: 100px;
     height: 1000px;
     overflow: hidden;
-    font-size: 3rem;
+    font-size: 3rem;    
     /* background-color: lightgreen; */
     text-align: right;
     padding-top: 70px;
+    width: 10vw;
 }
+/* 상단 페이지에서 다음 페이지로 넘어갈떄 페이지 */
