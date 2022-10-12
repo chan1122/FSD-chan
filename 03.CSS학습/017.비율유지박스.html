@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>017.비율유지박스(Ratio Box)</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            /* 보이는 화면 기준 */
+        }
+
+        /* 비율 유지밗스 */
+        .rbx {
+            position: relative;
+            width: 60%;
+            margin: 0 auto;
+            /* 결론: 높이값으로는 비율유지 안됨! */
+
+            /* height 값 없이 강제로 높이값을 어떻게 만들까? -> 패딩으로 만들자!
+            padding-top만 사용해서 높이를 만든다! 
+            자기자신에게 준 패딩값에 %를 쓰면 비율유지 박스가 되지만 정확한 비율을 계산하기가 어렵다!
+            -> 이 패딩값을 자식 블록요소에게 줘본다!
+            */
+            /* padding-top: 50%; */
+
+            background: url(./images/mobum.jpg) no-repeat center/cover;
+        }
+
+        .rbx::before {
+            content: '';
+            display: block;
+            /* div와 같은 블록화 시킨후에
+            비율을 만드는 패딩탑을 이용하여 비율 조정
+            */
+            padding-top: 100%;
+            /* 배경이미지의 비율로 계산해보기
+                가로 : 세로 = 1170 : 614 = 100% : X%
+                x% = 614 * 100 /1170
+            */
+
+        }
+
+
+        /* 가상요소 패딩떄문에 내용이 밀리므로 내부에 컨텐츠 박스를 앱솔루트로 만든다! */
+        .rbxIn{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+
+        /* 내용셋팅 */
+        .cat {
+            /* 포지션 */
+            position: absolute;
+            /* 위치값 */
+            bottom: 2%;
+            left: 5%;
+            /* 부모는? .rbxIn */
+            margin: 0;
+            padding: 0;
+
+            /* 글자 디자인 */
+            color: #fff;
+            font-size: 1.5vw;
+            font-weight: bold;
+            line-height: 2;
+            text-shadow: 2px 2px 2px #000;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 비율 유지 박스 -->
+    <div class="rbx">
+        <!-- <div style="padding-top: 100%;"></div> -->
+        <!-- 직계자식 블록요소에게 패딩값을 %단위로 주면 정확한 비가 성립한다! 100%는 1:1비율임!
+        
+        [ 비율 계산법 ]
+        16 : 9 = 100 : X 
+        16x = 9*100
+        x = 900/16 =56.25%
+
+        ->>> 직접 태그를 쓰면 위험 요소가 되므로 (변경등) 가상요소 brfore를 사용하면 해결!
+
+        -->
+
+        <!-- 비율 유지 속박스 -->
+        <div class="rbxIn">
+            <!-- 컨텐츠 넣기 -->
+            <dl class="cat">
+                <dt>출연진</dt>
+                <dd>이제훈(김도기역)</dd>
+                <dd>이솜(강하나역)</dd>
+                <dd>김의성(장성철역)</dd>
+            </dl>
+
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>

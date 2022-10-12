@@ -81,32 +81,65 @@
             /* [ 세로 그리드 템플릿] */
             /*  1 . 구체적인 수치 높이값 쓴만큼 셋팅 
             -나머지는 자동높이!(자동생성값!) */
-            grid-template-rows: 100px 200px 300px;
+            /* grid-template-rows: 100px 200px 300px; */
+
+
+            /*  2. 높이값 전체에서의 비를 쓴만큼 셋팅 */
+            /* grid-template-rows: 1fr 3fr 5fr 2fr ; */
+
+            /*  3 . repeat(수치의 반복수, 반복수) */
+            /* grid-template-rows: repeat(4, 300px); */
             
-        
+            /*  4. 모든 높이값을 동일하게 셋팅 -> grid-auto-rows */
+            grid-auto-rows: 300px;
+
 
             /* [수평방향 간격] */
             grid-column-gap: 1vw;
 
             /* 수직방향 간격 */
             grid-row-gap: 1.5vw;
-            
- 
-    
-
-
             /* 최대크기 */
             max-width: 1200px;
             margin: 0 auto;
             outline: 2px dotted red;
         }
+        /* 갤러리 div박스에 가상요소 before를 이용한 비율 만들기 렛츠 기릿 */
+        .grid>div::before{
+            content: '';
+            display: block;
+            padding-top: 142%;
+        }
+        /* 갤러리 각박스 공통 */
+        .grid>div{
+            position: relative;
+        }
+
         /* 갤러리 이미지 셋팅 */
         .grid img{
+            position: absolute;
+            top: 0;
             width: 100%;
-            height: 100%;
-            object-fit: cover;
             /* 비율에 맞춰서 이미지를 박스에 채움! 박스 바깥으로 나간 이미지 부분은 자동숨김 */
+        }
 
+        /* 상품 설명 박스 */
+        .grid aside{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.308);
+            text-align: center;
+        }
+        .grid aside h2{
+            font-size: min(2vw,24px);
+            font-weight: normal;
+            margin: min(1.2vw,14px);
+        }
+        .grid aside h3{
+            font-size: min(1.5vw, 18px);
+            margin: min(1vw,10px);
         }
     </style>
 </head>
