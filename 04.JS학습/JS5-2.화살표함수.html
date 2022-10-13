@@ -62,39 +62,53 @@
         ****************************************************/
 
         // 일반적인 할당형 함수 /////
-        
+        let x = function (a, b) {
+            return a * b
+        };
 
         // 함수호출하기
-        
+        console.log("x(100,20) 함수호출:", x(100, 20));
 
         // 축약형
-          
+        let y = (a, b) => {
+            return a * b
+        };
 
         // 함수호출하기
-        
 
+        console.log("축양형:", y(10, 50));
 
         // 좀더 축약!
-        
+        let z = (a, b) => a * b;
 
         // 함수호출하기
-        
+        console.log("z축약형", z(30, 50))
+
+        // 자체 적으로 하나더 해보기 
+        let aa = (a, b, c, d) => a * b + c / d;
+
+        // 호출해보기
+        console.log("자체적으로 한번 해보는거임:", aa(20, 30, 50, 2))
 
 
         // 일반적인 함수할당
-        
+        let my = function (x) {
+
+            return `나는${x}다`;
+        };
         // 함수호출하기
-        
+        console.log(my(" 풀스택개발자가 되고싶다"));
 
         // 축약형 
         // - 전달변수가 하나일때 소괄호() 생략가능!
         // - 실행문이 하나일때도 중괄호{} 생략가능!
-        
+
 
         ////////// we 함수 ///////////
-
+        let we = x => `나는 ${x} 라고생각한다`;
         // 함수호출하기
-        
+        console.log(we("zz"));
+
 
 
         /// 로딩구역 ////////////////////////
@@ -102,15 +116,30 @@
 
             // 버튼요소
             let btn = document.querySelectorAll(".btn");
+            console.log(btn);
 
             // 버튼요소 클릭시 글자 바꾸기 //////
 
             // 기존방식 /////
-            
+            btn[0].onclick = function () {
+
+                // console.log("버튼!:", this)
+                this.innerText = "올드 익명함수다! "
+            };
 
 
             // 새로운 방식 ////
-           
+            btn[1].onclick = () => {
+                // console.log(this)
+
+                //클릭된 요소자신 -> this키워드!
+                // 화살표 함수에서는 this는 window객체이다!
+                // 요소 자신은 이벤트속성을 사용하여 구함!
+                // event.curretTarget
+                event.currentTarget.innerText = "새로운 방식이다!";
+                // 버튼 글자형
+                // this.innerText = 
+            };
 
 
 
