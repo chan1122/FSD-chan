@@ -270,7 +270,7 @@
                     };
                     // console.log("멈췅~!", autoi);
                     x.style.display = "none";
-                    abtn[isB?1:0].style.display = "inline-block";
+                    abtn[isB ? 1 : 0].style.display = "inline-block";
 
                     // isb?0:1 의 해석
                     // 삼항연산자 -> 비?집:놀이동산
@@ -288,6 +288,27 @@
             // 원리: 미리셋팅된 클래스를 미니언즈요소에
             // 일정시간 후 넣고/빼고/넣기를 해준다!
             // 변경대상: #mini
+
+
+
+
+            const mini = document.querySelector("#mini");
+            // 2초후에 미니언즈 클래스넣기
+            setTimeout(() => {
+                mini.classList.add(`on1`,"바부야","힝구멍구");       
+            }, 2000);
+            setTimeout(() => {
+                mini.classList.remove(`on1`,"바부야","힝구멍구");       
+            }, 4000);
+            setTimeout(() => {
+                    mini.classList.toggle("on2");
+            }, 6000);
+            setTimeout(() => {
+                mini.classList.replace("on2","on1");
+            }, 8000);
+
+
+            
 
 
         }); /////////// 로드구역 ///////////////////
