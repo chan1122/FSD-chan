@@ -121,7 +121,7 @@ body {
 @keyframes iphoneani {
     to {
         transform:
-            rotateX(370deg) rotateY(-330deg);
+            rotateX(10deg) rotateY(-360deg);
 
         /* transform:
         rotateX(370deg) rotateY(-330deg) rotateZ(360deg); */
@@ -208,4 +208,25 @@ body {
     to {
         left: 0;
     }
+}
+
+
+/* 이벤트 처리박스 */
+.evt{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100vh;
+    /* 애니후 width: 100vw변경! (JS에서) */
+    /* 플렉스 박스 */
+    display: flex;
+    
+}
+/* 등분할 박스 */
+.evt div{
+    flex: 1;
+    outline: 1px dotted blue;
+
+    background-color: rgba(255, 0, 0, 0.448);
 }
