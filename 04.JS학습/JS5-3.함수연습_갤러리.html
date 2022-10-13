@@ -182,14 +182,18 @@
 
                     nm++;
                     if (nm === 8) nm = 1;
-                }
-                else{
+                } else {
                     nm--;
                     if (nm === 0) nm = 7;
                 }
                 // 3 . 변경 대상: #mbox img ->mimg 변수
                 // 4. 변경내용: 이미지의 src속성값 변경
                 mg.src = `./images/img${nm}.jpg`;
+
+
+                // 5. 추가변경내용 : 글자내용 + 글자색
+                it.innerText = itxt[nm - 1];
+                it.style.color = tcolor[nm - 1];
 
                 // 1. 호출밑 전달값 확인! 
                 console.log("너는?:", dir);
@@ -239,10 +243,48 @@
 
             // 자동넘김 버튼 클릭시 인터발함수 셋팅하기!! ///
             // 이벤트 대상: .abtn button
-
-
-
+            const abtn = document.querySelectorAll(".abtn button");
             // 타임아웃 함수로 미니언즈 애니하기!!! ////
+
+            // 인터벌용 변수
+            let autoi;
+
+            for (let x of abtn) {
+                x.onclick = () => {
+                    // 클릭된요소의 클래스이름 여부
+                    let isB = x.classList.contains("start");
+                    // classList.contains(클래스명)
+                    // 클래스명이 맞으면 true /fale
+
+                    console.log("z:", isB);
+
+
+                    // 추가문
+                    if (isB) {
+                        // 인터발 주기 2초 간격 goslide(1)로호출
+                        autoi = setInterval(() =>
+                            goSlide(1), 1000); // 심심해서 이래해봄ㅋ  
+                        //자기자신 버튼 없애기
+                    } else {
+                        clearInterval(autoi);
+                    };
+                    // console.log("멈췅~!", autoi);
+                    x.style.display = "none";
+                    abtn[isB?1:0].style.display = "inline-block";
+
+                    // isb?0:1 의 해석
+                    // 삼항연산자 -> 비?집:놀이동산
+                    // isB가 true이면 즉, 자동넘김이면 
+                    // 1 즉 2번쨰 버튼 출력
+                    // 아니면 0 즉 첫번째 버튼 출력
+                };
+            };
+
+            // forEach문
+            // forEach((ele,idx)=>{
+            //     abtn.onclick = () => {};
+            // });
+
             // 원리: 미리셋팅된 클래스를 미니언즈요소에
             // 일정시간 후 넣고/빼고/넣기를 해준다!
             // 변경대상: #mini
