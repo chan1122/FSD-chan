@@ -5,20 +5,34 @@
 
 /* 1300 px */
 @media screen and (max-width:1300px) {
+    .mvtxt{
+        font-size: 2vw;
+    }
     /* gnb위치변경 */
-    .gnb{
+    .gnb {
         right: 73px;
     }
+    .mlist {
+        bottom: 2%;
+        width: 70%;
+    }       
 }
+
 /* 1000 px */
 @media screen and (max-width:1000px) {
-    .gnb{
+
+    .mvtxt{
+        font-size: 2vw;
+    }
+    .gnb {
         bottom: auto;
     }
-    .gnb ul{
+
+    .gnb ul {
         position: absolute;
-        top: 10px;
-        right: 0;
+        top: 12px;
+        padding-top: 12px;
+        right: -36px;
         width: 200px;
         display: flex;
         font-family: 'jua', sans-serif;
@@ -27,10 +41,160 @@
         /* 처음에 안보임 */
         display: none;
     }
-    .gnb:hover ul{
+
+    .gnb:hover ul {
         display: flex;
+
     }
-    .gnb ul>li:hover .smenu{
+
+    .gnb ul>li:hover .smenu {
         display: none;
+    }
+    .mlist {
+        bottom: 2%;
+        width: 80%;
+    }   
+}
+
+/* 700 px */
+@media screen and (max-width:700px) {
+
+    .mvtxt{
+        font-size: 3vw;
+    }
+    /* 하단영역 */
+    .info {
+
+        flex-direction: column;
+        /* 세로진행 방향 */
+        padding: 0 15px 20px;
+    }
+
+    .info>div {
+        padding-top: 10px;
+    }
+
+    .info address {
+        text-align: center;
+    }
+
+    /* sns박스 */
+    .info>div:last-child {
+        margin-right: 0;
+        /* 오른쪽 akwlsdjqtdoa 설정해제 */
+    }
+
+    .info>div:last-child {
+        margin-left: 0;
+        /* 오른쪽끝 설정해제 */
+    }
+
+    .mlist {
+        bottom: 2%;
+        width: 90%;
+    }
+
+    .mlist ul {
+        flex-wrap: wrap;
+
+    }
+
+    .mlist ul>li {
+        flex: 0;
+        flex-basis: 14.43%;
+    }
+
+}
+
+
+
+/* 500 px */
+@media screen and (max-width:500px) {
+
+    /* 메인 컨텐트 박스 */
+    .cont {
+        background-position: top;
+        background-size: 140%;
+
+    }
+
+    .cont::before {
+        padding-top: 140%;
+    }
+
+    #screen {
+        top: 11.3%;
+        left: 10.1%;
+        width: 81.6%;
+        height: 33.2%;
+    }
+
+    .mlist ul>li {
+        flex: 0;
+        flex-basis: 27.43%;
+
+    }
+
+    .tit {
+        font-size: 3rem;
+    }
+
+    .cam {
+        display: none;
+    }
+
+    #cam img {
+        display: none;
+    }
+
+
+
+
+
+
+    /* 하단로고 */
+    .lowimg>img {
+        position: absolute;
+        left: 0;
+    }
+
+    .lastbox {
+        width: 100%;
+        position: absolute;
+        left: 0;
+    }
+
+    .sns {
+        position: absolute;
+        right: 0;
+        padding: 10px;
+
+    }
+
+    address {
+        position: absolute;
+        width: 100%;
+    }
+    .mvtxt{
+        font-size: 4vw;
+    }
+    .info address>span {
+        display: none;
+    }
+}
+
+/* 420 px */
+@media screen and (max-width:420px) {
+    address{
+        position: absolute;
+        width: 42%; 
+        margin: 0 auto;
+        /* display: block; */
+        left: 105px;
+
+
+    }
+    .mvtxt{
+        font-size: 5vw;
     }
 }

@@ -202,7 +202,6 @@ body {
     right: 8px;
     width: 0;
     height: 55px;
-    outline: 2px dotted pink;
     background: url(../images/bim.png) no-repeat;
     background-position: right center;
     background-size: auto 100%;
@@ -275,7 +274,7 @@ body {
     /* 부모자격이 이쓴ㄴ 요소가 앱솔루트를 숨길수 있다 */
     overflow: hidden;
     transform-origin: bottom;
-    transform: rotateX(75deg);
+    transform: rotateX(50deg);
 
     /* 트랜지션주기 */
     transition: all .4s ease-out;
