@@ -6,6 +6,7 @@
 @import url(core.css);
 @import url(ani.css);
 
+
 /* 공사중 표시 */
 body * {
     /* outline: 1px dotted red; */
@@ -52,9 +53,11 @@ body {
 
     position: absolute;
     bottom: 10px;
-    right: 20px;
-    /* 부모는 .top이 부모 */
+    right: 44px;
 }
+
+/* 부모는 .top이 부모 */
+
 
 /* 네비 ul */
 .gnb ul {
@@ -70,6 +73,7 @@ body {
     padding: 0 10px;
     padding-bottom: 5px;
     /* 하단패딩  -> 서브멤뉴와 붙어 있게 하기 위햐서 */
+    z-index: 1;
 }
 
 /*  s메뉴  */
@@ -164,24 +168,74 @@ body {
     border-top: 1px solid #fff;
 }
 
+/* 영사기 박스 */
+#cam {
+    position: absolute;
+    right: -43px;
+    bottom: -10px;
+}
+
+/* 영사기 이미지 */
+#cam img {
+    /* z-index를 주기위해서 렐러티브 */
+    z-index: 1;
+    position: relative;
+    width: 50px;
+
+    transform: rotate(20deg);
+    transition: .4s ease-out;
+}
+
+.gnb:hover #cam img {
+    transform: rotate(0);
+}
+
+.gnb:hover #cam .beam {
+    width: 200px;
+    transition-delay: .4s;
+}
+
+/* 빔  */
+.beam {
+    position: absolute;
+    top: -9px;
+    right: 8px;
+    width: 0;
+    height: 55px;
+    outline: 2px dotted pink;
+    background: url(../images/bim.png) no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+
+    transition: .3s ease-in;
+
+}
+
 /**-******-****-****-**** 2. 메인영역 *-******-****-****-*****/
 .cont {
     /* relative 포지션 (부모자격주기) */
     position: relative;
-    height: 788px;
-    background: url(../images/bg.jpg) no-repeat center;
+    /* height: 788px; */
+    background: url(../images/bg.jpg) no-repeat center/100% 100%;
+}
+
+.cont::before {
+    content: '';
+    display: block;
+
+    padding-top: 65.66%;
+    /* 배경이미지와 
+    
+    */
 }
 
 /*  2-1 . 스크린 박스 */
 #screen {
-    /* 앱솔루트 포지션 */
     position: absolute;
-    top: 136px;
-    left: calc(50% - 343px);
-    /* 화면이 줄어도 스크린이 중앙에 위치하도록  left 50% 밀고 스크리 크기의 절반정도를 뻄 */
-    width: 701px;
-    height: 397px;
-    /* 부모는? .cont */
+    top: 17.3%;
+    left: 21.4%;
+    width: 58.4%;
+    height: 50.2%;
     background-color: black;
 }
 
@@ -197,8 +251,10 @@ body {
 /* 2-2 . 예고편 선택메뉴 */
 .mlist {
     position: absolute;
-    width: 100%;
-    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 54%;
+    bottom: 7%;
     /* 앱솔루트 판다롱스타킹 이므로 가로크기를 부모박스에 맞춘다! 이유는?
     flex 정렬을 맞추기 위해서 */
 }
@@ -213,6 +269,7 @@ body {
 
 /* 상위 li */
 .mlist ul>li {
+    flex: 1;
     /* 렐러티브 포지션 - 부모자격(.mvtxt) */
     position: relative;
     /* 부모자격이 이쓴ㄴ 요소가 앱솔루트를 숨길수 있다 */
@@ -314,8 +371,11 @@ body {
 
 /* 포스터 이미지  */
 .mlist img {
-    width: 99px;
-    height: 140px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 이미지 를 박스에 맞춤! */
+
 }
 
 /* 상위 li 중 2번쨰 부터 끝까지 적용 */
@@ -341,7 +401,7 @@ body {
     position: absolute;
     font-family: 'Cute Font', cursive;
     color: #fff;
-    font-size: 1.4rem;
+    font-size: min(1.3vw, 14px);
     text-align: center;
     line-height: 2;
     /* 트랜지션 : 속시이지 */
@@ -357,7 +417,8 @@ body {
 .mvtxt li:first-child {
 
     color: rosybrown;
-    font-size: 1.7rem;
+
+    font-size: min(1.5vw, 17px);
     font-weight: bold;
     letter-spacing: -1px;
 }
@@ -431,3 +492,5 @@ body {
     [속성명$=값] -> 값이 끝나는 문자가 있으면 적용
         ($일이 끝나면 돈받고 끝나라!)
     */
+
+
