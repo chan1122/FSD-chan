@@ -224,9 +224,9 @@
                 let imbx = document.querySelector(".imbx");
 
                 //직전 랜덤수 담을변수
-                let bnum = 99999999;
+                let bnum = 999999;
                 //초기값은 0~3 사이수가 아닌 아무수
-
+                let rn = Math.floor(Math.random()*4);
 
                 /* 
                 
@@ -240,8 +240,6 @@
                     // 먼저 1~4의 난수를 생각함! 최대수 4
                     // Math.floor()  내림적용으로 0~3의 난수 발생!
 
-                    let 
-
                     // console.log("랜덤수:",rn);
 
                     // 2 . 랜덤수가 바로 직전수와 같으면 다시 발생하기 
@@ -249,11 +247,12 @@
                     // while(조건)(코드)
                     // 조건 : 현제 발생한 랜덤수가 직전 랜덤수와 같은가?
                     // 만약 true이면 다시발생!
-                    while(rn === bnum){rn = Math.floor(Math.random()*4);
-                        console.log("다시난수?",rn)
+                    while (rn === bnum) {
+                        rn = Math.floor(Math.random() * 4);
+                        console.log("다시난수?", rn)
                     }
                     // while문 통과 후 rnum을 bnum에 반드시 할당!
-                    bnum = rnum;
+                    bnum = rn;
 
 
                     // 3. 랜덤 이미지 넣기
@@ -265,7 +264,7 @@
 
 
 
-                };// insimg 함수 //
+                }; // insimg 함수 //
                 // 임시 호출
                 window.onclick = () => insImg();
 
