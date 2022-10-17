@@ -265,8 +265,12 @@
 
 
                 }; // insimg 함수 //
+
+                    //랜던 이미지 넣기 함수 최초호출!
+                    insImg();
+
                 // 임시 호출
-                window.onclick = () => insImg();
+                setInterval(insImg,2000);
 
 
             }); /////////// 로드구역 ///////////////////
