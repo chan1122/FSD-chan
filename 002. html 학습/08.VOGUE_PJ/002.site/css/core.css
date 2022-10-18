@@ -47,5 +47,14 @@ font-family: 'Roboto Condensed', sans-serif;
 }
 /* 2 - 2 비율 유지박스 */
 .rbx{
-  
+
+}
+/* 2 - 5 파티션 박스 유형별 박스 */
+/* 1개 컨텐츠박스형 */
+.pt1{
+  height: 724px;
+}
+/* 3개 컨텐츠박스형 */
+.pt2{
+  height: 650px;
 }
