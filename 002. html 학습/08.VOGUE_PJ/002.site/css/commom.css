@@ -1,12 +1,11 @@
 @charset "utf-8";
 
 /* 보그PJ common.css */
-.top{
+.top {
     min-height: 206px;
 }
 
-
 /* 하단영역 */
-.info{
+.info {
     min-height: 286px;
 }

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>집가고싶다</title>
+
+        <style>
+            html,
+            body,
+            h1,
+            h2,
+            ul {
+                margin: 0;
+                padding: 0;
+            }
+            html {
+                width: 100vw;
+                height: 100vh;
+                background-image: linear-gradient(
+                    90deg,
+                    red,
+                    orange,
+                    yellow,
+                    green,
+                    skyblue,
+                    blue,
+                    purple
+                );
+            }
+
+            h1 {
+                font-size: 10vw;
+            }
+            .top {
+                position: absolute;
+                top: 30%;
+                right: 10px;
+                width: 30vw;
+                height: 30vw;
+                /* background-color: #fff; */
+                background: url(./images/bono.jpg) no-repeat center/cover;
+
+                border-radius: 50% 10px 10px 50%;
+            }
+            .mal {
+                position: absolute;
+                width: 1000px;
+                height: 355px;
+                background-color: #fff;
+                border-radius: 90% 90% 10px 90%;
+                top: 4%;
+                left: 1%;
+                z-index: -1;
+            }
+            .mal>h1{
+                display: block;
+                position: absolute;
+                top: 30%;
+                left: 10%;
+                /* font-size: 100px; */
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="top"></div>
+        <div class="mal">
+            <h1>집가고싶다...</h1>
+        </div>
+        <main></main>
+    </body>
+</html>
