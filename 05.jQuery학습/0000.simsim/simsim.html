@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SIMSIM Hae Yo</title>
+        <!-- 제이쿼리 라이브러리 호출 -->
+        <script src="../000.최신버전/jquery-3.6.1.min.js"></script>
+        <script src="../000.최신버전/jquery-ui.min.js"></script>
+        <!-- 스크립트 구역 -->
+        <script>
+            // 로드 구역
+            $(() => {
+                $(".h1").click(() => {
+                    $("h1").text("안녕하세욥!").css({
+                        color: "red",
+                    }).animate({
+                        right:"28%",
+                        color:"orange"
+                    },1000);
+                    // return 0;
+                    // imgg구역
+                    
+
+                    $(".immg").css({
+                        background:"url(./img/simsim2.jpg) no-repeat center/cover",
+                        
+                    });
+                    $(".imgg").animate({
+                        width:"360",
+                        height:"360px",
+                        left:"50%",
+                        transform: "scale(1.2)"
+                        
+
+                    },800,()=>{setTimeout(aaa,1000);
+                    });
+
+
+                    
+                    
+                    function aaa(){
+                        $("h1").text("저는 찬우에요!").css({
+                            color:"blue"
+                        }).delay(200).animate({
+                            left:"10%",
+                            paddingTop: "2%"
+                        })
+
+
+
+                        $(".immg").css({
+                        background:"url(./img/simsim1.jpg) no-repeat center/cover",
+                    });
+                    $("imgg").animate({
+                        width:"380",
+                        height:"380",
+                        left:"50%"
+                    },800
+
+                    )
+                    };
+                    
+                   
+                }); // h1 구역
+
+
+            }); // 로드 구역
+        </script>
+        <style>
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                background-image: linear-gradient(
+                    90deg,
+                    red,
+                    orange,
+                    yellow,
+                    green,
+                    skyblue,
+                    blue,
+                    purple,
+                    brown,
+                    pink
+                );
+                /* overflow: hidden; */
+
+            }
+            h1 {
+                text-align: center;
+                margin: 0 auto;
+                padding-top: 17%;
+                font-size: 8vw;
+                display: block;
+                position: relative;
+
+            }
+            .h1{
+                /* position: relative; */
+            }
+            .imgg{
+                position: absolute;
+                width: 200px;
+                height: 200px;
+                outline: 10px solid red;
+                top: 30%;
+                left: 77%;
+
+
+            }
+
+            .immg{
+                position: absolute;
+                right: 0;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                background: url(./img/jjeonda.jpg) no-repeat top/cover;
+
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="h1">
+                <h1>클릭!!</h1>
+            </div>
+        </header>
+        <div class="imgg">
+            <div class="immg">
+
+            </div>
+        </div>
+
+        </div>
+    </body>
+</html>
