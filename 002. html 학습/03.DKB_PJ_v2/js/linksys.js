@@ -1,142 +1,76 @@
-// 도캐빙 PJ v2 링크 시스템 js - linksys.js
+// 도깨비 PJ v.2 링크시스템 JS - linksys.js
 
-// 로드구역
-window.addEventListener("DOMContentLoaded", () => {
+////////////// 로드구역 ///////////////////
+window.addEventListener("DOMContentLoaded",()=>{
 
-    // 호출확인!    
     console.log("로딩완료!");
 
-
-
-    /// 링크 대상 . top
+    /// 링크 대상: .top a -> .gnb a + .tmenu a + logo a
     const link = document.querySelectorAll(".top a");
-    // 호출확인!
     // console.log(link);
 
-    // 링크 이벤트 걸기 및 셋팅하기
-    // click 이벤트걸기
-    link.forEach(ele => {
+    /// 링크 이벤트 셋팅하기 /////
+    // click 이벤트
+    link.forEach(ele=>{ // ele - 각a요소
 
-        //ele는 각 a 요소이다 
-        ele.onclick = () => {
+        ele.onclick = ()=>{
+            // 1. a요소 글자데이터
             let atxt = ele.innerText;
-            // console.log("a텍스트:",atxt)
-
+            console.log(atxt);
 
             // 주소할당변수
             let url;
-            // 2. 링크 분깋기
-            switch (atxt) {
-                case "프로그램 소개":
-                    url = "etc";
-                    break;
-                case "인물소개":
-                    url = "etc";
-                    break;
-                case "인물관계도":
-                    url = "cat";
-                    break;
-                case "미리보기":
-                    url = "etc";
-                    break;
-                case "동영상":
-                    url = "etc";
-                    break;
-                case "클립영상":
-                    url = "etc";
-                    break;
-                case "다시보기":
-                    url = "etc";
-                    break;
-                case "예고편":
-                    url = "etc";
-                    break;
-                case "스페셜":
-                    url = "etc";
-                    break;
-                case "사진첩":
-                    url = "etc";
-                    break;
-                case "현장 포토":
-                    url = "etc";
-                    break;
-                case "대표 포스터":
-                    url = "etc";
-                    break;
-                case "OST":
-                    url = "";
-                    break;
-                case "[심리 테스트]":
-                    url = "etc";
-                    break;
-                case "시청자 게시판":
-                    url = "board";
-                    break;
-                case "로그인":
-                    url = "login";
-                    break;
-                case "회원가입":
-                    url = "member";
-                    break;
-                case "트위터 바로가기":
-                    url = "twitter";
-                    break;
-                case "인스타 바로가기":
-                    url = "instargram";
-                    break;
-                case "페이스북 바로가기":
-                    url = "facebook";
-                    break;
-                default:
-                    url = "index";
 
+            // 2. 링크 분기하기
+            switch(atxt){
+                case "프로그램 소개": url = "etc"; break;
+                case "인물소개": url = "etc"; break;
+                case "인물관계도": url = "cat"; break;
+                case "미리보기": url = "etc"; break;
+                case "동영상": url = "etc"; break;
+                case "클립영상": url = "etc"; break;
+                case "다시보기": url = "etc"; break;
+                case "예고편": url = "etc"; break;
+                case "스페셜": url = "etc"; break;
+                case "사진첩": url = "etc"; break;
+                case "현장 포토": url = "etc"; break;
+                case "대표 포스터": url = "etc"; break;
+                case "OST": url = "etc"; break;
+                case "시청자 게시판": url = "board"; break;
+                case "로그인": url = "login"; break;
+                case "회원가입": url = "member"; break;
+                case "트위터 바로가기": url = "twit"; break;
+                case "인스타그램 바로가기": url = "insta"; break;
+                case "페이스북 바로가기": url = "fab"; break;
+                default : url = "index";
+            } //////// switch case ///////
 
-            }
+            console.log("url:",url);
 
-            // console.log("url:", url);
-
-            if (url === "etc") {
-                alert("현제 페이지는 공사중(제작중)입니다... ㅜㅠ");
-            } else {
-                if (url === "twitter" || url === "instargram" || url === "facebook") {
+            // 3. 해당 url로 페이지 이동
+            if(url==="etc"){
+                alert("현재 페이지는 공사중입니다~!");
+            } //////// if /////////
+            else{
+                // sns거르기 /////////
+                if(url==="twit"||url==="insta"||url==="fab"){
+                    // 새창열고 페이지이동
                     window.open().location.href = 
-                    url === "instargram"?
-                    "https://www.instagram.com/tvn_joy/":
-                    url === "twitter"?
+                    url==="twit"? // 트위터냐?
                     "https://twitter.com/chtvn":
+                    url==="insta"? // 인스타냐?
+                    "https://www.instagram.com/tvn_joy/":
                     "https://www.facebook.com/cjtvngo";
-                } else {
+                    // 삼항연산자(비?집:놀이동산 -> 2번씀!)
+                } /////////// if /////////
+                else{ // 해당이름 페이지로 이동!
                     location.href = url + ".html";
-                }
-            }
+                } ///////// else ///////////
 
-        }; // 클릭 이벤트
+            }/ //////// else //////////
 
-    }); ///forEach////
+        }; //////// click //////////
 
-}); //로드 구역
+    }); //////////// forEach /////////
 
-
-
-
-// 프로그램 소개
-// 인물소개
-// 인물관계도
-// 미리보기
-// 동영상
-// 클립영상
-// 다시보기
-// 예고편
-// 스페셜
-// 사진첩
-// 현장 포토
-// 대표 포스터
-// OST
-// [심리 테스트]
-// 시청자 게시판
-
-// 로그인
-// 회원가입
-// 트위터 바로가기
-// 인스타 바로가기
-// 페이스북 바로가기
+});/////////// 로드구역 ///////////////////////
