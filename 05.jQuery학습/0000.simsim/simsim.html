@@ -1,141 +1,348 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>SIMSIM Hae Yo</title>
-        <!-- 제이쿼리 라이브러리 호출 -->
-        <script src="../000.최신버전/jquery-3.6.1.min.js"></script>
-        <script src="../000.최신버전/jquery-ui.min.js"></script>
-        <!-- 스크립트 구역 -->
-        <script>
-            // 로드 구역
-            $(() => {
-                $(".h1").click(() => {
-                    $("h1").text("안녕하세욥!").css({
-                        color: "red",
-                    }).animate({
-                        right:"28%",
-                        color:"orange"
-                    },1000);
-                    // return 0;
-                    // imgg구역
-                    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIMSIM Hae Yo</title>
+    <!-- 제이쿼리 라이브러리 호출 -->
+    <script src="../000.최신버전/jquery-3.6.1.min.js"></script>
+    <script src="../000.최신버전/jquery-ui.min.js"></script>
+    <!-- 스크립트 구역 -->
+    <script>
+      // 로드 구역
+      $(() => {
+        $(".h1").click(() => {
+          $("h1")
+            .text("안녕하세욥!")
+            .css({
+              color: "red",
+            })
+            .animate(
+              {
+                right: "28%",
+                color: "orange",
+              },
+              1000
+            );
+          // return 0;
+          // imgg구역
 
-                    $(".immg").css({
-                        background:"url(./img/simsim2.jpg) no-repeat center/cover",
-                        
-                    });
-                    $(".imgg").animate({
-                        width:"360",
-                        height:"360px",
-                        left:"50%",
-                        transform: "scale(1.2)"
-                        
-
-                    },800,()=>{setTimeout(aaa,1000);
-                    });
-
-
-                    
-                    
-                    function aaa(){
-                        $("h1").text("저는 찬우에요!").css({
-                            color:"blue"
-                        }).delay(200).animate({
-                            left:"10%",
-                            paddingTop: "2%"
-                        })
-
-
-
-                        $(".immg").css({
-                        background:"url(./img/simsim1.jpg) no-repeat center/cover",
-                    });
-                    $("imgg").animate({
-                        width:"380",
-                        height:"380",
-                        left:"50%"
-                    },800
-
-                    )
-                    };
-                    
-                   
-                }); // h1 구역
-
-
-            }); // 로드 구역
-        </script>
-        <style>
-            html,
-            body {
-                margin: 0;
-                padding: 0;
+          $(".immg").css({
+            background: "url(./img/simsim2.jpg) no-repeat center/cover",
+          });
+          $(".imgg").animate(
+            {
+              width: "360",
+              height: "360px",
+              left: "50%",
+              transform: "scale(1.2)",
+            },
+            800,
+            () => {
+              setTimeout(aaa, 1000);
             }
-            body {
-                background-image: linear-gradient(
-                    90deg,
-                    red,
-                    orange,
-                    yellow,
-                    green,
-                    skyblue,
-                    blue,
-                    purple,
-                    brown,
-                    pink
+          );
+
+          // _______________________________________________________________ //
+
+          function aaa() {
+            $("h1")
+              .text("저는 찬우에요!")
+              .css({
+                color:
+                  "linear-gradient(90deg,red,orange,yellow,green,skyblue,blue,purple,brown,pink",
+              })
+              .delay(200)
+              .animate({
+                left: "2%",
+                paddingTop: "2%",
+              });
+
+            $(".immg")
+              .css({
+                background: "url(./img/simsim1.jpg) no-repeat center/cover",
+              })
+              .delay(1000);
+            $(".imgg").animate(
+              {
+                width: "380px",
+                height: "380px",
+                left: "38%",
+              },
+              800,
+              () => {
+                setTimeout(bbb, 1000);
+              }
+            ); // 2번째 애니
+
+            // _______________________________________________________________ //
+
+            //세번쨰 애니
+            function bbb() {
+              $("h1").text("제가 보고싶으신가용?").css({
+                color: "black",
+                fontSize: "60px",
+              });
+              $(".immg")
+                .css({
+                  background: "url(./img/bogosupa.jpg) no-repeat center/cover",
+                })
+                .delay(1000);
+              $(".imgg").animate(
+                {
+                  width: "671px",
+                  height: "390px",
+                  left: "25%",
+                },
+                800,
+                () => {
+                  setTimeout(ccc, 1000);
+                }
+              );
+
+              // _______________________________________________________________ //
+              function ccc() {
+                $("h1").text("조금만 기다려주세욥!").css({
+                  color: "white",
+                  fontSize: "50px",
+                });
+                $(".immg")
+                  .css({
+                    background:
+                      "url(./img/jogumman.jpg) no-repeat center/cover",
+                  })
+                  .delay(1000);
+                $(".imgg").animate(
+                  {
+                    width: "339px",
+                    height: "481px",
+                    left: "40%",
+                    //   left: 40%;
+                    //   width: 339px;
+                    //   height: 481px;
+                  },
+                  800,
+                  () => {
+                    setTimeout(ddd, 1000);
+                  }
                 );
-                /* overflow: hidden; */
+                // _______________________________________________________________ //
+                function ddd() {
+                  $("h1").text("금방 가겠습니다?...?").css({
+                    color: "coral",
+                    fontSize: "55px",
+                  });
+                  $(".immg")
+                    .css({
+                      background:
+                        "url(./img/gumbang.jpg) no-repeat center/cover",
+                    })
+                    .delay(1000);
+                  $(".imgg").animate(
+                    {
+                      width: "746px",
+                      height: "426px",
+                      left: "21%",
+                      // left: 21%;
+                      // width: 746px;
+                      // height: 426px;
+                    },
+                    800,
+                    () => {
+                      setTimeout(eee, 1000);
+                    }
+                  );
+                } // 5번째 애니
+                // _______________________________________________________________ //
+                function eee() {
+                  $("h1")
+                    .text("아맞다! 참고로 데일리 미션 늦게나마 제출하겟습니다!")
+                    .css({
+                      color: "lime",
+                      fontSize: "40px",
+                    });
+                  $(".immg")
+                    .css({
+                      background: "url(./img/daily.png) no-repeat center/cover",
+                    })
+                    .delay(1000);
+                  $(".imgg").animate(
+                    {
+                      width: "746px",
+                      height: "426px",
+                      left: "21%",
+                      // left: 21%;
+                      // width: 746px;
+                      // height: 426px;
+                    },
+                    800,
+                    () => {
+                      setTimeout(fff, 1000);
+                    }
+                  );
+                } // 6번째 애니
+                // _______________________________________________________________ //
+                function fff() {
+                  $("h1").text("이미지 클릭(링크 안타지시면 더블클릭도 괜찮아욥!)").css({
+                    color: "gray",
+                    fontSize: "50px",
+                  });
+                  $("body").css({
+                    background:"url(./img/dkb.jpg) no-repeat center/cover",
+                    height:"721px"
+                  })
+                  $(".immg")
+                    .css({
+                      background:
+                        "url(./img/ddkkbb.jpg) no-repeat center/cover",
+                    })
+                    .delay(1000);
+                  $(".imgg").animate(
+                    {
+                      width: "240px",
+                      height: "431px",
+                      left: "43%",
+                      // left: 43%;
+                      // width: 240px;
+                      // height: 431px;
+                    },
+                    800,
+                    () => {
+                      setTimeout(ggg, 1000);
+                    }
+                  );
 
-            }
-            h1 {
-                text-align: center;
-                margin: 0 auto;
-                padding-top: 17%;
-                font-size: 8vw;
-                display: block;
-                position: relative;
 
-            }
-            .h1{
-                /* position: relative; */
-            }
-            .imgg{
-                position: absolute;
-                width: 200px;
-                height: 200px;
-                outline: 10px solid red;
-                top: 30%;
-                left: 77%;
+                  function ggg(){
+                    $(".immg").click(()=>{location.href = "../../002. html 학습/03.DKB_PJ_v2/index.html"})
+                    .css({
+                      background:
+                        "url(./img/ddkkbb.jpg) no-repeat center/cover",
+                        transform:"scale(1.2)"    
+                    })
+                    .delay(1000);
+                  $(".imgg").animate(
+                    {
+                      width: "260px",
+                      height: "460px",
+                      left: "40%",
+                      // left: 43%;
+                      // width: 240px;
+                      // height: 431px;
+    
+                    },()=>{
+                        setTimeout(hhh,500)
+                    });
 
 
-            }
+                  function hhh(){
+                    $(".immg").click(()=>{location.href = "../../002. html 학습/03.DKB_PJ_v2/index.html"})
+                    .css({
+                      background:
+                        "url(./img/ddkkbb.jpg) no-repeat center/cover",
+                        transform:"scale(1.5)"
+                    })
+                    .delay(1000);
+                  $(".imgg").animate(
+                    {
+                        width: "260px",
+                      height: "460px",
+                      left: "40%",
+                    //   width: "270px",
+                    //   height: "480px",
+                    //   left: "40%",
+                      // left: 43%;
+                      // width: 240px;
+                      // height: 431px;
 
-            .immg{
-                position: absolute;
-                right: 0;
-                left: 0;
-                top: 0;
-                bottom: 0;
-                background: url(./img/jjeonda.jpg) no-repeat top/cover;
+                    },()=>{
+                        setTimeout(ggg,500)
+                    });}
 
-            }
 
-        </style>
-    </head>
-    <body>
-        <header>
-            <div class="h1">
-                <h1>클릭!!</h1>
-            </div>
-        </header>
-        <div class="imgg">
-            <div class="immg">
 
-            </div>
-        </div>
+                  }//마지막 애니
+                } // 7번째 애니
+              } // 4번째 애니
+            } //세번쨰 애니
+          } // 2번쨰 애니
+        }); // 클릭 구역 // 첫번째 애니
+      }); // 로드 구역
+    </script>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-image: linear-gradient(
+          90deg,
+          red,
+          orange,
+          yellow,
+          green,
+          skyblue,
+          blue,
+          purple,
+          brown,
+          pink
+        );
 
-        </div>
-    </body>
+        /* overflow: hidden; */
+        overflow: hidden;
+        color: linear-gradient(
+          90deg,
+          red,
+          orange,
+          yellow,
+          green,
+          skyblue,
+          blue,
+          purple,
+          brown,
+          pink
+        );
+      }
+      h1 {
+        text-align: center;
+        margin: 0 auto;
+        padding-top: 17%;
+        font-size: 8vw;
+        display: block;
+        position: relative;
+      }
+
+      .imgg {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        outline: 10px solid red;
+        top: 30%;
+        left: 77%;
+      }
+
+      .immg {
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        background: url(./img/jjeonda.jpg) no-repeat top/cover;
+
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="h1">
+        <h1>클릭!!</h1>
+      </div>
+    </header>
+    <div class="imgg">
+      <div class="immg">
+        <a href="../../002. html 학습/03.DKB_PJ_v2/index.html"></a>
+      </div>
+    </div>
+  </body>
 </html>
