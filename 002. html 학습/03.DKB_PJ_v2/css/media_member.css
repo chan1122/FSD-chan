@@ -15,11 +15,10 @@
 
     /*  3 . 입력창  */
     .scont input[type="text"],
-.scont input[type="password"] {
-    width: 100%;
-}
-    
-    
+    .scont input[type="password"] {
+        width: 100%;
+    }
+
     #email1 {
         width: 30vw;
         padding-left: 1vw;
@@ -32,5 +31,23 @@
 
     #seleml {
         width: 34vw;
+    }
+
+    /* 가입하기 버튼 */
+    #btnj {
+        width: 100%;
+        float: none;
+        margin-top: 20px;
+    }
+
+    #drama thead tr th:first-child,
+    #drama tbody tr td:first-child,
+    #drama thead tr th:last-child,
+    #drama tbody tr td:last-child {
+        display: none;
+    }
+
+    .stit {
+        font-size: min(8vw, 5rem);
     }
 } /**************** 750px이하 ****************/
