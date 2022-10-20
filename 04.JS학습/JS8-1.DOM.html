@@ -2,7 +2,7 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <title>JS8. DOM(Document Object Model)</title>
+    <title>JS8-1. DOM(Document Object Model)</title>
     <script>
       //////////// 로드구역 ///////////////////////////
       window.addEventListener("DOMContentLoaded", function () {
@@ -267,19 +267,19 @@
         // -> 기존요소를 선택하면 이동이 됨!
         /////////////////////////////////////////////////
         const mvl = document.querySelector(".mvl");
+        /// 클릭이벤트 설정하기 ////
         mvl.onclick = () => {
-          // 호출확인
-          console.log("뒤로 이동~!");
+          // 1. 호출확인
+          console.log("맨뒤로가!");
 
-          // 2. 이동 대상
+          // 2. 이동대상: 변수 ctg 아래 li중 첫번째요소
+          let fele = ctg.querySelectorAll("li")[0];
+          // fele -> first element (첫번째 요소)
 
-          let dv2 = ctg.querySelectorAll("li")[0];
-          console.log(dv2);
+          // 3. 맨뒤로 이동 : appendChild(요소)
+          ctg.appendChild(fele);
+        }; ///////////// click //////////////
 
-
-          // 3 . 맨뒤로 이동 : appendChild(요소)
-          ctg.appendChild(dv2);
-        };
         /// 맨뒤요소 맨앞으로 이동하기 ///////////////////////
         // 이벤트 종류: click
         // 이벤트 대상: .mvf
@@ -290,6 +290,24 @@
         // 넣을놈 - 마지막 li요소
         // 넣을놈전놈 - 맨처음 li요소
         //////////////////////////////////////////////////
+        const mvf = document.querySelector(".mvf");
+        //// 클릭 이벤트 설정 /////
+        mvf.onclick = () => {
+          // 1. 호출확인
+          console.log("맨앞으로!");
+
+          // 2. 이동대상: 변수 ctg 아래 li요소들
+          let eles = ctg.querySelectorAll("li");
+
+          // 3. 맨앞으로 이동
+          // -> insertBefore(넣을놈,넣을놈전놈)
+          // insertBefore(맨뒤li,맨앞li)
+          ctg.insertBefore(eles[eles.length - 1], eles[0]);
+          // 맨뒤li -> eles[마직막번호]
+          // 마지막번호 -> 개수-1
+          // eles[eles.length-1]
+          // ※ 배열과 컬렉션의 마지막순번은 항상[개수-1] 이다!
+        }; ///////////// click //////////////
 
         /************************************************* 
                     ※ appendChild() 와 insertBefore()는 대상을

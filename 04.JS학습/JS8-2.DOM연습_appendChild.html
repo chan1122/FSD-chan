@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JS8-2. DOM연습 - appendChild</title>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        // 호출 확인
+        // console.log("로딩완료");
+
+        // 대상 박스 : section
+        const box = document.querySelector("section");
+        // console.log(box);
+        // 이벤트 대상
+
+        const tg = document.querySelectorAll("img");
+        // console.log(tg);
+
+        // 글자 출력대상
+        const exp = document.querySelector("h2");
+        // console.log(exp)
+
+        // 두가지 상태변환을  위한 변수
+        let sts = 0; // 두가지 상태를 0과 1로 구분
+
+        // 클릭 이벤트 설정하기
+
+        for (let x of tg) {
+          x.onclick = () => {
+            // 화살표함수는 this대신 event.currentTarger
+            let me = event.currentTarget;
+            // 1 . 클릭 된 이미지가 맨뒤로 감!
+            box.appendChild(me);
+
+            // 2 . 클릭된 이미지의 src에서 번호에 해당하는 데이터를 잘라서 가져온후 h2에 출력한다!
+
+            let isrc = me.src;
+            // console.log(isrc);
+
+            // 가공1 : 슬래쉬(/)로 잘라서 맨끝 데이터
+            // split(자를 기준)
+            isrc = isrc.split("/");
+            // 맨끝 순번을 넣는다
+            isrc = isrc[isrc.length - 1];
+
+            
+            // 가공  2
+            
+            isrc = isrc.split(".")[0];
+            
+
+            // 가공 3  까지는 모두 동일함로
+            // 순번 5번 부터 끝까지 잘라서 가져오자!!!!
+            // substr(시작순번,갯수)
+            // -> 뒤엣것 안쓰면 끝까지 가져옴
+
+            isrc = isrc.substr(5);
+
+            // 결국 이미지번호만 추출됨!!
+            // 이것으로 h2에 출력!!
+
+            exp.innerHTML = isrc+"번 뒤로가!";
+
+            exp.classList.add(sts?"action2" : "action");
+            exp.classList.remove(sts?"action1" : "action2");
+
+
+            sts? (sts = 0) : (sts = 1);
+
+
+
+
+
+            console.log(isrc);
+          }; // click //
+        } //// for of ////
+      }); // 로드 구역
+    </script>
+
+    <style>
+      body {
+        background-color: #000;
+        overflow: hidden;
+      }
+      h1,
+      h2 {
+        color: #fff;
+        text-align: center;
+      }
+      section {
+        position: relative;
+        top: 200px;
+        width: 1000px;
+        float: right;
+      }
+      section img {
+        width: 9%;
+        height: 200px;
+        margin-left: 2px;
+      }
+      .action{
+        transition: .5s;
+        transform: scale(3) rotate(15deg);
+        color: lime;
+      }
+      .action2{
+        transition: .3s;
+        transform: scale(2) rotate(-25deg);
+        color: pink;
+      }
+      section::before {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: -350px;
+        width: 350px;
+        height: 400px;
+        background: url(https://preview.clipartkorea.co.kr/2017/02/07/ti238a7412.jpg)
+          no-repeat center/cover;
+      }
+    </style>
+    <script></script>
+  </head>
+
+  <body>
+    <h1>DOM 연습 - appendChild</h1>
+    <h2>클릭하는 것이 맨뒤로 간다!</h2>
+    <section>
+      <img src="./images/num/num_01.png" alt="숫자" />
+      <img src="./images/num/num_02.png" alt="숫자" />
+      <img src="./images/num/num_03.png" alt="숫자" />
+      <img src="./images/num/num_04.png" alt="숫자" />
+      <img src="./images/num/num_05.png" alt="숫자" />
+      <img src="./images/num/num_06.png" alt="숫자" />
+      <img src="./images/num/num_07.png" alt="숫자" />
+      <img src="./images/num/num_08.png" alt="숫자" />
+      <img src="./images/num/num_09.png" alt="숫자" />
+      <img src="./images/num/num_010.png" alt="숫자" />
+    </section>
+  </body>
+</html>
