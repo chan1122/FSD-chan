@@ -1,34 +1,46 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title> 전체 선택자 (*) </title>
-<!-- jQuery library -->
+  <head>
+    <meta charset="utf-8" />
+    <title>전체 선택자 (*)</title>
+    <!-- jQuery library -->
+    <script src="./js/jquery-3.6.1.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
 
-</head>
-  
-<body>
+    <script>
+      // 제이쿼리 로딩 구역
+      $(() => {
+        // 미션: body를 클릭하면 모든 요소를 선택하여(*)
+        // 인터넷으로 검색한 이미지 주소를 배경이미지로 설정하여
+        // width: 200px, height: 200px 로 설정하시오.
 
-<div id="container">
+        $("body").click(() => {
+          $("*").css({
+            background: "url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGN0J3h04I5buwB-ImSJzzxE9rywQuLQObLw&usqp=CAU)no-repeat center/cover",
+            width: "200px",
+            height: "  200px",
+          });
+        }); // 클릭 이벤트
+      }); // 제이쿼리 로딩 구역
+    </script>
+  </head>
 
- <header>
-   <h2> Welcome mySite </h2>
- </header>
+  <body>
+    <div id="container">
+      <header>
+        <h2>Welcome mySite</h2>
+      </header>
 
- <nav>
-   <ul class="list">
-   <li id="first">One</li>
-   <li id="second">Two</li>
-   <li id="third">Three</li>
-  </ul>
- </nav>
+      <nav>
+        <ul class="list">
+          <li id="first">오전수업후</li>
+          <li id="second">점심식후</li>
+          <li id="third">집갈때쯤</li>
+        </ul>
+      </nav>
+    </div>
 
-</div>
-
-<!---------- jQuery code Start ---------->
-<script>
-
-</script>
-
-</body>
+    <!---------- jQuery code Start ---------->
+    <script></script>
+  </body>
 </html>
