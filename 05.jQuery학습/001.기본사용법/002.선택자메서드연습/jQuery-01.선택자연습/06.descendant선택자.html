@@ -26,25 +26,38 @@
         $("#third").html(
           '<img src="https://5.imimg.com/data5/XQ/KP/MY-40305254/kids-toy-500x500.jpg" alt="미니언즈">'
         ); // 세번째 이미지
-        $(".list img").css({
-          width: "100px"
-        });
-        $(".list img").click( function(){
+        $(".list img").css({ width: "100px" });
+        $(".list img").click(function () {
           $(this).css({
-            width:"+=10px",
-            transform:"rotate(10deg)",
-            transtion:".3s"
-          });/// css //
-        }) // 클릭 이벤트
+            width: "+=10px",
+            // transform: "rotate(10deg)",
+            transtion: ".3s",
+
+          }).toggleClass("act1")?.toggleClass("act2"); /// css //
+
+        }); // 클릭 이벤트
       }); // <!-- 제이쿼리 로딩 구역 -->
     </script>
+    <style>
+      #container {
+        text-align: center;
+      }
+      .act1{
+        transform: rotate(20deg);
+
+      }
+      .act2{
+        transform: rotate(-20deg);
+
+      }
+    </style>
   </head>
 
   <body>
     <div id="container">
       <header>
-        <h2>Welcome mySite</h2>
-        <p>Lorem Ipsum is simply</p>
+        <h2>작은아이들!</h2>
+        <p>심플하게 하레용!</p>
       </header>
 
       <nav>

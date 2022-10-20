@@ -43,11 +43,9 @@
             // 맨끝 순번을 넣는다
             isrc = isrc[isrc.length - 1];
 
-            
             // 가공  2
-            
+
             isrc = isrc.split(".")[0];
-            
 
             // 가공 3  까지는 모두 동일함로
             // 순번 5번 부터 끝까지 잘라서 가져오자!!!!
@@ -59,14 +57,12 @@
             // 결국 이미지번호만 추출됨!!
             // 이것으로 h2에 출력!!
 
-            exp.innerHTML = isrc+"번 뒤로가!";
+            exp.innerHTML = isrc + "번 뒤로가!";
 
-            exp.classList.add(sts?"action2" : "action");
-            exp.classList.remove(sts?"action1" : "action2");
+            exp.classList.add(sts ? "action2" : "action");
+            exp.classList.remove(sts ? "action1" : "action2");
 
-
-            sts? (sts = 0) : (sts = 1);
-
+            sts ? (sts = 0) : (sts = 1);
 
             console.log(isrc);
           }; // click //
@@ -95,13 +91,13 @@
         height: 200px;
         margin-left: 2px;
       }
-      .action{
-        transition: .5s;
+      .action {
+        transition: 0.5s;
         transform: scale(3) rotate(15deg);
         color: lime;
       }
-      .action2{
-        transition: .3s;
+      .action2 {
+        transition: 0.3s;
         transform: scale(2) rotate(-25deg);
         color: pink;
       }
