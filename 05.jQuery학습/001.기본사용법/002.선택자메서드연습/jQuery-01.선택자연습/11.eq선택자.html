@@ -1,57 +1,82 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>eq 선택자</title>
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script src="./jquery-ui-1.8.23.custom.min.js"></script>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .nav1 {
+        user-select: none;
+        -webkit-user-drag: none;
+      }
+    </style>
+  </head>
 
-<head>
-	<meta charset="utf-8">
-	<title> eq 선택자 </title>
-	<style>
-		html,
-		body {
-			margin: 0;
-			padding: 0;
-			width: 100%;
-			height: 100%;
-		}
-	</style>
-	
+  <body>
+    <div id="container">
+      <select id="selnum">
+        <option value="tt">이름을 선택하세요</option>
+        <option value="0">김수현</option>
+        <option value="1">정우성</option>
+        <option value="2">유아인</option>
+        <option value="3">아이유</option>
+        <option value="4">박보검</option>
+        <option value="5">송중기</option>
+        <option value="6">김혜수</option>
+        <option value="7">전지현</option>
+        <option value="8">손예진</option>
+      </select>
 
-</head>
+      <ul class="nav1">
+        <li>김수현</li>
+        <li>정우성</li>
+        <li>유아인</li>
+        <li>아이유</li>
+        <li>박보검</li>
+        <li>송중기</li>
+        <li>김혜수</li>
+        <li>전지현</li>
+        <li>손예진</li>
+      </ul>
+    </div>
 
-<body>
-
-	<div id="container">
-		<select id="selnum">
-			<option value="tt">이름을 선택하세요</option>
-			<option value="0">김수현</option>
-			<option value="1">정우성</option>
-			<option value="2">유아인</option>
-			<option value="3">아이유</option>
-			<option value="4">박보검</option>
-			<option value="5">송중기</option>
-			<option value="6">김혜수</option>
-			<option value="7">전지현</option>
-			<option value="8">손예진</option>
-		</select>
-
-		<ul class="nav1">
-			<li>김수현</li>
-			<li>정우성</li>
-			<li>유아인</li>
-			<li>아이유</li>
-			<li>박보검</li>
-			<li>송중기</li>
-			<li>김혜수</li>
-			<li>전지현</li>
-			<li>손예진</li>
-		</ul>
-
-	</div>
-
-	<!---------- jQuery code Start ---------->
-	<script>
-
-
-	</script>
-</body>
-
+    <!---------- jQuery code Start ---------->
+    <script>
+      // 제이쿼리 시작한다 임마
+      $(() => {
+        $(".nav1 li").css({
+          fontSize: "50px",
+          textShadow: "0 0 10px black",
+          cursor: "pointer",
+          width: "300px",
+          whiteSpace: "nowrap",
+        });
+        // 1차 미션: .nav1 아래 li를 클릭시 클릭된 li의
+        // 글자크기를 5px씩 커지게 하시오. 동시에 글자색을
+        // 무지개색 순서로 차례로 변경되게 하시오.
+		const rbcolor = ["red","orange","yellow","green","blue","navy","purple"];
+		let csep = 0;
+		
+        $(".nav1 li").click(() => {
+          // 클릭된 자신은 this지만
+          // 화살표함수는 event.currentTarget
+          $(event.currentTarget).css({
+            fontSize: "+=5px",
+            color:rbcolor[csep],
+          });// 클릭 css
+		//   무지개색 순번 증가
+		csep ++;
+		if(csep===7)csep===0;
+        }); // 클릭이벤트
+      }); // 제이쿼리 시작한다 임마
+    </script>
+  </body>
 </html>
