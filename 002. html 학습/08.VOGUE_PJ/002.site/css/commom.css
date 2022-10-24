@@ -65,6 +65,11 @@
     font-family: 'Roboto',nbg;
     font-size: 12px;
 }
+/* 사이드 메뉴 상위 a요소 */
+.smbx>li>a{
+    display: block;
+    padding: 0 13px;
+}
 /********** 1-2.로고박스 **********/
 .logo{
     height: 115px;
