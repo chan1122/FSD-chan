@@ -62,20 +62,40 @@
         // 1차 미션: .nav1 아래 li를 클릭시 클릭된 li의
         // 글자크기를 5px씩 커지게 하시오. 동시에 글자색을
         // 무지개색 순서로 차례로 변경되게 하시오.
-		const rbcolor = ["red","orange","yellow","green","blue","navy","purple"];
-		let csep = 0;
-		
+        const rbcolor = [
+          "red",
+          "orange",
+          "yellow",
+          "green",
+          "blue",
+          "navy",
+          "purple",
+        ];
+        let csep = 0;
+
         $(".nav1 li").click(() => {
           // 클릭된 자신은 this지만
           // 화살표함수는 event.currentTarget
           $(event.currentTarget).css({
             fontSize: "+=5px",
-            color:rbcolor[csep],
-          });// 클릭 css
-		//   무지개색 순번 증가
-		csep ++;
-		if(csep===7)csep===0;
+            color: rbcolor[csep],
+          }); // 클릭 css
+          //   무지개색 순번 증가
+          csep++;
+          if (csep === 7) csep === 0;
         }); // 클릭이벤트
+        //// 2차미션 : 선택박스의 선택을 변경하는 순간 .selnum
+        //선택된 이름의 배경색을 무지개색 순번으로 변경하시오.
+        //동시에 배경이미지를 body에 해당이름과 매칭하여 넣으시오..
+        $("#selnum").change(function () {
+          let opt = $(this).val();
+        //   console.log(opt);
+
+          $("body").css({
+            background: `url(img/${opt}.jpg) no-repeat center/cover`,
+          });
+		  
+        }); // 체인쥐!
       }); // 제이쿼리 시작한다 임마
     </script>
   </body>
