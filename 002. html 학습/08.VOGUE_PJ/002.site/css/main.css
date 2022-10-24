@@ -4,7 +4,7 @@
 /* 공통 외부CSS 합치기 */
 @import url(reset.css);
 @import url(core.css);
-@import url(common.css);
+@import url(commom.css);
 
 /* 개별 배경이미지 */
 /* 1번 - 1개 */
