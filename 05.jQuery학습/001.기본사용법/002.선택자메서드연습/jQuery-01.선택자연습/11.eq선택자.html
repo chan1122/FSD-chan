@@ -82,19 +82,37 @@
           }); // 클릭 css
           //   무지개색 순번 증가
           csep++;
-          if (csep === 7) csep === 0;
-        }); // 클릭이벤트
+          if (csep === 7) csep = 0;
+        });
+
+        // 클릭이벤트
         //// 2차미션 : 선택박스의 선택을 변경하는 순간 .selnum
         //선택된 이름의 배경색을 무지개색 순번으로 변경하시오.
         //동시에 배경이미지를 body에 해당이름과 매칭하여 넣으시오..
         $("#selnum").change(function () {
           let opt = $(this).val();
-        //   console.log(opt);
+          //   console.log(opt);
+          const rbcolor = [
+            "red",
+            "orange",
+            "yellow",
+            "green",
+            "blue",
+            "navy",
+            "purple",
+          ];
+          let csep = 0;
 
           $("body").css({
             background: `url(img/${opt}.jpg) no-repeat center/cover`,
           });
-		  
+          $(".nav1 li").css({
+            backgroundColor: "transparent",
+          });
+          $(`.nav1 li:eq(${opt})`).css({
+            backgroundColor: rbcolor[opt],
+          });
+		  //   무지개색 순번 증가
         }); // 체인쥐!
       }); // 제이쿼리 시작한다 임마
     </script>
