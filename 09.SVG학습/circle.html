@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG 기본원리 및 애니메이션</title>
+    <!-- 제이쿼리 불러오는 함수 [ 익스터널 방식 ] -->
+    <script src="../05.jQuery학습/000.최신버전/jquery-3.6.1.min.js"></script>
+    <script src="../05.jQuery학습/000.최신버전/jquery-ui.min.js"></script>
+    <!-- 스크립트 구역 -->
+    <script>
+      // <!-- 스크립트 구역 -->
+      $(() => {}); // <!-- 스크립트 구역 --> //
+    </script>
+    <!-- 스타일 구역  -->
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      body * {
+        outline: 1px dotted red;
+      }
+      body {
+        background: linear-gradient(to bottom, aqua, lightpink);
+      }
+
+      .wrap {
+        /* 플렉스 박스 */
+        display: flex;
+
+        /* 플렉스 랩핑 박스 */
+        flex-wrap: wrap;
+
+        width: 100vw;
+        height: 100vh;
+      }
+      .wrap > section {
+        /* 부모자격!! */
+        position: relative;
+        /* 등분할!!! 가로 , 세로 등분할 채우기 */
+        flex: 1;
+        /* 한줄에 2개씩 */
+        flex-basis: 50%;
+      }
+      .cbx {
+        /* 자식요소 !!!!!!!!!!! */
+        position: absolute;
+
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 300px;
+        height: 300px;
+      }
+
+      /* svg 공통 */
+      .cbx svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      .svg1 {
+        background: url(./images/man.jpg) no-repeat center/cover;
+        border-radius: 50%;
+
+        /* 여기에는 transform이 적용됨! */
+        
+      }
+
+      .svg1 svg{
+        transform: rotate(-90deg);
+      }
+
+      /* 서클 설정 */
+      .c1 {
+        /* 채우기색~!!!!! -> 기본색은 검정!! -> 투명은(transparent), 없음!(none) */
+        fill: transparent;
+
+        /* 선!!!!!!! */
+
+        stroke: red;
+        /* 예시 2 */
+        stroke: linear-gradient(to bottom, red,blue,green);
+        /* 두꼐!! 안쓰면 1px*/
+        /* 단위를 안쓰면 기본 px로 나온다! */
+
+        /* 중심선 기준으로 생긴다! */
+        stroke-width: 20px;
+
+        /* 대쉬선 속성 
+            -선 , 공백순으로 셋팅! */
+        stroke-dasharray: 300%;
+
+        /* 선 공백에서 선으로 모두 채우기
+            방법 : 50%를 줘본다 
+            몇조각인지 센다
+            
+
+            식 50%  * 조각수 
+
+            ( 여기서는 6조각이 나옴!)
+            50% * 6조각 300%
+            
+            */
+            stroke-linecap: round;
+            /* 대쉬선 시작 위치 속성 */
+            stroke-dashoffset: -300%;
+
+            /* 
+            {대쉬선 셋팅}
+
+            stroke-dashoffset 값을 50% 준후 조각수 만큼 곱하여 전체 선부터 채워지게 함!
+
+            2 . 선만큼 채워진 %를 stroke-dashoffset에 값을 설정하여 공백부터 시작하게 함! 
+
+            3. (오버시 선애니할 경우)
+            3. 여기에 트랜지션을 준다
+            4 . stroke-dashoffset:0;
+            으로 셋팅하면 도형이 그려지는 애니!
+            
+            */
+            transition: stroke-dashoffset 1s ease-in;
+      }
+
+      .c1:hover{
+        stroke-dashoffset: 0;
+      }
+
+    </style>
+    <!-- 스타일 구역  -->
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- 철인 -->
+      <section>
+        <div class="cbx svg1">
+          <svg>
+            <circle class="c1" cx="150" cy="150" r="140"></circle>
+            <!-- transform="rotate(-90,150,150)" -->
+          </svg>
+        </div>
+      </section>
+
+      <section></section>
+
+      <section></section>
+
+      <section></section>
+    </div>
+    <!-- SVG 란? -->
+    <!-- SVG = Scalable Vector Graphic
+        -> 이미지를 확대해도 꺠지지 않는 백터 방식의 그래픽요소
+        -> 이미지가 코드로 되어있음!
+        -> 백터 그래픽: 일러스트 레이터 같은 툴에서 제작함!
+
+        비교) 포토샵에서 픽셀로 만드는 이미지는? -> 비트맵 이미지!
+        -> canvas 요소 : 비트맵 이미지 그래픽 요소
+         : canvas는 JS로 코딩함!
+
+         -> 
+
+         [svg 요소 포함법 ]
+         - svg요소 내부에 자식요소로 각 도형요소를 넣고 코딩함
+
+         [ circle 요소 : 원 ]
+         - cx : 중심원 x좌표 (center x), 단위없는 숫자는  px
+         - cy : 중심원 y좌표 (center y), 단위없는 숫자는  px
+         - r  : 반지름 (radius)
+
+         - transform 속성 : svg 요소를 변형하기 위한 속성
+            rotate(각도,x위치,y위치)
+            -> 회전속성으로 각도를 단위없이 사용, 마이너스는 반시계
+            -> 이 속성을 쓰는 이유는 circle에는 일반 transform이 적용되지 않기 때문임!
+            (svg 요소 transform이 적용됨)
+    -->
+  </body>
+</html>
