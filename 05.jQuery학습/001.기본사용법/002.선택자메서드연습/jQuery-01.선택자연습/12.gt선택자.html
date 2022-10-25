@@ -4,7 +4,37 @@
 <meta charset="utf-8">
 <title>  gt 선택자 </title>
 <!-- jQuery library -->
+<script src="./js/jquery-3.6.1.min.js"></script>
+<script src="./js/jquery-ui.min.js"></script>
 
+<script>
+  // 제이쿼리 로딩 구역 //
+  $(()=>{
+    // :gt(n) -> grater than ~ 보다 큰
+    // n은 0부터
+    // 사용법: $("선택자:gt(n)")
+
+
+
+    // 미션: 6번째 보다 큰 li에 배경이미지 sample1.jpg를 넣으시오.
+
+    $("li:gt(5)").css({
+      backgroundImage: "url(./images/sample1.jpg) no-repeat center/cover"
+    })// css
+
+    // 미션 : 5번째 보다 작은 li에 rmfwk 42px 글자색 green 으로 하시오
+
+
+
+  }); // 제이쿼리 로딩 구역 //
+
+
+
+</script>
+<style>
+  body{
+  }
+</style>
 
 </head>
 <body>

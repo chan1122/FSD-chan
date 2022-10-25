@@ -16,6 +16,25 @@
       .nav1 {
         user-select: none;
         -webkit-user-drag: none;
+        width: 93vw;
+        height: 100vh;
+        text-align: center;
+      }
+      .nav1>li{
+        display: block;
+        margin: 0 auto;
+      }
+      #selnum{
+        text-align: center;
+        left: 50%;
+        width: 300px;
+        height: 100px;
+        font-size: 30px;
+        letter-spacing: 2px;
+        font-weight: bold;
+      }
+      #container{
+        text-align: center;
       }
     </style>
   </head>
@@ -100,6 +119,8 @@
             "blue",
             "navy",
             "purple",
+            "pink",
+            "aqua"
           ];
           let csep = 0;
 
@@ -113,6 +134,9 @@
             backgroundColor: rbcolor[opt],
           });
           //   무지개색 순번 증가
+          $( this`:eq(${opt})`).css({
+            Color: rbcolor[opt],
+          }) // / /  / 이거 왜 적용 안됨!!!ㅃ!!!!!
         }); // 체인쥐!
       }); // 제이쿼리 시작한다 임마
     </script>

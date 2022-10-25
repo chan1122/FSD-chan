@@ -4,7 +4,31 @@
 <meta charset="utf-8">
 <title>  lt 선택자 </title>
 <!-- jQuery library -->
+<script src="./js/jquery-3.6.1.min.js"></script>
+<script src="./js/jquery-ui.min.js"></script>
+<script>
 
+  $(()=>{
+    // :gt(n) -> grater than ~ 보다 큰
+    // n은 0부터
+    // 사용법: $("선택자:gt(n)")
+    
+    
+    
+    // 미션: 6번째 보다 큰 li에 배경이미지 sample1.jpg를 넣으시오.
+    
+    // 미션 : 5번째 보다 작은 li에 rmfwk 42px 글자색 green 으로 하시오
+    $("li:lt(4)").css({
+      color:"green",
+      fontSize: "42px"
+
+    })// css
+    
+
+    
+    
+  }); // 제이쿼리 로딩 구역 //
+  </script>
 
 </head>
 <body>

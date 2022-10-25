@@ -37,10 +37,32 @@ window.addEventListener("DOMContentLoaded", loadFn);
     기능: 로딩 후 버튼 이벤트 및 기능구현
 ******************************************/
 function loadFn() {
+  // 1. 호출확인
+  console.log("로딩완료!");
+  // 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+  let pnum = 100;
 
-    // 1. 호출확인
-    console.log("로딩완료!");
+  // 2 . 대상 선정 :
+  // 2 - 1 . 이벤트 대상 : .abtn
+  const abtn = document.querySelectorAll(".abtn");
+  // 2 - 3 . 변경 대상 : #slide
+  const slide = document.querySelector("#slide");
+  abtn[1].onclick = () => {
 
-    
+    // 1 1 1 1 1 1 1 1 1 1 1 11 
+    // pnum += 100;
+
+    slide.style.left = `-${pnum}%`;
+    slide.style.transition = ".8s";
+
+    // 이거 주석 풀자잉!!!  ! ! ! ! ! ! !! ! ! 
+    // 0.8 초후 맨앞 li 잘라서 맨뒤로 이동
+    setTimeout(() => {
+      slide.appendChild(
+        slide.querySelectorAll("li")[0])
+      slide.style.left = "0";
+      slide.style.transition = "none";
+    }, 800);
+  };
 } //////////////// loadFn 함수 ///////////////
 /////////////////////////////////////////////
