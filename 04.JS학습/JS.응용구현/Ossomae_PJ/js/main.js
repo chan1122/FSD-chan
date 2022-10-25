@@ -68,9 +68,9 @@ window.addEventListener("DOMContentLoaded", () => {
       // 맨뒤요소는 [개수-1]
     } /////////// else /////////
   } //////////// goSlide 함수 //////////
-
   //   인터발 용 변수
   let autoI;
+  slideAuto();
   // 자동 넘기기
   // 인터발 함수를 지우려면 변수에넣고
   // clearInterval(변수) 해야함!!!
@@ -78,7 +78,7 @@ window.addEventListener("DOMContentLoaded", () => {
     autoI = setInterval(() => {
       goSlide(1);
     }, 2000);
-  };
+  }
   let autoT;
   //   지우기 함수
   function clearAuto() {
