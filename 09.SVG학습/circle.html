@@ -127,6 +127,40 @@
 
       .c1:hover{
         stroke-dashoffset: 0;
+
+      
+      }
+      .svg2{
+        background: url(./images/black.jpg) no-repeat top/cover;
+      }
+
+      .rt1{
+        /* 채우기 */
+        fill: none;
+        /* 선색 */
+        stroke: black;
+        /* 선 굵기 */
+        stroke-width: 10px;
+        
+        /* 선 모양 */
+        stroke-linecap: round;
+                    /* 
+                stroke-linecap 선끝옵션
+                1) butt - 끝에 중심선이 보임(기본값)
+                2) square - 끝에 사각형으로 덮음
+                3) round - 끝에 둥근모양으로 덮음
+            */
+        
+        /* 대쉬선 */
+        stroke-dasharray: 10%;
+        /* 대쉬선 옵셋 */
+        stroke-dashoffset: 15%;
+
+
+        transition: all 2s ease-in-out;
+      }
+      .svg2:hover .rt1{
+        stroke-dashoffset: 415%;
       }
 
     </style>
@@ -134,7 +168,7 @@
   </head>
   <body>
     <div class="wrap">
-      <!-- 철인 -->
+      <!-- 철인 원모양!-->
       <section>
         <div class="cbx svg1">
           <svg>
@@ -144,7 +178,16 @@
         </div>
       </section>
 
-      <section></section>
+      <section>
+        <!-- 검은여자! 네모네모!! -->
+        <div class="cbx svg2">
+          <svg>
+            <rect class="rt1" width="280px" height="280px" x="10px" y="10px">
+
+            </rect>
+          </svg>
+        </div>
+      </section>
 
       <section></section>
 
@@ -164,6 +207,7 @@
 
          [svg 요소 포함법 ]
          - svg요소 내부에 자식요소로 각 도형요소를 넣고 코딩함
+         (유의사할: svg는 처음에 px단위의 특정크기로 만들어야 한다. 그래야 기본형으로 정하고 유동적인 크기는 viewBox설정으로 얼마든지 변경이가능하다!!!)
 
          [ circle 요소 : 원 ]
          - cx : 중심원 x좌표 (center x), 단위없는 숫자는  px
@@ -175,6 +219,13 @@
             -> 회전속성으로 각도를 단위없이 사용, 마이너스는 반시계
             -> 이 속성을 쓰는 이유는 circle에는 일반 transform이 적용되지 않기 때문임!
             (svg 요소 transform이 적용됨)
+
+            [rect 요소 : 사각형 ]
+            - rectangle(사각형!!!) 이라는 말에서 나온 요소명
+
+            -width : 가로크기
+            -height : 세로크기
+            - x , y : x축 , y축
     -->
   </body>
 </html>
