@@ -31,7 +31,6 @@ window.addEventListener("DOMContentLoaded", loadFn);
             li에 클래스 "on"주기(나머진 빼기->초기화!)
 
 *****************************************************/
-
 /****************************************** 
     함수명: loadFn
     기능: 로딩 후 버튼 이벤트 및 기능구현
@@ -48,21 +47,47 @@ function loadFn() {
   // 2 - 3 . 변경 대상 : #slide
   const slide = document.querySelector("#slide");
   abtn[1].onclick = () => {
-
-    // 1 1 1 1 1 1 1 1 1 1 1 11 
+    // 1 1 1 1 1 1 1 1 1 1 1 11
     // pnum += 100;
 
     slide.style.left = `-${pnum}%`;
     slide.style.transition = ".8s";
 
-    // 이거 주석 풀자잉!!!  ! ! ! ! ! ! !! ! ! 
+    // 이거 주석 풀자잉!!!  ! ! ! ! ! ! !! ! !
     // 0.8 초후 맨앞 li 잘라서 맨뒤로 이동
     setTimeout(() => {
-      slide.appendChild(
-        slide.querySelectorAll("li")[0])
+      slide.appendChild(slide.querySelectorAll("li")[0]);
       slide.style.left = "0";
       slide.style.transition = "none";
     }, 800);
+  }; ////////////////// 클릭 //////////////////
+
+  // 3 - 2 . 왼쪽 버튼 클릭시 : 외쪽버튼 abtn변수 0번째
+  abtn[0].onclick = function(){
+    //  1 . 맨뒤요소를 잘라서 맨앞으로 이동한다!
+    // 대상: slide변수 -> ul#slide
+    // 사용 메서드: insertBefore(넣을놈,넣을놈 전놈)
+    let cli = slide.querySelectorAll("li");
+    let ssllidd = slide.insertBefore(cli[cli.length-1],cli[0]);
+    //  2 . 왼쪽 바깥에 -100% left값 주기!
+    slide.style.left = "-100%";
+    // 첫번째 실행후 트랜지션 없애기
+    slide.style.transition = "";
+    
+    //2 번과 3번 코드 사이에 시차 필요 
+    setTimeout(() => {
+      
+      // 3 . left값을 0으로 트랜지션 애니메이션하기
+      slide.style.left = "0";
+      slide.style.transition = ".8s";
+    }, 50);
+
   };
+
+
+
+
+
+
 } //////////////// loadFn 함수 ///////////////
 /////////////////////////////////////////////
