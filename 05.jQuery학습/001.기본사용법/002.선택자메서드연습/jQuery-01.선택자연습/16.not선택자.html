@@ -1,61 +1,86 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title> not 선택자 </title>
-<!-- jQuery library -->
+  <head>
+    <meta charset="utf-8" />
+    <title>not 선택자</title>
+    <!-- jQuery library -->
+    <script src="./js/jquery-3.6.1.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
 
+    <!---------- jQuery code Start ---------->
+    <script>
+      $(() => {
+        /* 
+		:not 선택자 - 선택한 요소만 뺴고 나머지 선택자
+		-> 제이쿼리 전용!
+	*/
+        // 미션: li클릭하면 클릭된 것은 "왕" 이라고 글자를
+        // 변경하고 글자크기를 72px로 , 글자색은 빨간색으로
+        // 변경과 동시에 나머지 li는 사라지게 하시오
 
-</head>
-<body>
+        $("li").click(function(){
+          $(this).text("!!우~~~왕!!")
+		  .css({fontSize:"72px",color:"red",transition:".8s"});
 
-<div id="container">
+		  // 선택 된 li 이외의 나머지는?
+		  // 선택된 순번이 아닌 것으로 구한다!
+		  // :not(:eq(n))
+		  let ibx	= $(this).index();
+		  // index 메서드
+		  /// - 선택요소의 형제 중 순번을 리턴함!
+		//   console.log(ibx)
 
-   <ul class="nav1">
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-	   <li>사람</li>
-   </ul>
-   
-</div>
+		  // 숨기는 애니메이션 메서드?
+		  // hide(시간) 메서드 시간 ease 함수
+		  // 시간을 주면 애니메이션 되면서 사라짐!
+		  // 시간은 1/1000초 
 
-<!---------- jQuery code Start ---------->
-<script>
+		  // 해당 순번이 아닌요소 모두! -> li:not(:eq(순번))
+		  $(`li:not(:eq(${ibx}))`).delay(1000).hide(1000)
 
- 
-  
-</script>
-</body>
+        }); // 클릭
+      });
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <ul class="nav1">
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+        <li>사람</li>
+      </ul>
+    </div>
+  </body>
 </html>

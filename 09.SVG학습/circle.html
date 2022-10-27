@@ -67,10 +67,9 @@
         border-radius: 50%;
 
         /* 여기에는 transform이 적용됨! */
-        
       }
 
-      .svg1 svg{
+      .svg1 svg {
         transform: rotate(-90deg);
       }
 
@@ -83,7 +82,7 @@
 
         stroke: red;
         /* 예시 2 */
-        stroke: linear-gradient(to bottom, red,blue,green);
+        stroke: linear-gradient(to bottom, red, blue, green);
         /* 두꼐!! 안쓰면 1px*/
         /* 단위를 안쓰면 기본 px로 나온다! */
 
@@ -105,11 +104,11 @@
             50% * 6조각 300%
             
             */
-            stroke-linecap: round;
-            /* 대쉬선 시작 위치 속성 */
-            stroke-dashoffset: -300%;
+        stroke-linecap: round;
+        /* 대쉬선 시작 위치 속성 */
+        stroke-dashoffset: -300%;
 
-            /* 
+        /* 
             {대쉬선 셋팅}
 
             stroke-dashoffset 값을 50% 준후 조각수 만큼 곱하여 전체 선부터 채워지게 함!
@@ -122,46 +121,82 @@
             으로 셋팅하면 도형이 그려지는 애니!
             
             */
-            transition: stroke-dashoffset 1s ease-in;
+        transition: stroke-dashoffset 1s ease-in;
       }
 
-      .c1:hover{
+      .c1:hover {
         stroke-dashoffset: 0;
-
-      
       }
-      .svg2{
+      .svg2 {
         background: url(./images/black.jpg) no-repeat top/cover;
       }
 
-      .rt1{
+      .rt1 {
         /* 채우기 */
         fill: none;
         /* 선색 */
         stroke: black;
         /* 선 굵기 */
         stroke-width: 10px;
-        
+
         /* 선 모양 */
         stroke-linecap: round;
-                    /* 
+        /* 
                 stroke-linecap 선끝옵션
                 1) butt - 끝에 중심선이 보임(기본값)
                 2) square - 끝에 사각형으로 덮음
                 3) round - 끝에 둥근모양으로 덮음
             */
-        
+
         /* 대쉬선 */
         stroke-dasharray: 10%;
         /* 대쉬선 옵셋 */
         stroke-dashoffset: 15%;
 
-
         transition: all 2s ease-in-out;
       }
-      .svg2:hover .rt1{
+      .svg2:hover .rt1 {
         stroke-dashoffset: 415%;
       }
+
+      /* 의사 레인지 : 다각형!(육각) */
+      .svg3 svg {
+        background: url(./images/doc.jpg) no-repeat top / cover;
+        /* 다각형 클리핑 적용하기
+        
+        -points 속성
+            -표현법 : <polygon points="x1,y1 x2,y2...."
+            */
+
+        /* clip-path: polygon(
+          50% 0%,
+          100% 33%,
+          100% 66%,
+          50% 100%,
+          0% 66%,
+          0% 33%
+        ); */
+      }
+      .pg {
+        fill: transparent;
+
+        stroke: rgb(168, 51, 51);
+
+        /* 선두꺠 */
+        stroke-width: 20px;
+
+
+        stroke-dasharray: 300%;
+        stroke-dashoffset: 300%;
+        stroke-linecap: round;
+        transition: .8s;
+
+        
+      }
+      .svg3:hover .pg{
+        stroke-dashoffset: 0;
+      }
+
 
     </style>
     <!-- 스타일 구역  -->
@@ -182,14 +217,29 @@
         <!-- 검은여자! 네모네모!! -->
         <div class="cbx svg2">
           <svg>
-            <rect class="rt1" width="280px" height="280px" x="10px" y="10px">
-
-            </rect>
+            <rect
+              class="rt1"
+              width="280px"
+              height="280px"
+              x="10px"
+              y="10px"
+            ></rect>
           </svg>
         </div>
       </section>
 
-      <section></section>
+      <section>
+        <!-- 의사전자레인지 : 다각형 (6각) -->
+        <div class="cbx svg3">
+          <svg>
+            <polygon
+              class="pg"
+              points="
+              10,150 50,70  100,30  150,10 200,30  250,70  290,150  250,230 200,270 150,290 100,270 50,230"
+            ></polygon>
+          </svg>
+        </div>
+      </section>
 
       <section></section>
     </div>
@@ -222,10 +272,16 @@
 
             [rect 요소 : 사각형 ]
             - rectangle(사각형!!!) 이라는 말에서 나온 요소명
-
             -width : 가로크기
             -height : 세로크기
             - x , y : x축 , y축
+
+            [ polygon : 다각형]
+
+            -points 속성
+            -표현법 : <polygon points="x1,y1 x2,y2...."
+              -> x,y 좌표를 콤마로 구분하고 
+              다른 좌표는 띄어쓰기로 구분함!
     -->
   </body>
 </html>
