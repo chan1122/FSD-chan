@@ -66,7 +66,6 @@ function loadFn() {
   }; ////////////////// 클릭 //////////////////
 
 
-
   // 3 - 2 . 왼쪽 버튼 클릭시 : 외쪽버튼 abtn변수 0번째
   abtn[0].onclick = function(){
     if(prot) return; //나가!
@@ -94,6 +93,32 @@ function loadFn() {
 
 
   };
+
+  // 4 . 슬라이드가 이동 되므로 순서를 알수 있는 
+  // 고유순번용 속성을 만들어서 넣어준다!
+  // w3c 에서 허용한 사용자 지정 송성명은 반드시 data-로
+  // 시작해야하므로 우리는 "data-seq" 라는 이름을 쓰자!
+  // 대상: #slide li -> 여기에 속성을 넣는다
+  // 
+  // 사용 메서드 : forEach((요소,순번)=>{코드})
+  slide.querySelectorAll("li")
+  .forEach((ele,idx)=>{
+
+    ele.setAttribute("data-seq",idx);
+  });// for Each
+
+  // 5 . 불릿 변경 함수!
+  // 버튼을 클릭할때 블릿을 해당 순번의 슬라이드와 같은 
+  //순번의 블릿의 li에 클래스"on을 넣고
+  // 나머지는 클래스를 제거함!
+  // chgIndic -> change Indicator (변경하라! 표시자를!)
+  const chgIndic = () => {
+
+    // 1 . 현제 슬라이드 순번 알아오기
+    // cseq -> current sequence number(현제순번)
+    let cseq = slide.querySelectorAll("li")[0]
+
+  }; ////////// chgIndic 함수 //////////
 
 
 
