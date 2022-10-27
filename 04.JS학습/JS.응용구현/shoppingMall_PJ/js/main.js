@@ -34,15 +34,20 @@ window.addEventListener("DOMContentLoaded", loadFn);
 /****************************************** 
     함수명: loadFn
     기능: 로딩 후 버튼 이벤트 및 기능구현
-******************************************/
+    ******************************************/
+    let prot = 0;
+    // 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    let pnum = 100;
 function loadFn() {
   // 1. 호출확인
   console.log("로딩완료!");
   // 광클 금지 함수!!!!!!
   // 광클 금지 상태변수
-  let prot = 0;
-  // 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-  let pnum = 100;
+
+  if(prot) return; //나가!
+  prot = 1;
+  setTimeout(() => 
+    prot=0,800);
 
   // 2 . 대상 선정 :
   // 2 - 1 . 이벤트 대상 : .abtn
@@ -63,6 +68,10 @@ function loadFn() {
       slide.style.left = "0";
       slide.style.transition = "none";
     }, 800);
+
+    //불릿 함수 호출!
+    // -> 오른쪽 버튼은 
+    chgIndic(1)
   }; ////////////////// 클릭 //////////////////
 
 
@@ -90,7 +99,9 @@ function loadFn() {
       slide.style.transition = ".8s";
     }, 0);
 
-
+    // 불릿 변경 함수 호출 !
+    // -> 왼쪽 버튼은 첫번째 슬라이드가 주인공!
+    chgIndic();
 
   };
 
@@ -112,17 +123,71 @@ function loadFn() {
   //순번의 블릿의 li에 클래스"on을 넣고
   // 나머지는 클래스를 제거함!
   // chgIndic -> change Indicator (변경하라! 표시자를!)
-  const chgIndic = () => {
+  const chgIndic = idx => { // idx - 대상 슬라이드 순번
 
     // 1 . 현제 슬라이드 순번 알아오기
     // cseq -> current sequence number(현제순번)
-    let cseq = slide.querySelectorAll("li")[0]
+    let cseq = slide.querySelectorAll("li")[0] // 해당 li 순번
+    .getAttribute("data-seq"); // 그 li에 "data-seq"속성값
+    // getAttribute(속성명) -> 속성값 읽어오는 JS 내장함수
+
+    console.log(cseq)
+    // 2 . 슬라이드 li클래스 초기화
+    for(let x of indic) x.classList.remove("on");
+
+    // 2 . 슬라이드 순번과 동일한 블릿 li 클래스 "on"넣기
+    indic[cseq].classList.add("on");
+
+    
 
   }; ////////// chgIndic 함수 //////////
 
 
 
 
+
+
+
+
+ /***************************************** 
+        자동넘기기 기능구현
+    *****************************************/
+    // 인터발용변수
+    let autoI;
+    // 타임아웃용 변수
+    let autoT;
+
+    // 자동넘기기 /////
+    // 인터발함수를 지우려면 변수에 넣고
+    // clearInterval(변수) 해야함!!!
+
+    /******************************* 
+        함수명: slideAuto
+        기능: 슬라이드 인터발 호출
+    *******************************/
+    function slideAuto() {
+        autoI = setInterval(() => {
+          slide.style.left = "-100%";
+          slide.style.transition = ".8s";
+        }, 2000);
+    } //////// slideAuto 함수 //////////
+
+    // 인터발함수 최초호출!
+    slideAuto();
+
+    /*********************************** 
+        함수명: clearAuto
+        기능: 인터발지우기,타임아웃셋팅
+    ***********************************/
+    function clearAuto() {
+        console.log("인터발지워!!!");
+        // 1. 인터발 지우기
+        clearInterval(autoI);
+        // 2. 타임아웃 지우기(실행쓰나미 방지!)
+        clearTimeout(autoT);
+        // 3. 일정시간 후 다시 인터발 호출!
+        autoT = setTimeout(slideAuto, 5000);
+    } /////// clearAuto함수 ////////
 
 
 } //////////////// loadFn 함수 ///////////////
