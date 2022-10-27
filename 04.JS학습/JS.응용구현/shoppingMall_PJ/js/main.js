@@ -38,6 +38,9 @@ window.addEventListener("DOMContentLoaded", loadFn);
 function loadFn() {
   // 1. 호출확인
   console.log("로딩완료!");
+  // 광클 금지 함수!!!!!!
+  // 광클 금지 상태변수
+  let prot = 0;
   // 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
   let pnum = 100;
 
@@ -62,8 +65,14 @@ function loadFn() {
     }, 800);
   }; ////////////////// 클릭 //////////////////
 
+
+
   // 3 - 2 . 왼쪽 버튼 클릭시 : 외쪽버튼 abtn변수 0번째
   abtn[0].onclick = function(){
+    if(prot) return; //나가!
+    prot = 1;
+    setTimeout(() => 
+      prot=0,800);
     //  1 . 맨뒤요소를 잘라서 맨앞으로 이동한다!
     // 대상: slide변수 -> ul#slide
     // 사용 메서드: insertBefore(넣을놈,넣을놈 전놈)
@@ -80,7 +89,9 @@ function loadFn() {
       // 3 . left값을 0으로 트랜지션 애니메이션하기
       slide.style.left = "0";
       slide.style.transition = ".8s";
-    }, 50);
+    }, 0);
+
+
 
   };
 
