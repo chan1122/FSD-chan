@@ -22,21 +22,22 @@ $(window).scroll(function(){
     // 1 . 슬림메뉴 클래스 on적용
     // 기준 위치는 스크롤위치 100px이상
 
-    if(scTop >= 205){
-        realTop.addClass("on");
+    if(scTop >= 100){
+        realTop.addClass("on down");
     }////// if //////
     else{
         realTop.removeClass("on")
-    }////// else //////
-
+    }
     if(scTop > lastSC){
-        console.log("방향방향")
-        // realTop.removeClass("down")
+        realTop.removeClass("down")
+
     }
     else{
-        console.log("윗방향!")
-        // realTop.addClass("down");
-    }
+        realTop.addClass("down")
+        // 띄어쓰기로 복수에 클래스 적용 가능
+
+    }////// else //////
+
     lastSC = scTop;
 
 
