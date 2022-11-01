@@ -16,6 +16,58 @@
             (만약 엄격모드를 설정하지 않으면 class 를 사용하는 JS는 엄격모드로 자동 적용된다!!)
 
             __________________________________________
+
+            ((클래스 구문))
+
+            class ClassName {
+                constructor(){......}
+            }
+
+            -> 기본적으로 클래스안에
+            constructor() 메서드를 필수로 생성함!
+            객체의 속성을 셋팅하는 역할을 한다!
+            -> 일명 속성 셋팅 메서드라고도 한다!
+            -> 공식명칭은 생성자 매서드!!!
+            **********************************************************
+
+            ((클래스 메서드))
+
+            class ClassName {
+                constructor(){
+                    method_1(){....}
+                    method_2(){....}
+                    method_3(){....}
+                    method_4(){....}
+                }
+            }
+
+            -> 메서드를 추가해서 만들 경우
+            constructor() 메섣 아래에 하나씩 생성한다!
+            ____________________________________________________________
+            클래스로 생성할 객체 모델:
+
+            (constructor()메서드 안에 구현)
+            1 . 속성 5가지
+            -제목,개요,감독,출연,문구
+
+            (메서드를 constructor())
+            2 . 함수 1가지-실행함수
+
+            {
+                제목:"",
+                개요:"",
+                감독:"",
+                출연:"",
+                문구:"",
+                함수:function(){!코드!}
+            }
+
+
+            **********************************************************
+            
+
+            -> 기본적으로 클래스 안에 
+            constructor() 메서드를 필수로 생성함!
             (참고 : 엄격모드란 JS를 좀더 엄격하게 문법 적용을 하도록 지정하는 방식이다)
             -> https://www.w3schools.com/js/js_strict.asp
 
@@ -24,7 +76,67 @@
 
         
         */
-        window.addEventListener(function(){});
+        // window.addEventListener(function(){});
+
+
+    class MovieInfo{
+        // 생성자 메서드 : 주로 속성만 셋팅함!
+        constructor(tit,sum,dir,act,des){
+            this.제목 = tit;
+            this.개요 = sum;
+            this.감독 = dir;
+            this.출연 = act;
+            this.문구 = des;
+
+        }///  constructor ///
+
+        // 내가 만들고자 하는 메서드는 아래에 따로 생성한다!
+        함수(msg){ // msg 응원 메시지 전달변수
+            return `영화${this.제목} 의 감독님 이름은 ${this.감독},나의 응원은${msg}`;
+        }
+
+    } /////////////// class /////////////////
+
+    //클래스는 함수와 달리 호이스팅이 불가하다!
+    //만들고 호출행지 위에서 호출하면 안됨!!!
+
+    //클래스의 데이터형은 뭐지!
+    //typeop 변수 -> 변수(객체,클래스)의 데이터형을 리턴함
+    console.log("클래스의 형은 뭐징?? : ",typeof MovieInfo)
+    // 클래스는 함수형이다!
+
+    document.write("<h1>JS5-5. JS 클래스</h1>")
+
+    // 클래스로 객체 만들기 
+    const mi1 = new MovieInfo("이웃사촌","드라마, 코미디","이환경","정우, 김희원","이웃을 사랑합시다");
+
+    //클래스를 new키워드로 생성한것이 객체인지 확인!
+    console.log("mi1이 객체인지 확인: ",mi1)
+
+    // 만들어진 객체를 화면에 출력: 객체니까 for in 사용!
+    for(let x in mi1){ // x는 속성명
+        document.write(`<h2> ${x} : ${mi1[x]}</h2>`)
+    } ///// for in /////
+    // -> 생성자함수와 달리 클래스는 객체찍기에서 메서드가
+    // 별도로 관리 되고 constructor로 생성된 속성만 찍힌다!
+
+    // 객체 메서드 호출!
+    // document.write(`<h2>${mi1.메서드("굉장하네!")}</h2>`);
+
+    document.write("<hr>");
+
+    // 클래스를 이용한 객체를 하나 더만들고 화면에 찍기
+
+    const meme2 = new MovieInfo("안녕", "반가워", "나는", "안녕이랄까?", "안녕해^^");
+    console.log(meme2)
+
+    document.write("<hr>")
+
+    for(let x in meme2){
+        document.write(`${x} : ${meme2[x]} `)
+    }
+
+    document.write(`<h2>${meme2.메서드("닫ㄹ ㅏㅇ뇽!")}</h2>`)
 
     </script>
 </head>
