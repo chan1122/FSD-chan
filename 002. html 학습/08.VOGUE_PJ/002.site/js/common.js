@@ -21,24 +21,26 @@ $(window).scroll(function(){
 
     // 1 . 슬림메뉴 클래스 on적용
     // 기준 위치는 스크롤위치 100px이상
-
+    
     if(scTop >= 100){
         realTop.addClass("on down");
+        console.log($("#top").height());
     }////// if //////
     else{
         realTop.removeClass("on")
     }
     if(scTop > lastSC){
         realTop.removeClass("down")
-
+        
     }
     else{
         realTop.addClass("down")
         // 띄어쓰기로 복수에 클래스 적용 가능
-
+        
     }////// else //////
-
+    
     lastSC = scTop;
+    
 
 
 
