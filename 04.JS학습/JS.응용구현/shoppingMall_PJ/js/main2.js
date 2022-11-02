@@ -75,7 +75,7 @@ function loadFn() {
         clearAuto();
     }; //////////// click ////////////////
 
-    // 3-2. 왼쪽버튼 클릭시 : 왼쪽버튼 abtn변수 0번째
+    // 3-2. 윗버튼 클릭시 : 윗버튼 abtn변수 0번째
     abtn[0].onclick = () => {
         // 광클금지 ////////////
         if (prot) return; // 나가!
@@ -90,7 +90,7 @@ function loadFn() {
         let cli = slide.querySelectorAll("li");
         slide.insertBefore(cli[cli.length - 1], cli[0]);
 
-        // 2. 왼쪽 바깥에 -100% top값 주기!
+        // 2. 윗 바깥에 -100% top값 주기!
         slide.style.top = "-100%";
         // 첫번째 실행후 생긴 트랜지션 없애기!
         slide.style.transition = "none";
@@ -106,7 +106,7 @@ function loadFn() {
         }, 0);
 
         // 블릿변경함수 호출!
-        // -> 왼쪽버튼은 첫번째 슬라이드가 주인공!
+        // -> 윗버튼은 첫번째 슬라이드가 주인공!
         chgIndic(0);
 
         // 자동넘김지우기 함수 호출!
