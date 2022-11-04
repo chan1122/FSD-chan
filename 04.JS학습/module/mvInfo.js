@@ -1,4 +1,4 @@
-// 영화 정보 클래스 JS - mvinfo.JS
+// 영화정보 클래스 JS - mvInfo.js
 
 class MovieInfo {
     // 생성자 메서드 : 주로 속성만 셋팅함!
@@ -19,5 +19,7 @@ class MovieInfo {
     }
 } ////////// class /////////////////
 
+// 클래스 내보내기
 export default MovieInfo
-// 권고 사항 
+// 선언적 함수나 클래스는 뒤에 세미콜론이 없으므로
+// 내보낼때도 뒤에 세미콜론 쓰지말것을 JS에선 권고함!
