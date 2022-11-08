@@ -166,10 +166,14 @@ font-family: 'Roboto Condensed', sans-serif;
 
     /* 글자설정 - 영문체,한글체 */
     font-family: pist, nbg;
-    font-size: 33px;
+    font-size: min(3vw,33px);
     font-weight: normal;
     text-align: center;
     color: #fff;
+}
+/* 컨텐츠 타이틀 작은글자 */
+.cbx h2 small{
+    font-size: 13px;
 }
 
 /* 2-7. 배경공통 적용 클래스 */
