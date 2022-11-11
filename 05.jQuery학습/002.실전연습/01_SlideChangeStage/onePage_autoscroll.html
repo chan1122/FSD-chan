@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>One Page Scroll</title>
+    <title>One Page Scroll - autoscroll</title>
     <style>
       html,
       body {
@@ -12,6 +12,7 @@
         width: 100%;
         height: 100%; /* 보이는 화면기준 채우기 */
         /* body하위 요소의 높이값 %의 기준이됨! */
+        overflow: hidden;
       }
       /* 공통셋팅 */
       a {
@@ -155,6 +156,11 @@
 
     <script>
       $(() => {
+        // 페이지 이동을 위한 변수
+        let pno = 0;
+        // 전체 페이지수(페이지요소 개수를 할당)
+        let totnum = $(".page").length;
+
         // a클릭시 스크롤이동 애니메이션 구현 //
 
         // 대상 : .gnb a
@@ -162,25 +168,83 @@
           // a 기본 이동 막기
           e.preventDefault();
 
+          // 수정본 : 스크롤 바가 없어지면
+          // 위치값에 오작동이 나타나므로
+          // 한페이지 단위로 이동한다!
+          // 메뉴li순번 === 페이지이동순반
+          // 이동단위: 윈도우 높이값
           // 클릭시 스크롤 위치 아이디 알아내기
-          let scping = $(this).attr("href");
-          console.log(scping);
+          let ibx = $(this).parent().index();
+          console.log(ibx);
 
-          // 2 . 해당 아이디 박스 위치값 알아내기(top값)
-          let pos = $(scping).offset().top;
+        /********************************************** 
+    
+        마우스 휠 작동시 자동 스크롤 이동기능
+        이벤트: mouwheel + DOMMouseScroll
+        -> wheel이벤트가 최신이벤트임!
 
-          console.log(pos);
+        대상 : document
 
+
+        메서드: $(선택자).on(이벤트명,함수)
+        -> 이벤트명에 띄어쓰기로 쓰면 다중이벤트 적용
+    **********************************************/
+
+        $(document).on("mousewheel wheel", (e) => {
+          // e - 이벤트 전달
+          // e.preventDefault();
+          // 기본기능 막기는 window,document,body
+          // 세가지 최상위 객체에는 사용할수 없다!(에러남!)
+
+          console.log("스크롤링~~!");
+
+          // 이벤트 전달변수
+          e = window.event || e;
+          // 오리지날 이벤트와 전달이벤트 중 유효한 값을 할당!
+          // 변수 = 값 or 값 -> 두 값중 true인 값이 할당됨!
+
+          // 1. 휠방향 알아내기
+          // 방향은 델타값 사용!
+          let delta = event.wheelDelta || event.deltail;
+          // e.wheelDelta - 일반 브라우저용 방향정보
+          // e.deltail - 파이어폭스용 방향정보
+
+          //   console.log(delta);
+
+          // 2.  음수면 아랫방향 : 다음페이지
+          if (delta < 0) {
+            pno++;
+            if (pno > totnum - 1) pno = totnum - 1;
+            // 페이지수와 같아지면 끝번호 다음번호니까
+            // 끝번호에 고정!!!
+          } else {
+            // 페이지수 감서
+            pno--;
+            if (pno === -1) pno = 0;
+            // 첫페이지 이전으로 가면 첫번호에 고정!
+            console.log("오이오이!");
+          }
+
+          console.log("페이지번호: ",pno);
+
+
+
+          
           // 3. 위치이동 스크롤 애니메이션
           // 전체스크롤 대상: html,body(최상위 부모 2개 동시에!)
-          $("html  ,body").animate(
+          $("html,body").animate(
             {
-              scrollTop: pos + "px",
+              scrollTop: ($(window).height() * ibx )+ "px",
             },
             800,
-            "easeOutElastic"
+            "easeInOutQuint"
           );
         }); // 클릭 //
+
+        }); // wheel //
+
+        // 스크롤 이벤트와 비교!
+        // $(window).scroll(()=>{console.log("스크롤!~!~")})
       }); //jqb
     </script>
   </head>
