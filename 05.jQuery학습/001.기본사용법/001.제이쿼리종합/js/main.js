@@ -1,3 +1,5 @@
+const { fn } = require("jquery");
+
 // 미니언즈 좀비 탈출 애니 구현 JS - main.js
 $(() => {
   /////////// jQB ///////////////////
@@ -93,10 +95,7 @@ $(() => {
     // 서서히 사라짐, 사라진후 display:none
 
     // 2 . 메시지 함수 : msgFn() + 다음 버튼 보이기
-    const msgFn = (txt) => {
-      msg.text(txt).fadeIn(300);
-      $(ele).next().delay(500).slideDown(300);
-    }; ////// msgFn 함수 //////
+    const msgFn = (txt) => {}; ////// msgFn 함수 //////
     // 1 . 이동하기
     // 위치: i 8번방
     let pos = [];
@@ -127,11 +126,20 @@ $(() => {
   btns
     .first()
     .click(function () {
-      actMini(this, 8, "와~! 아늑하다! 옆방으로 가볼까?");
+      // 이동후 함수
+      let Fn = () => {
+        msg.text("와~! 아늑하다! 옆방으로 가볼까?").fadeIn(300);
+        $(ele).next().delay(500).slideDown(300);
+      }; // Fn함수 //
+
+      actMini(this, 8, Fn);
     })
     // 5 . 옆방으로 버튼클릭시!
     .next()
     .click(function () {
+      // 이동후 함수
+      let Fn = () => {}; // Fn함수 //
+
       actMini(this, 9, "와~! 아늑하다! 옆방으로 가볼까?");
     })
     // 6 . 윗층으로 도망가 버튼클릭시!
