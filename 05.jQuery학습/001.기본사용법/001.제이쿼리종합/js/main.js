@@ -78,7 +78,7 @@ $(() => {
   // 2. 버튼 셋팅하기
   // 모든 버튼은 숨기고 첫번재 버튼만 보여!
   // 버튼.숨겨().첫번째().보여()
-  btns.hide().first().show();
+  btns.hide().eq(5).show();
 
   // 3. 공통함수 : actMini() ///////////////////////
   const actMini = (ele, seq, fn) => {
@@ -268,17 +268,19 @@ $(() => {
                 "easeInOutElastic",
                 () => {
                   // 물린후 대사
-                  msg.css({
-                    left: "-110%",
-                  }).html(`악 나도 물렷다...어서 치료주사방으로`)
+                  msg
+                    .css({
+                      left: "-110%",
+                    })
+                    .html(`악 나도 물렷다...어서 치료주사방으로`);
 
                   setTimeout(() => {
-                      mi.find("img")
-                      .attr("src","images/mz1.png")
-                      .css({filter:"grayscale(100%)"})
+                    mi.find("img")
+                      .attr("src", "images/mz1.png")
+                      .css({ filter: "grayscale(100%)" });
 
-                      // 다음 버튼 보이기
-                      $(this).next().slideDown(300);
+                    // 다음 버튼 보이기
+                    $(this).next().slideDown(300);
                   }, 1000);
                 }
               );
@@ -290,32 +292,150 @@ $(() => {
     })
     // 9. 치료주사방으로! 버튼 클릭시 ///////////////
     .next()
-    .click(function () {})
+    .click(function () {
+      let fn = () => {
+        $(".inj").css({
+          transform: "rotate(-150deg)", // 반시계방향
+          transition: ".5s .5s", // 05초후 05촨 애니
+          zIndex: "9999", // 미니언즈보다 위
+        });
+        setTimeout(() => {
+          mi.find("img").attr("src", "images/m2.png").css({
+            filter: "grayscale(0)",
+          });
+          msg
+            .html("이제 조금만 더가면 <br> 탈출이다!")
+            .css({
+              left: "-84%",
+            })
+            .fadeIn(200);
+
+          $(".inj").hide();
+
+          $(this).next().slideDown(300);
+        }, 1000);
+      };
+
+      // 다음 버튼 보이기
+      actMini(this, 2, fn);
+    })
     // 10. 3번방으로! 버튼 클릭시 ///////////////
     .next()
     .click(function () {
       // 이동후 함수
-      let fn = () => {};
+      let fn = () => {
+        msg.html("어서 윗층으로 가자").fadeIn(200);
+
+        // 다음버튼 보이기
+        $(this).next().slideDown(300);
+      };
 
       // 액션 함수 호출
-      actMini(this, 4, Fn);
+      actMini(this, 3, fn);
     })
     // 11. 1번방으로! 버튼 클릭시 ///////////////
     .next()
     .click(function () {
       // 이동후 함수
-      let fn = () => {};
+      let fn = () => {
+        msg.html("이제곧 탈출이다!").fadeIn(200);
+
+        // 다음버튼 보이기
+        $(this).next().slideDown(300);
+      };
 
       // 액션 함수 호출
-      actMini(this, 2, Fn);
+      actMini(this, 1, fn);
     })
     // 12. 헬기를 호출! 버튼 클릭시 ///////////////
     .next()
     .click(function () {
       // 이동후 함수
-      let fn = () => {};
+      let fn = () => {
+        // 메시지 보이기
+        msg.html("Help Me!").fadeIn(200);
+
+        // 1번방 단체 좀비들 달려듬!
+        bd.eq(1)
+          .find(".mz")
+          .fadeIn(300)
+          .animate(
+            {
+              right: bd.eq(1).width() + "px",
+            },
+            3000,
+            "easeInBack"
+          );
+
+        $(".heli")
+          .animate(
+            {
+              left: "20%",
+            },
+            4000,
+            "easeOutElastic",
+            function () {
+              $(this).attr("src", "images/heli2.png");
+              //원본 미니언즈는 사라짐
+              mi.hide();
+            }
+          )
+          .delay(200)
+          .animate(
+            {
+              left: "67%",
+            },
+            5000,
+            "easeOutCirc",
+            function () {
+              $(this).attr("src", "images/heli3.png");
+            }
+          )
+          .delay(100)
+          .animate(
+            {
+              left: "100%",
+            },
+            1000,
+            "linear",
+            () => {
+              // 최종 마무리 구역
+              // 간판 먼저 떨어트리기
+              let tit = $(".tit");
+              tit.addClass("on");
+              setTimeout(() => {
+                tit.addClass("on2");
+              }, 3000);
+              setTimeout(() => {
+                bd.parent().addClass("on");
+              }, 6000);
+            }
+          ); // linear 등속도
+      };
 
       // 액션 함수 호출
-      actMini(this, 1, Fn);
+      actMini(this, 0, fn);
+    });// 그렇다 헬기 호출은 끝난것이다..
+
+
+    // 간판에 마우스 오버시 색상 변경하기
+    // hover(함수1,함수2)
+    // - 함수 1은 오버시 
+    // - 함수 2는 아웃시 실행!
+    $(".tit").hover(function(){
+      // 오버
+      $(this).css({
+        backgroundColor:"red",
+        color:"blue"
+      })
+
+    },function(){
+      // 아웃
+      $(this).css({
+        backgroundColor:"aqua",
+        color:"red"
+      })
+
+
     });
 }); /////////////// jQB ////////////////////
