@@ -8,6 +8,9 @@ html,body{
     /* 보이는 화면기준 채우기! */
 }
 
+body * {
+    outline: 10px dotted red;
+}
 /* 전체배경 */
 body{
     background-image: 
