@@ -1,5 +1,16 @@
 // 보그PJ 공통JS - common.js
 
+// 현제 페이지명을 알아내어 제어에 활용한다!
+// 페이지명 변수 
+let pname = location.pathname;
+// location.pathname 은 페이지 명이 포함된 전체경로를 리턴해준다
+// console.log("페이지이름: ",pname);
+// split(자를 문자열) -> 배열에 담긴다
+pname = pname.split("/");
+pname = pname[pname.length-1];
+pname = pname.split(".")[0];
+console.log("페이지이름 : ",pname)
+
 // 제이쿼리 구역 길게쓰기도 있음~!
 // $(document).ready(function(){})
 
