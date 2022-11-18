@@ -103,3 +103,29 @@ root3.render(<Favorite color="모든색" food="고기" hobby="운동이"/>)
 // 함수 컴포넌트에서는 표현식안에서 {props.호출시사용한속성명}
 // 여기서는 {props.color}를 사용한다!
 
+
+// 컴포넌트 재사용 호출!
+const root4 = ReactDOM.createRoot(
+  document.getElementById("root4")
+)
+root4.render(<Favorite color="파란색" food="아이스크림" hobby="활쏘자!" />);
+
+
+/*************************************************************** 
+  컴포넌트 내부에서 다른 컴포넌트를 호출할 수 있다!
+***************************************************************/
+
+function Ans() {
+  return <h2>주씨가 차장으로 승진햇다!</h2>
+} /// Ans 함수
+function Who() {
+  return (
+    <React.Fragment>
+      <h1>그렇다면 주...차장..님?</h1>
+      <Ans />
+    </React.Fragment>
+  );
+}
+
+const root5 = ReactDOM.createRoot(document.getElementById("root5"));
+root5.render(<Who />);
