@@ -1,4 +1,9 @@
 // 04. 리액틑 컴포넌트 JSX
+
+// 복수자들 컴포넌트 import하기
+import Avengers from "./Aengers";
+// 임포트 하는 js/jsx파일의 확장자는 생략
+
 /************************************************ 
     [ 리액트 컴포넌트 ]
     - 컴포넌트는 Html요소를 반환하는 함수!
@@ -89,34 +94,34 @@ root2.render(<IronMan />);
 
 ***************************************/
 // 내가 좋아하는 색 표시하기!
-function Favorite(props){ //props는 속성 셋팅 변수집합!
-    return <h2>내가 좋아하는 색은 {props.color}이야!
-    내가 좋아하는음식은{props.food}
-    내취미는 {props.hobby}야</h2>;
-    // 표현식에 {props.color} 는 호출시 보낸 속성명의 값이다!
+function Favorite(props) {
+  //props는 속성 셋팅 변수집합!
+  return (
+    <h2>
+      내가 좋아하는 색은 {props.color}이야! 내가 좋아하는음식은{props.food}
+      내취미는 {props.hobby}야
+    </h2>
+  );
+  // 표현식에 {props.color} 는 호출시 보낸 속성명의 값이다!
 } // Favorite 컴포넌트 함수 //
 
 // 좋아하는 색을 props로 전달할수 있다!
 const root3 = ReactDOM.createRoot(document.getElementById("root3"));
 // 랜더링시 속성셋팅 형식으로 함수 컴포넌트에 값을 전달함!
-root3.render(<Favorite color="모든색" food="고기" hobby="운동이"/>)
+root3.render(<Favorite color="모든색" food="고기" hobby="운동이" />);
 // 함수 컴포넌트에서는 표현식안에서 {props.호출시사용한속성명}
 // 여기서는 {props.color}를 사용한다!
 
-
 // 컴포넌트 재사용 호출!
-const root4 = ReactDOM.createRoot(
-  document.getElementById("root4")
-)
+const root4 = ReactDOM.createRoot(document.getElementById("root4"));
 root4.render(<Favorite color="파란색" food="아이스크림" hobby="활쏘자!" />);
-
 
 /*************************************************************** 
   컴포넌트 내부에서 다른 컴포넌트를 호출할 수 있다!
 ***************************************************************/
 
 function Ans() {
-  return <h2>주씨가 차장으로 승진햇다!</h2>
+  return <h2>주씨가 차장으로 승진햇다!</h2>;
 } /// Ans 함수
 function Who() {
   return (
@@ -129,3 +134,57 @@ function Who() {
 
 const root5 = ReactDOM.createRoot(document.getElementById("root5"));
 root5.render(<Who />);
+
+/***************************************************************** 
+  [ 컴포넌트의 파일 분리 ]
+  리액트는 코드를 재사용하는 것이므로 
+  컴포넌트를 별도의 파일로 분할 하는것이 일반적이다!
+
+  { 분할 방법 }
+  -> 1) JSX형태의 새파일을 생성한다 
+  -> 2) 대문자로 시작하는 컴포넌트를 구현한다.
+  -> 3) 분할구현된 JSX파일을 import하여 호출한다. 
+
+      -> 일반적으로 JS파일 상단에 import 키워드로 불러오면 되는데
+        -지금 사용하고 있는 CDN방식의 바벨 모듈에서는 
+        주의사항이 있다!!!!( 아래 참고! )
+
+                  ( 아   래 )
+*****************************************************************/
+const root6 = ReactDOM.createRoot(document.getElementById("root6"));
+root6.render(<Avengers />)
+/***************************************************************** 
+  [ 바벨을 사용할때 모듈로 파일 호출시 주의사항! ]
+  ____________________________________________
+
+  설치형이 아닌 CDN방식의 바벨은 호출셋업의 시차로
+  바로 모듈을 호출하면 에러가 발생한다!
+  따라서 모듈을 사용할 파일을 아래와 같은 형식으로
+  메인 html 상단에 호출해 줘야만 한다!!!
+
+  -> 상단에 모듈화한 JS를 먼저 불러준다!
+
+  <script src="모듈화한js" 
+  data-plugins="transform-es2015-modules-umd" 
+  type="text/babel"></script>
+
+  -> 아래쪽에 모듈을 호출하는 JS를 불러준다!
+
+  <script src="모듈을 호출하는 JS" 
+  data-plugins="transform-es2015-modules-umd" 
+  type="text/babel"></script>
+
+  ->>> 위의 호출 속성 중 기본적으로
+  type="text/babel" 은 당연히 해야하고
+
+  ->>> 여기에 더하여 하나의 속성을 추가한다!
+  data-plugins="transform-es2015-modules-umd"
+
+  이 속성과 값이 바벨에서 모듈을 사용하게 하는
+  es2015 즉 ES6버전에서의 모듈문법을 사용하게끔 해준다!
+
+
+
+
+  -> 4)
+*****************************************************************/
