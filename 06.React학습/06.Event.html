@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>04.React 컴포넌트</title>
+    <title>06.Event</title>
 
     <!-- [ 리엑트 CDN방식 호출코드! ] -->
 
@@ -19,27 +19,33 @@
     ></script>
     <!-- 3.리액트 바벨 라이브러리 -->
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <!-- import로 호출한 JSX도 여기에  등록한다(CDN에서만!) -->
-    <script
-      src="./js/Aengers.jsx"
-      data-plugins="transform-es2015-modules-umd"
-      type="text/babel"
-    ></script>
 
-    <!--  리액트 컴포넌트 JSX 호출  -->
-    <script
-      src="./js/04.컴포넌트.jsx"
-      data-plugins="transform-es2015-modules-umd"
-      type="text/babel"
-    ></script>
+    <!--  리액트 Event JSX 호출  -->
+    <script src="./js/06.Event.jsx" type="text/babel"></script>
+
+    <style>
+      .wrap {
+        height: 300px;
+      }
+      #ball {
+        height: 100px;
+      }
+      #ball img {
+        height: 200px;
+      }
+    </style>
   </head>
   <body>
     <!-- 리액트 출력요소들 -->
-    <div id="root1"></div>
-    <div id="root2"></div>
-    <div id="root3"></div>
-    <div id="root4"></div>
-    <div id="root5"></div>
-    <div id="root6"></div>
+    <div class="wrap">
+      <!-- 버튼 출력: 이벤트적용요소 -->
+      <div id="root">
+        <!-- 이벤트 결과 출력 -->
+        <div>
+          <span id="ala"></span>
+          <span id="ball"></span>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
