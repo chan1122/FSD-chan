@@ -9,6 +9,10 @@
         -> 예) onclick -> onClick
     4. 이벤트 핸들러 : 중괄호 안에 작성(중괄호는 JSX표현식영역)
         -> 예)onclick="shoot()" => onClick={shoot}
+        -> 호출 메소드에 전달값이 있을경우엔 익명함수(화살표함수) 사용함
+            예) onClick={()=>shoot(전달값)}
+            -> 익명함수를 쓰는 이유는 함수 호출시 소괄호가 있으면 바로 실행 되기 떄문에 이벤트 안에 실행안돠게 하기 위한 방법임!
+            
 ******************************************************/
 
 // 전체 이벤트를 적용할 컴포넌트 구성하기 //
@@ -69,6 +73,26 @@ function EventShow() {
 function AlaLamp(props) {
   return <img src={props.isrc} alt="알라딘램프" />;
 } // ala램프 컴포넌트
+
+//  ball 이미지 출력 컴포넌트
+function Ball(props) {
+  return (
+    <img
+      id="bb"
+      src={props.isrc}
+      alt="축구공"
+      title="클릭하시면 공이 날아가요!"
+      onClick={move}
+    />
+  );
+} // ball 컴포넌트
+
+// 일반 함수로 구현! 공을 움직이기!
+function move() {
+  let bb = document.getElementById("bb");
+  bb.style.transform = "translateX(200%) rotate(720deg)";
+  bb.style.transition = "2s ease-in-out";
+} // move 일반함수
 
 //// 최초 출력 호출하기 ////
 const root = ReactDOM.createRoot(document.getElementById("root"));
