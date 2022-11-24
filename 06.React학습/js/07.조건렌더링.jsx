@@ -37,7 +37,6 @@ root2.render(<Developer isDev={false} />);
 // 조건이 true 일떄만 && 뒤의 JSX표현식이 출력됨!
 ////////////////////////////////////////////////////
 
-
 /// 리스트 반복 찍기를 위한 컴포넌트
 function Loopc(props) {
   return (
@@ -97,7 +96,9 @@ function WishList2(props) {
           <h2>내가 사고 싶은 자동차는 모두 {mycars.length}대입니다. </h2>
 
           <ul>
-            {mycars.map((X) => (<Loopc2 seq={X.id} cname={X.name} />))}
+            {mycars.map((X) => (
+              <Loopc2 seq={X.id} cname={X.name} />
+            ))}
           </ul>
         </div>
       )}
@@ -106,22 +107,13 @@ function WishList2(props) {
   );
 } ////// WishList2 컴포넌트 /////////////////////
 
-
 const root4 = ReactDOM.createRoot(document.getElementById("root4"));
 root4.render(<WishList2 wlist={cars2} />);
 const cars2 = [
-    { id: "첫번째", name: "레이" },
-    { id: "두번째", name: "캐스퍼" },
-    { id: "세번째", name: "티코" },
-  ];
-
-
-
-
-
-
-
-
+  { id: "첫번째", name: "레이" },
+  { id: "두번째", name: "캐스퍼" },
+  { id: "세번째", name: "티코" },
+];
 
 const cars = ["제네시스", "그랜져", "롤스로이스"];
 // const cars = [];
@@ -131,6 +123,3 @@ root3.render(<WishList wlist={cars} />);
 /// 조금더 복잡한 속성을 전달하여 반복하는 위시리스트2
 // 전달할 배열변수 할당하기
 // 배열안에 객체가 같은 구조로 들어감!
-
-
-
