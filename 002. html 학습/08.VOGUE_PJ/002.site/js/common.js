@@ -1,15 +1,32 @@
 // 보그PJ 공통JS - common.js
 
-// 현제 페이지명을 알아내어 제어에 활용한다!
+// 윈도우 가로 크기가 모바일 사이즈면 코드를 변경한다!
+// 모바일일때 적용하고 싶거나 싶지않으면 mobsts값을 활용한다!
+// 모바일일때 1, 모바일이 아닐때 0 (가로크기 500기준)
+let mobsts = 0;
+if ($(window).width() <= 500) mobsts = 1;
+console.log("모바일적용여부:", mobsts);
+
+// 이건 순전히 개발자들 브라우저 크기변경 테스트때문에 구현함
+$(window).resize(() => {
+  // 브라우저 화면크기변경시 계속발생!
+  if ($(window).width() <= 500) mobsts = 1;
+  else mobsts = 0;
+  console.log("모바일적용여부(resize):", mobsts);
+
+  // 탑영역 스타일 날리기!
+  $("#top").attr("style", "");
+}); /////// resize //////////////
+
+// [현재 페이지명을 알아내어 제어에 활용한다!]
 // 페이지명 변수
 let pname = location.pathname;
-// location.pathname 은 페이지 명이 포함된 전체경로를 리턴해준다
-// console.log("페이지이름: ",pname);
-// split(자를 문자열) -> 배열에 담긴다
-pname = pname.split("/");
-pname = pname[pname.length - 1];
-pname = pname.split(".")[0];
-console.log("페이지이름 : ", pname);
+// location.pathname 페이지명이 포함된 전체경로
+// split(자를문자열) -> 배열에 담긴다!
+pname = pname.split("/"); //배열에 담는다
+pname = pname[pname.length - 1]; // 마지막 배열
+pname = pname.split(".")[0]; // 페이지이름만 가져옴
+// console.log("페이지이름:",pname);
 
 // 제이쿼리 구역 길게쓰기도 있음~!
 // $(document).ready(function(){})
@@ -69,10 +86,10 @@ $(() => {
   ///////////////////////////////////////
   //////// 스크롤 이벤트 함수 /////////////
   $(window).scroll(() => {
-    // 슬림메뉴와 상단이동버튼 보이기 작동 안할 페이지셋팅
+    // 슬림메뉴와 상단이동버튼 보이기 작동안할 페이지셋팅
     if (pname === "login" || pname === "member" || pname === "gallery") {
-      return;
-    } ///// if문 이다 //////
+      return; // 여기서 나감!
+    } ////////// if /////////////
 
     // 스크롤 위치값(this는 window)
     scTop = $(this).scrollTop();
@@ -82,7 +99,8 @@ $(() => {
 
     // 1. 슬림메뉴 클래스on적용
     // 기준위치는 스크롤위치 100px이상
-    if (scTop >= 100) {
+    // mobsts === 0 모바일이 아닐때만 들어옴!
+    if (scTop >= 100 && mobsts === 0) {
       // 100px이상
       topA.addClass("on");
       // addClass(클래스명) - 클래스넣기

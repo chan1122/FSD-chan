@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* 보그 PJ gallery 페이지 CSS - login.css */
+/* 보그 PJ 갤러리 페이지 CSS - gallery.css */
 
 /* 외부파일 합치기 */
 @import url(reset.css);
@@ -24,16 +24,16 @@
 /* 2-2. 서브 컨텐츠 박스 */
 .scont {
   min-height: 600px;
-
-  /* 드래그 선택 안되게 하기 */
+  /* 드래그 선택안되게하기 */
   user-select: none;
   -webkit-user-drag: none;
 }
 
+/* 스와이퍼 박스 */
 .swiper {
-    min-width: 1300px;
-    height: 500px;
-    margin: 0 auto;
+  max-width: 1300px;
+  height: 500px;
+  margin: 0 auto;
 }
 
 .swiper-slide {
@@ -43,13 +43,7 @@
 
   /* Center slide text vertically */
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
   align-items: center;
 }
 
