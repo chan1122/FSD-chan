@@ -53,4 +53,4 @@ export default function App() {
 
 // index.html의 div#root에 <App /> 컴포넌트 출력 지정하기!
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />)
+root.render(<App />);
