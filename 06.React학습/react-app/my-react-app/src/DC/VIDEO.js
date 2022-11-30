@@ -6,7 +6,7 @@ const VIDEO = () => {
         <React.Fragment>
 
             <h2>VIDEO 페이지</h2>
-            <img src={isrc[6]} />
+            <img src={isrc.video} />
         </React.Fragment>
         
         

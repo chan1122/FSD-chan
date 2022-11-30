@@ -6,7 +6,7 @@ const NEWS = () => {
         <React.Fragment>
 
             <h2>NEWS 페이지</h2>
-            <img src={isrc[5]} />
+            <img src={isrc.news} />
         </React.Fragment>
         
         

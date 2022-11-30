@@ -6,7 +6,7 @@ const CHARACTERS = () => {
         <React.Fragment>
 
             <h2>CHARACTERS 페이지</h2>
-            <img src={isrc[1]} />
+            <img src={isrc.character} />
         </React.Fragment>
         
         

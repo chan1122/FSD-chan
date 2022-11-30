@@ -7,7 +7,7 @@ const MOVIES = () => {
         <React.Fragment>
 
             <h2>MOVIES 페이지</h2>
-            <img src={isrc[4]} />
+            <img src={isrc.movies} />
         </React.Fragment>
         
         

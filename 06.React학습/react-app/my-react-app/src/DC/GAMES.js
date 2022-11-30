@@ -6,7 +6,7 @@ const GAMES = () => {
         <React.Fragment>
 
             <h2>GAMES 페이지</h2>
-            <img src={isrc[3]} />
+            <img src={isrc.games} />
         </React.Fragment>
         
         
