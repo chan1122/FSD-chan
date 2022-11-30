@@ -41,7 +41,7 @@ export default function App() {
             <Route path="co" element={<COMICS />} />
             <Route path="gm" element={<GAMES />} />
             <Route path="mv" element={<MOVIES />} />
-            <Route path="v" element={<VIDEO />} />
+            <Route path="vd" element={<VIDEO />} />
             <Route path="nw" element={<NEWS />} />
 
         </Route>
