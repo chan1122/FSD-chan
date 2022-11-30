@@ -11,7 +11,7 @@ import {
     sTitle as sTit,
     personInfo as pInfo,
     mv,
-} from "./textData.js";
+} from "./textData.js"; 
 // import message from "./msgFormat.js";
 // 별칭사용
 import { message as msg } from "./msgFormat.js";
