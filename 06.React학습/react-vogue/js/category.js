@@ -1,20 +1,14 @@
 // 보그 PJ 카테고리 페이지 JS - category.js
 import data from "cat";
 
-///////////////////////////////////////////////////////
-// 컴포넌트간 변수 전달을 위해 컨텍스트 사용! //////////
-// userContext를 사용하기 위해 바깥에 createContext()로 생성함!
-const MyContext = React.createContext("기본값");
-// userState변수는 각 컴포넌트 내부에 있으므로
-// 다른 컴포넌트에서 사용할 수 없다! 따라서 useContext를 사용함!
-
 /************************************************ 
     [1] 메인 카테고리 렌더링 컴포넌트 : Render
 ************************************************/
-function Render(props) {
+function Render() {
+    // 네비게이션 상태훅
     const [showNav, setShowNav] = React.useState(null);
 
-    // 파리미터 전달값 받기
+    // 파리미터 전달값 받기 -> 새로 배운것!
     const params = new URLSearchParams(location.search);
     // 파라미터 중 특정키값 받기 : get(키이름)
     let catname = params.get("cat");
@@ -26,6 +20,8 @@ function Render(props) {
 
     // 객체 데이터 중 카테고리에 해당하는 데이터만 저장하기
     let seldata;
+    // data 변수 -> cat.js의 데이터를 담은 변수임!
+    // 내용이 객체니까 for in문 사용!
     for (const key in data) {
         if (key == catName) {
             seldata = data[key];
@@ -38,6 +34,7 @@ function Render(props) {
         const menuList = seldata["메뉴"];
         // 메뉴가 있을경우 메뉴 코드를 생성해서 리턴!
         if (menuList != "없음") {
+            // 배열데이터의 값이 있는 동안 map()으로 돌아줌!
             const hcode = menuList.map((item) => (
                 <li>
                     <a href="#">{item}</a>
